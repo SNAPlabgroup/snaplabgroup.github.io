@@ -1,0 +1,184 @@
+/* PITT BRANDING */
+
+/* Custom navbar styles */
+.custom-navbar {
+  background: url(../images/bg_header.png);
+  background-color: #003594;
+  background-size: cover; /* Cover the entire navbar */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+}
+
+.custom-navbar-brand,
+.custom-navbar-text,
+.custom-nav-link {
+  color: white !important;
+}
+
+.custom-navbar-toggler {
+  background-color: white;
+}
+
+/* Hover effect for navbar items */
+.custom-nav-item a:hover {
+  background-color: #3366ff;
+  color: white !important;
+}
+
+/* Active state for navbar items */
+.custom-nav-item a.active {
+  background-color: #ffb81c;
+  color: black !important;
+}
+
+
+/* Custom navbar-toggler styles */
+.custom-navbar-toggler {
+  background-color: #ffb81c !important;
+  border-color: #003594 !important;
+}
+
+
+.custom-navbar-toggler:focus {
+  outline: none;
+  box-shadow: 0 0 5px #ffb81c; /* Or any other color */
+}
+
+
+.menu-label {
+  color: #003594;
+  margin-right: 4px; /* Adjust spacing as needed */
+  font-size: 16px;  /* Adjust font size as needed */
+}
+
+
+/* Footer */
+.custom-footer {
+  background-image: url('../images/footerpano.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+  padding: 20px 0;
+  margin-top: 50px; /* Add top margin */
+
+}
+
+
+.footer-logo {
+  max-width: 100px;
+  margin-bottom: 15px;
+}
+
+.smaller-text {
+  font-size: 0.8em;
+}
+
+.smallest-text {
+  font-size: 0.7em;
+}
+
+.footer-link {
+  color: #ffb81c;
+  font-size: 0.9em;
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  color: #fff;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+.social-icons a {
+  color: #fff;
+  font-size: 24px;
+}
+
+.social-icons a:hover {
+  color: #ffb81c;
+}
+
+
+/* Team page styles */
+
+/* Custom Card */
+.team-card {
+  border: none; /* Removes the border */
+  text-align: center; /* Centers the content */
+}
+
+/* Custom Card Image */
+/* Existing CSS for .team-card-img */
+.team-card-img {
+  border-radius: 50%;  /* makes it round */
+  object-fit: cover;  /* resizes image to fit container while maintaining aspect ratio */
+  object-position: center;  /* centers the image */
+  width: 14rem;  /* fixed width */
+  height: 14rem;  /* fixed height, same as width to make it a circle */
+  display: block;  /* block level, for better control */
+  margin: auto;  /* centers the image in the card */
+  box-shadow: 0 0 10px 5px grey;  /* Adds a faded grey border */
+  transition: box-shadow 0.2s;  /* Smooth transition for box-shadow */
+}
+
+/* Focus and hover behavior for links */
+.profile-link {
+  color: #000000;
+  text-decoration: none;  /* Removes underlining */
+}
+
+.profile-link .fas,
+.profile-link .team-card-title,
+.profile-link .team-card-img {
+  transition: color 0.2s, box-shadow 0.2s;  /* Smooth transition for color and box-shadow */
+}
+
+/* Color and box-shadow change on focus or hover for all elements inside the wrapper link */
+.profile-link:focus .fas,
+.profile-link:hover .fas {
+  color: #ffb81c;
+}
+
+.profile-link:focus .team-card-img,
+.profile-link:hover .team-card-img {
+  box-shadow: 0 0 10px 5px #ffb81c;
+}
+
+
+/* Custom Card Body */
+.team-card-body {
+  padding: 15px;
+}
+
+/* Custom Social Media Icons */
+.team-social-icons {
+  font-size: 18px; /* Smaller font-size */
+}
+
+.team-social-icon {
+  margin: 0 10px; /* Space between icons */
+  color: #000000;
+  text-decoration: none;
+}
+
+.team-social-icon:hover {
+  color: #ffb81c; /* Becomes Pitt gold hover */
+}
+
+
+/* Style for social links on individual member page */
+.social-link {
+  color: black;
+  text-decoration: none;
+}
+
+.social-link:hover {
+  color: #ffb81c;
+}
+
+
