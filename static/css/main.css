@@ -182,3 +182,7 @@
 }
 
 
+.twitter-scroll {
+      max-height: 500px;  /* Set this to match the height of your main content */
+      overflow-y: auto;
+    }
