@@ -186,3 +186,40 @@
       max-height: 500px;  /* Set this to match the height of your main content */
       overflow-y: auto;
     }
+
+
+
+/* Centered Heading and Icon Section */
+.text-center h1 {
+  color: #333333; /* Neutral dark gray */
+  font-weight: bold;
+}
+
+.nav-icon {
+  color: #333333; /* Neutral dark gray for icons */
+  cursor: pointer; /* Pointer cursor for interactivity */
+  transition: color 0.3s, transform 0.3s; /* Smooth transitions */
+}
+
+.nav-icon:hover {
+  color: #ffb81c; /* Pitt gold on hover */
+  transform: scale(1.1); /* Slight zoom effect */
+}
+
+.nav-icon p {
+  margin-top: 10px; /* Space between icon and label */
+  font-size: 1.2rem; /* Adjust font size */
+  color: #333333; /* Neutral gray for text */
+  transition: color 0.3s;
+}
+
+.nav-icon:hover p {
+  color: #ffb81c; /* Gold text on hover */
+}
+
+.custom-icon-link {
+  display: inline-block;
+  text-align: center; /* Center-align text and icon */
+}
+
+
