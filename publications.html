@@ -1,13 +1,13 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>SNAPlab</title>
-
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   SNAPlab
+  </title>
   <style>
-    .google-scholar-link img {
+   .google-scholar-link img {
       /* Adjusts the favicon size to fit inline */
       height: 20px;
       width: 20px;
@@ -15,943 +15,1476 @@
       /* Aligns the favicon with the text */
       position: relative;
       top: 0px; /* Adjust for perfect alignment */
-    }
+   }
   </style>
-
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-  <link rel="stylesheet" type="text/css" href="static/css/main.css">
-  <link rel="icon" type="image/x-icon" href="static/images/favicons/favicon.ico">
-</head>
-
-
-<body>
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+  <link href="static/css/main.css" rel="stylesheet" type="text/css"/>
+  <link href="static/images/favicons/favicon.ico" rel="icon" type="image/x-icon"/>
+ </head>
+ <body>
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg custom-navbar sticky-top">
-    <div class="container">
-      <a class="navbar-brand custom-navbar-brand" href="https://www.pitt.edu/">
-        <img src="static/images/pittsecondaryreverse.png" width="135" alt="Pitt">
-      </a>
-      <span class="border-start">
-        <h3 class="custom-navbar-text ms-4 mt-2">SNAPlab </h3>
-      </span>
-      <button class="navbar-toggler custom-navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="true" aria-label="Toggle navigation">
-        <span class="menu-label">Menu</span>
-        <i class="fas fa-bars-staggered"></i> <!-- FontAwesome icon -->
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item custom-nav-item">
-            <a class="nav-link custom-nav-link" href="index.html">Home</a>
-          </li>
-          <li class="nav-item custom-nav-item">
-            <a class="nav-link custom-nav-link" href="people.html">People</a>
-          </li>
-          <li class="nav-item custom-nav-item">
-            <a class="nav-link custom-nav-link" href="research.html">Research</a>
-          </li>
-          <li class="nav-item custom-nav-item">
-            <a class="nav-link custom-nav-link active" href="publications.html">Publications</a>
-          </li>
-          <li class="nav-item custom-nav-item">
-            <a class="nav-link custom-nav-link" href="join.html">Join Us!</a>
-          </li>
-        </ul>
-      </div>
+   <div class="container">
+    <a class="navbar-brand custom-navbar-brand" href="https://www.pitt.edu/">
+     <img alt="Pitt" src="static/images/pittsecondaryreverse.png" width="135"/>
+    </a>
+    <span class="border-start">
+     <h3 class="custom-navbar-text ms-4 mt-2">
+      SNAPlab
+     </h3>
+    </span>
+    <button aria-controls="navbarResponsive" aria-expanded="true" aria-label="Toggle navigation" class="navbar-toggler custom-navbar-toggler" data-bs-target="#navbarResponsive" data-bs-toggle="collapse" type="button">
+     <span class="menu-label">
+      Menu
+     </span>
+     <i class="fas fa-bars-staggered">
+     </i>
+     <!-- FontAwesome icon -->
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+     <ul class="navbar-nav ms-auto">
+      <li class="nav-item custom-nav-item">
+       <a class="nav-link custom-nav-link" href="index.html">
+        Home
+       </a>
+      </li>
+      <li class="nav-item custom-nav-item">
+       <a class="nav-link custom-nav-link" href="people.html">
+        People
+       </a>
+      </li>
+      <li class="nav-item custom-nav-item">
+       <a class="nav-link custom-nav-link" href="research.html">
+        Research
+       </a>
+      </li>
+      <li class="nav-item custom-nav-item">
+       <a class="nav-link custom-nav-link active" href="publications.html">
+        Publications
+       </a>
+      </li>
+      <li class="nav-item custom-nav-item">
+       <a class="nav-link custom-nav-link" href="join.html">
+        Join Us!
+       </a>
+      </li>
+     </ul>
     </div>
+   </div>
   </nav>
-
-
-
   <!-- Page Content -->
-  <main role="main" class="container">
-    <h1 class="mt-4">Publications</h1>
-
-    <p> As of <code>November 15, 2024</code>, our work has been cited <code>2845</code> times, with an h-index of <code>24</code>, and an i-10 index of <code>33</code> according to
-      <span class="google-scholar-link">
-        <img src="https://www.google.com/s2/favicons?domain=scholar.google.com" alt="Google Scholar Favicon">
-        <a href="https://scholar.google.com" target="_blank">Google Scholar.</a>
-      </span>
-    </p>
-
-
-    <div class="accordion mt-4" id="accordionExample">
-
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="heading2024">
-          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2024" aria-expanded="true" aria-controls="collapse2024">
-            <h4>2024
-            </h4>
-          </button>
-        </h2>
-        <div id="collapse2024" class="accordion-collapse collapse show" aria-labelledby="heading2024" data-bs-parent="#accordionExample">
-
-          <div class="accordion-body">
-            <span class="text-muted"> Singh, R., & Bharadwaj, H. (2024). </span>
-            <strong> Efficient modular system identification provides a high-resolution assay of temporal processing and reveals the multilevel effects of attention along the human auditory pathway. </strong>
-            <em> bioRxiv : the preprint server for biology</em>, 2024.08.11.607503. DOI: 10.1101/2024.08.11.607503
-            <a href="#" class="btn btn-outline-danger btn-sm ml-2 mb-2" target="_blank">
-              PDF
-            </a>
-            <a href="https://www.biorxiv.org/content/10.1101/2024.07.05.601801v1" class="btn btn-outline-primary btn-sm mr-2 mb-2" target="_blank">
-              www
-            </a>
-            <span class="badge rounded-pill text-bg-warning">PREPRINT</span>
-          </div>
-
-          <div class="accordion-body">
-            <span class="text-muted"> Hauser, S. N., Hustedt-Mai, A. R., Wichlinski, A., & Bharadwaj, H. M. (2024). </span>
-            <strong> The relationship between distortion product otoacoustic emissions and audiometric thresholds in the extended high-frequency range. </strong>
-            <em> bioRxiv : the preprint server for biology</em>, 2024.07.05.601801. DOI: 10.1101/2024.07.05.601801
-            <a href="#" class="btn btn-outline-danger btn-sm ml-2 mb-2" target="_blank">
-              PDF
-            </a>
-            <a href="https://pubmed.ncbi.nlm.nih.gov/39026860/" class="btn btn-outline-secondary btn-sm mr-2 mb-2" target="_blank">
-              PubMed
-            </a>
-            <a href="https://www.biorxiv.org/content/10.1101/2024.10.28.620630v1" class="btn btn-outline-primary btn-sm mr-2 mb-2" target="_blank">
-              www
-            </a>
-            <span class="badge rounded-pill text-bg-warning">PREPRINT</span>
-          </div>
-
-          <div class="accordion-body">
-            <span class="text-muted"> Kim, S., Schroeder, M., & Bharadwaj, H. M. (2024). </span>
-            <strong> Effect of digital noise-reduction processing on subcortical speech encoding and relationship to behavioral outcomes. </strong>
-            <em> bioRxiv : the preprint server for biology</em>, 2024.10.28.620630. DOI: 10.1101/2024.10.28.620630
-            <a href="#" class="btn btn-outline-danger btn-sm ml-2 mb-2" target="_blank">
-              PDF
-            </a>
-            <a href="https://pubmed.ncbi.nlm.nih.gov/39554128/" class="btn btn-outline-secondary btn-sm mr-2 mb-2" target="_blank">
-              PubMed
-            </a>
-            <a href="https://www.biorxiv.org/content/10.1101/2024.10.28.620630v1" class="btn btn-outline-primary btn-sm mr-2 mb-2" target="_blank">
-              www
-            </a>
-            <span class="badge rounded-pill text-bg-warning">PREPRINT</span>
-          </div>
-
-          <div class="accordion-body">
-            <span class="text-muted">Borjigin, A., Kokkinakis, K., Bharadwaj, H. M., & Stohl, J. S. (2023). </span>
-            <strong>Deep learning restores speech intelligibility in multi-talker interference for cochlear implant users. </strong>
-            <em>Scientific reports</em>, 14(1), 13241. DOI: 10.1038/s41598-024-63675-8
-            <a href="https://www.nature.com/articles/s41598-024-63675-8.pdf" class="btn btn-outline-danger btn-sm ml-2 mb-2" target="_blank">
-              PDF
-            </a>
-            <a href="https://pubmed.ncbi.nlm.nih.gov/38853168/" class="btn btn-outline-secondary btn-sm mr-2 mb-2" target="_blank">
-              PubMed
-            </a>
-            <a href="https://www.nature.com/articles/s41598-024-63675-8" class="btn btn-outline-primary btn-sm mr-2 mb-2" target="_blank">
-              www
-            </a>
-          </div>
-
-          <div class="accordion-body">
-            <span class="text-muted"> Bharadwaj, H., Parida, S., Kafi, H., Alexander, J., & Heinz, M. (2024). </span>
-            <strong> Overzealous Tail: Distorted Tonotopy Degrades Suprathreshold Sound Coding in Sensorineural Hearing Loss. </strong>
-            <em> Mechanics of Hearing Workshop 2024 (MoH 2024)</em>, Ann Arbor, Michigan, USA. Zenodo. DOI: 10.5281/zenodo.13334652
-            <a href="#" class="btn btn-outline-danger btn-sm ml-2 mb-2" target="_blank">
-              PDF
-            </a>
-            <a href="https://doi.org/10.5281/zenodo.13334673" class="btn btn-outline-primary btn-sm mr-2 mb-2" target="_blank">
-              www
-            </a>
-          </div>
-          <div class="accordion-body">
-            <span class="text-muted"> Hauser, S., Sivaprakasam, A., Bharadwaj, H., & Heinz, M. (2024). </span>
-            <strong> Precision Diagnostics for Complex Sensorineural Hearing Loss. </strong>
-            <em> Mechanics of Hearing Workshop 2024 (MoH 2024)</em>, Ann Arbor, Michigan, USA. Zenodo. DOI: 10.5281/zenodo.13334652
-            <a href="#" class="btn btn-outline-danger btn-sm ml-2 mb-2" target="_blank">
-              PDF
-            </a>
-            <a href="https://doi.org/10.5281/zenodo.13334652" class="btn btn-outline-primary btn-sm mr-2 mb-2" target="_blank">
-              www
-            </a>
-          </div>
-          <div class="accordion-body">
-            <span class="text-muted"> Whiteford, K. L., Baltzell, L. S., Chiu, M., Cooper, J. K., Faucher, S., Goh, P. Y., Hagedorn, A., Irsik, V. C., Irvine, A., Lim, S. J., Mesik, J., Mesquita, B., Oakes, B., Rajappa, N., Roverud, E., Schrlau, A. E., Van Hedger, S. C., Bharadwaj, H. M., Johnsrude, I. S., Kidd, G., Jr, … Oxenham, A. J. (2024). </span>
-            <strong> Musical training does not enhance neural sound encoding at early stages of the auditory system: A large-scale multisite investigation. </strong>
-            <em> bioRxiv : the preprint server for biology</em>, 2024.09.02.610856. DOI: 10.1101/2024.09.02.610856
-            <a href="#" class="btn btn-outline-danger btn-sm ml-2 mb-2" target="_blank">
-              PDF
-            </a>
-            <a href="https://pubmed.ncbi.nlm.nih.gov/39282463/" class="btn btn-outline-secondary btn-sm mr-2 mb-2" target="_blank">
-              PubMed
-            </a>
-            <a href="https://www.biorxiv.org/content/10.1101/2024.09.02.610856v1" class="btn btn-outline-primary btn-sm mr-2 mb-2" target="_blank">
-              www
-            </a>
-            <span class="badge rounded-pill text-bg-warning">PREPRINT</span>
-          </div>
-
-          <div class="accordion-body">
-            <span class="text-muted"> Salloom, W. B., Wade, K., Bharadwaj, H., & Strickland, E. A. (2024). </span>
-            <strong>The effect of broadband elicitor duration on transient-evoked otoacoustic emissions and a psychoacoustic measure of gain reduction. </strong>
-            <em> In AIP Conference Proceedings</em>, (Vol. 3062, No. 1). AIP Publishing.
-            <a href="#" class="btn btn-outline-danger btn-sm ml-2 mb-2" target="_blank">
-              PDF
-            </a>
-            <a href="https://pubmed.ncbi.nlm.nih.gov/33211652/" class="btn btn-outline-secondary btn-sm mr-2 mb-2" target="_blank">
-              PubMed
-            </a>
-            <a href="https://pubs.aip.org/aip/acp/article-abstract/3062/1/030006/3267426/" class="btn btn-outline-primary btn-sm mr-2 mb-2" target="_blank">
-              www
-            </a>
-          </div>
-
-          <div class="accordion-body">
-            <span class="text-muted">Mok, B. A., Viswanathan, V., Borjigin, A., Singh, R., Kafi, H., & Bharadwaj, H. M. (2024).</span>
-            <strong> Web-based psychoacoustics: Hearing screening, infrastructure, and validation.</strong>
-            <em>Behavior Research Methods</em>, Volume 56, pages 1433–1448. DOI: 10.3758/s13428-023-02101-9.
-            <a href="#" class="btn btn-outline-danger btn-sm ml-2 mb-2" target="_blank">
-              PDF
-            </a>
-            <a href="https://pubmed.ncbi.nlm.nih.gov/37326771/" class="btn btn-outline-secondary btn-sm mr-2 mb-2" target="_blank">
-              PubMed
-            </a>
-            <a href="https://link.springer.com/article/10.3758/s13428-023-02101-9" class="btn btn-outline-primary btn-sm mr-2 mb-2" target="_blank">
-              www (Advanced Online Publication 2023)
-            </a>
-          </div>
-
-
-        </div>
+  <main class="container" role="main">
+   <h1 class="mt-4">
+    Publications
+   </h1>
+   <p>
+    As of
+    <code>
+     November 15, 2024
+    </code>
+    , our work has been cited
+    <code>
+     2845
+    </code>
+    times, with an h-index of
+    <code>
+     24
+    </code>
+    , and an i-10 index of
+    <code>
+     33
+    </code>
+    according to
+    <span class="google-scholar-link">
+     <img alt="Google Scholar Favicon" src="https://www.google.com/s2/favicons?domain=scholar.google.com"/>
+     <a href="https://scholar.google.com" target="_blank">
+      Google Scholar.
+     </a>
+    </span>
+   </p>
+   <div class="accordion mt-4" id="accordionExample">
+    <div class="accordion-item">
+     <h2 class="accordion-header" id="heading2024">
+      <button aria-controls="collapse2024" aria-expanded="true" class="accordion-button" data-bs-target="#collapse2024" data-bs-toggle="collapse" type="button">
+       <h4>
+        2024
+       </h4>
+      </button>
+     </h2>
+     <div aria-labelledby="heading2024" class="accordion-collapse collapse show" data-bs-parent="#accordionExample" id="collapse2024">
+      <div class="accordion-body">
+       <span class="text-muted">
+        Singh, R., &amp; Bharadwaj, H. (2024).
+       </span>
+       <strong>
+        Efficient modular system identification provides a high-resolution assay of temporal processing and reveals the multilevel effects of attention along the human auditory pathway.
+       </strong>
+       <em>
+        bioRxiv : the preprint server for biology
+       </em>
+       , 2024.08.11.607503. DOI: 10.1101/2024.08.11.607503
+       <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">
+        PDF
+       </a>
+       <a class="btn btn-outline-primary btn-sm mr-2 mb-2" href="https://www.biorxiv.org/content/10.1101/2024.07.05.601801v1" target="_blank">
+        www
+       </a>
+       <span class="badge rounded-pill text-bg-warning">
+        PREPRINT
+       </span>
       </div>
-
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="heading2023">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2023" aria-expanded="true" aria-controls="collapse2023">
-            <h4>2023
-            </h4>
-          </button>
-        </h2>
-        <div id="collapse2023" class="accordion-collapse collapse" aria-labelledby="heading2023" data-bs-parent="#accordionExample">
-
-          <div class="accordion-body">
-            <span class="text-muted">Borjigin, A., & Bharadwaj, H. M. (2023). </span>
-            <strong>Individual Differences Reveal the Utility of Temporal Fine-Structure Processing for Speech Perception in Noise.</strong>
-            <em>bioRxiv : the preprint server for biology</em>, 2023.09.20.558670. https://doi.org/10.1101/2023.09.20.558670.
-            <a href="#" class="btn btn-outline-danger btn-sm ml-2 mb-2" target="_blank">
-              PDF
-            </a>
-            <a href="https://pubmed.ncbi.nlm.nih.gov/37790457/" class="btn btn-outline-secondary btn-sm mr-2 mb-2" target="_blank">
-              PubMed
-            </a>
-            <a href="https://www.biorxiv.org/content/10.1101/2023.09.20.558670v1" class="btn btn-outline-primary btn-sm mr-2 mb-2" target="_blank">
-              www
-            </a>
-            <span class="badge rounded-pill text-bg-warning">PREPRINT</span>
-
-          </div>
-          
-          <div class="accordion-body">
-            <span class="text-muted">Singh, R., & Bharadwaj, H. M. (2023). </span>
-            <strong>Cortical temporal integration can account for limits of temporal perception: investigations in the binaural system.</strong>
-            <em>Communications biology</em>, 6(1), 981. https://doi.org/10.1038/s42003-023-05361-5.
-            <a href="#" class="btn btn-outline-danger btn-sm ml-2 mb-2" target="_blank">
-              PDF
-            </a>
-            <a href="https://pubmed.ncbi.nlm.nih.gov/37752215/" class="btn btn-outline-secondary btn-sm mr-2 mb-2" target="_blank">
-              PubMed
-            </a>
-            <a href="https://www.nature.com/articles/s42003-023-05361-5" class="btn btn-outline-primary btn-sm mr-2 mb-2" target="_blank">
-              www
-            </a>
-
-          </div>
-          <div class="accordion-body">
-            <span class="text-muted">Ginsberg, H., Singh, R., Bharadwaj, H. M., & Heinz, M. G. (2023). </span>
-            <strong>A multi-channel EEG mini-cap can improve reliability for recording auditory brainstem responses in chinchillas.</strong>
-            <em>Journal of Neuroscience Methods</em>, 398, 109954.
-            <a href="#" class="btn btn-outline-danger btn-sm ml-2 mb-2" target="_blank">
-              PDF
-            </a>
-            <a href="https://pubmed.ncbi.nlm.nih.gov/37625650/" class="btn btn-outline-secondary btn-sm mr-2 mb-2" target="_blank">
-              PubMed
-            </a>
-            <a href="https://www.sciencedirect.com/science/article/pii/S0165027023001735" class="btn btn-outline-primary btn-sm mr-2 mb-2" target="_blank">
-              www
-            </a>
-          </div>
-          <div class="accordion-body">
-            <span class="text-muted">Alho, J., Samuelsson, J. G., Khan, S., Mamashli, F., Bharadwaj, H., Losh, A., McGuiggan, N. M., Graham, S., Nayal, Z., Perrachione, T. K., Joseph, R. M., Stoodley, C. J., Hämäläinen, M. S., & Kenet, T. (2023).</span>
-            <strong>Both stronger and weaker cerebro-cerebellar functional connectivity patterns during processing of spoken sentences in autism spectrum disorder.</strong>
-            <em>Human Brain Mapping</em>, 10.1002/hbm.26478. Advance online publication.
-            <a href="#" class="btn btn-outline-danger btn-sm ml-2 mb-2" target="_blank">
-              PDF
-            </a>
-            <a href="https://pubmed.ncbi.nlm.nih.gov/37688547/" class="btn btn-outline-secondary btn-sm mr-2 mb-2" target="_blank">
-              PubMed
-            </a>
-            <a href="https://onlinelibrary.wiley.com/doi/full/10.1002/hbm.26478" class="btn btn-outline-primary btn-sm mr-2 mb-2" target="_blank">
-              www
-            </a>
-          </div>
-          <div class="accordion-body">
-            <span class="text-muted">Bharadwaj, H. M., Wilbur, R. B., & Siskind, J. M. (2023).</span>
-            <strong> Still an Ineffective Method With Supertrials/ERPs-Comments on "Decoding Brain Representations by Multimodal Learning of Neural Activity and Visual Features".</strong>
-            <em>IEEE transactions on pattern analysis and machine intelligence</em>, 45(11), 14052–14054.
-            <a href="#" class="btn btn-outline-danger btn-sm ml-2 mb-2" target="_blank">
-              PDF
-            </a>
-            <a href="https://pubmed.ncbi.nlm.nih.gov/37402186/" class="btn btn-outline-secondary btn-sm mr-2 mb-2" target="_blank">
-              PubMed
-            </a>
-            <a href="https://ieeexplore.ieee.org/document/10172315" class="btn btn-outline-primary btn-sm mr-2 mb-2" target="_blank">
-              www
-            </a>
-          </div>
-          <div class="accordion-body">
-            <span class="text-muted">Viswanathan, V., Bharadwaj, H. M., Heinz, M. G., & Shinn-Cunningham, B. G. (2023).</span>
-            <strong> Induced alpha and beta electroencephalographic rhythms covary with single-trial speech intelligibility in competition.</strong>
-            <em>Scientific Reports</em>,  13(1), 10216. https://doi.org/10.1038/s41598-023-37173-2.
-            <a href="#" class="btn btn-outline-danger btn-sm ml-2 mb-2" target="_blank">
-              PDF
-            </a>
-            <a href="https://pubmed.ncbi.nlm.nih.gov/37353552/" class="btn btn-outline-secondary btn-sm mr-2 mb-2" target="_blank">
-              PubMed
-            </a>
-            <a href="https://www.nature.com/articles/s41598-023-37173-2" class="btn btn-outline-primary btn-sm mr-2 mb-2" target="_blank">
-              www
-            </a>
-          </div>
-          <div class="accordion-body">
-            <span class="text-muted">Salloom, W. B., Bharadwaj, H., & Strickland, E. A. (2023).</span>
-            <strong> The effects of broadband elicitor duration on a psychoacoustic measure of cochlear gain reduction.</strong>
-            <em>The Journal of the Acoustical Society of America</em>, 153(4), 2482. https://doi.org/10.1121/10.0017925.
-            <a href="#" class="btn btn-outline-danger btn-sm ml-2 mb-2" target="_blank">
-              PDF
-            </a>
-            <a href="https://pubmed.ncbi.nlm.nih.gov/37092950/" class="btn btn-outline-secondary btn-sm mr-2 mb-2" target="_blank">
-              PubMed
-            </a>
-            <a href="https://pubs.aip.org/asa/jasa/article/153/4/2482/2885286/" class="btn btn-outline-primary btn-sm mr-2 mb-2" target="_blank">
-              www
-            </a>
-          </div>
-          <div class="accordion-body">
-            <span class="text-muted">Ahlfors, S. P., Graham, S., Bharadwaj, H., Mamashli, F., Khan, S., Joseph, R. M., Losh, A., Pawlyszyn, S., McGuiggan, N. M., Vangel, M., Hämäläinen, M. S., & Kenet, T. (2023).</span>
-            <strong> No Differences in Auditory Steady-State Responses in Children with Autism Spectrum Disorder and Typically Developing Children.</strong>
-            <em>Journal of autism and developmental disorders</em>, 10.1007/s10803-023-05907-w. Advance online publication. https://doi.org/10.1007/s10803-023-05907-w.
-            <a href="#" class="btn btn-outline-danger btn-sm ml-2 mb-2" target="_blank">
-              PDF
-            </a>
-            <a href="https://pubmed.ncbi.nlm.nih.gov/36932270/" class="btn btn-outline-secondary btn-sm mr-2 mb-2" target="_blank">
-              PubMed
-            </a>
-            <a href="https://link.springer.com/article/10.1007/s10803-023-05907-w" class="btn btn-outline-primary btn-sm mr-2 mb-2" target="_blank">
-              www
-            </a>
-          </div>
-          <div class="accordion-body">
-            <span class="text-muted">Alho, J., Khan, S., Mamashli, F., Perrachione, T. K., Losh, A., McGuiggan, N. M., Graham, S., Nayal, Z., Joseph, R. M., Hämäläinen, M. S., Bharadwaj*, H., & Kenet*, T. (2023).</span>
-            <strong> Atypical cortical processing of bottom-up speech binding cues in children with autism spectrum disorders.</strong>
-            <em>NeuroImage. Clinical</em>, 37, 103336. https://doi.org/10.1016/j.nicl.2023.103336. [* Equal contribution as senior authors]
-            <a href="#" class="btn btn-outline-danger btn-sm ml-2 mb-2" target="_blank">
-              PDF
-            </a>
-            <a href="https://pubmed.ncbi.nlm.nih.gov/36724734/" class="btn btn-outline-secondary btn-sm mr-2 mb-2" target="_blank">
-              PubMed
-            </a>
-            <a href="https://www.sciencedirect.com/science/article/pii/S2213158223000256" class="btn btn-outline-primary btn-sm mr-2 mb-2" target="_blank">
-              www
-            </a>
-          </div>
-
-
-
-
-        </div>
+      <div class="accordion-body">
+       <span class="text-muted">
+        Hauser, S. N., Hustedt-Mai, A. R., Wichlinski, A., &amp; Bharadwaj, H. M. (2024).
+       </span>
+       <strong>
+        The relationship between distortion product otoacoustic emissions and audiometric thresholds in the extended high-frequency range.
+       </strong>
+       <em>
+        bioRxiv : the preprint server for biology
+       </em>
+       , 2024.07.05.601801. DOI: 10.1101/2024.07.05.601801
+       <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">
+        PDF
+       </a>
+       <a class="btn btn-outline-secondary btn-sm mr-2 mb-2" href="https://pubmed.ncbi.nlm.nih.gov/39026860/" target="_blank">
+        PubMed
+       </a>
+       <a class="btn btn-outline-primary btn-sm mr-2 mb-2" href="https://doi.org/10.1101/2024.07.05.601801" target="_blank">
+        www
+       </a>
+       <span class="badge rounded-pill text-bg-warning">
+        PREPRINT
+       </span>
       </div>
-
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="heading2022">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2022" aria-expanded="true" aria-controls="collapse2022">
-            <h4>2022
-            </h4>
-          </button>
-        </h2>
-        <div id="collapse2022" class="accordion-collapse collapse" aria-labelledby="heading2022" data-bs-parent="#accordionExample">
-          <div class="accordion-body">
-            <span class="text-muted">Bharadwaj, H. M., Hustedt-Mai, A. R., Ginsberg, H. M., Dougherty, K. M., Muthaiah, V. P. K., Hagedorn, A., Simpson, J. M., & Heinz, M. G. (2022). </span>
-            <strong>Cross-species experiments reveal widespread cochlear neural damage in normal hearing.</strong>
-            <em>Communications biology</em>, 5(1), 733. https://doi.org/10.1038/s42003-022-03691-4.
-            <a href="#" class="btn btn-outline-danger btn-sm ml-2 mb-2" target="_blank">
-              PDF
-            </a>
-            <a href="https://pubmed.ncbi.nlm.nih.gov/35869142/" class="btn btn-outline-secondary btn-sm mr-2 mb-2" target="_blank">
-              PubMed
-            </a>
-            <a href="https://www.nature.com/articles/s42003-022-03691-4" class="btn btn-outline-primary btn-sm mr-2 mb-2" target="_blank">
-              www
-            </a>
-          </div>
-          <div class="accordion-body">
-            <span class="text-muted">Ahmed, H., Wilbur, R. B., Bharadwaj, H. M., & Siskind, J. M. (2022). </span>
-            <strong>Confounds in the Data-Comments on "Decoding Brain Representations by Multimodal Learning of Neural Activity and Visual Features".</strong>
-            <em>IEEE transactions on pattern analysis and machine intelligence</em>, 44(12), 9217–9220. https://doi.org/10.1109/TPAMI.2021.3121268.
-            <a href="#" class="btn btn-outline-danger btn-sm ml-2 mb-2" target="_blank">
-              PDF
-            </a>
-            <a href="https://pubmed.ncbi.nlm.nih.gov/34665721/" class="btn btn-outline-secondary btn-sm mr-2 mb-2" target="_blank">
-              PubMed
-            </a>
-            <a href="https://ieeexplore.ieee.org/document/9580535" class="btn btn-outline-primary btn-sm mr-2 mb-2" target="_blank">
-              www
-            </a>
-          </div>
-          <div class="accordion-body">
-            <span class="text-muted">Peng, Z. E., Waz, S., Buss, E., Shen, Y., Richards, V., Bharadwaj, H., Stecker, G. C., Beim, J. A., Bosen, A. K., Braza, M. D., Diedesch, A. C., Dorey, C. M., Dykstra, A. R., Gallun, F. J., Goldsworthy, R. L., Gray, L., Hoover, E. C., Ihlefeld, A., Koelewijn, T., Kopun, J. G., … Venezia, J. H. (2022). </span>
-            <strong>FORUM: Remote testing for psychological and physiological acoustics.</strong>
-            <em>The Journal of the Acoustical Society of America</em>, 151(5), 3116. https://doi.org/10.1121/10.0010422.
-            <a href="#" class="btn btn-outline-danger btn-sm ml-2 mb-2" target="_blank">
-              PDF
-            </a>
-            <a href="https://pubmed.ncbi.nlm.nih.gov/35649891/" class="btn btn-outline-secondary btn-sm mr-2 mb-2" target="_blank">
-              PubMed
-            </a>
-            <a href="https://pubs.aip.org/asa/jasa/article/151/5/3116/2838379/" class="btn btn-outline-primary btn-sm mr-2 mb-2" target="_blank">
-              www
-            </a>
-          </div>
-          <div class="accordion-body">
-            <span class="text-muted">Kim, S., Wu, Y. H., Bharadwaj, H. M., & Choi, I. (2022). </span>
-            <strong>Effect of Noise Reduction on Cortical Speech-in-Noise Processing and Its Variance due to Individual Noise Tolerance. </strong>
-            <em> Ear and hearing</em>, 43(3), 849–861. https://doi.org/10.1097/AUD.0000000000001144.
-            <a href="#" class="btn btn-outline-danger btn-sm ml-2 mb-2" target="_blank">
-              PDF
-            </a>
-            <a href="https://pubmed.ncbi.nlm.nih.gov/34751679/" class="btn btn-outline-secondary btn-sm mr-2 mb-2" target="_blank">
-              PubMed
-            </a>
-            <a href="https://journals.lww.com/ear-hearing/fulltext/2022/05000/effect_of_noise_reduction_on_cortical.13.aspx" class="btn btn-outline-primary btn-sm mr-2 mb-2" target="_blank">
-              www
-            </a>
-          </div>
-
-          <div class="accordion-body">
-            <span class="text-muted">Borjigin, A., Hustedt-Mai, A. R., & Bharadwaj, H. M. (2022). </span>
-            <strong>Individualized Assays of Temporal Coding in the Ascending Human Auditory System. </strong>
-            <em> eNeuro</em>, 9(2), ENEURO.0378-21.2022. https://doi.org/10.1523/ENEURO.0378-21.2022.
-            <a href="#" class="btn btn-outline-danger btn-sm ml-2 mb-2" target="_blank">
-              PDF
-            </a>
-            <a href="https://pubmed.ncbi.nlm.nih.gov/35193890/" class="btn btn-outline-secondary btn-sm mr-2 mb-2" target="_blank">
-              PubMed
-            </a>
-            <a href="https://www.eneuro.org/content/9/2/ENEURO.0378-21.2022" class="btn btn-outline-primary btn-sm mr-2 mb-2" target="_blank">
-              www
-            </a>
-          </div>
-
-          <div class="accordion-body">
-            <span class="text-muted">Bharadwaj, H., Mamashli, F., Khan, S., Singh, R., Joseph, R. M., Losh, A., Pawlyszyn, S., McGuiggan, N. M., Graham, S., Hämäläinen, M. S., & Kenet, T. (2022). </span>
-            <strong>Cortical signatures of auditory object binding in children with autism spectrum disorder are anomalous in concordance with behavior and diagnosis. </strong>
-            <em> PLoS biology</em>, 20(2), e3001541. https://doi.org/10.1371/journal.pbio.3001541.
-            <a href="#" class="btn btn-outline-danger btn-sm ml-2 mb-2" target="_blank">
-              PDF
-            </a>
-            <a href="https://pubmed.ncbi.nlm.nih.gov/35167585/" class="btn btn-outline-secondary btn-sm mr-2 mb-2" target="_blank">
-              PubMed
-            </a>
-            <a href="https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3001541" class="btn btn-outline-primary btn-sm mr-2 mb-2" target="_blank">
-              www
-            </a>
-          </div>
-        </div>
+      <div class="accordion-body">
+       <span class="text-muted">
+        Kim, S., Schroeder, M., &amp; Bharadwaj, H. M. (2024).
+       </span>
+       <strong>
+        Effect of digital noise-reduction processing on subcortical speech encoding and relationship to behavioral outcomes.
+       </strong>
+       <em>
+        bioRxiv : the preprint server for biology
+       </em>
+       , 2024.10.28.620630. DOI: 10.1101/2024.10.28.620630
+       <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">
+        PDF
+       </a>
+       <a class="btn btn-outline-secondary btn-sm mr-2 mb-2" href="https://pubmed.ncbi.nlm.nih.gov/39554128/" target="_blank">
+        PubMed
+       </a>
+       <a class="btn btn-outline-primary btn-sm mr-2 mb-2" href="https://doi.org/10.1101/2024.10.28.620630" target="_blank">
+        www
+       </a>
+       <span class="badge rounded-pill text-bg-warning">
+        PREPRINT
+       </span>
       </div>
-
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="heading2021">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2021" aria-expanded="true" aria-controls="collapse2021">
-            <h4>2021
-            </h4>
-          </button>
-        </h2>
-        <div id="collapse2021" class="accordion-collapse collapse" aria-labelledby="heading2021" data-bs-parent="#accordionExample">
-          <div class="accordion-body">
-            <span class="text-muted">Alho, J., Bharadwaj, H., Khan, S., Mamashli, F., Perrachione, T. K., Losh, A., McGuiggan, N. M., Joseph, R. M., Hämäläinen, M. S., & Kenet, T. (2021). </span>
-            <strong>Altered maturation and atypical cortical processing of spoken sentences in autism spectrum disorder. </strong>
-            <em> Progress in neurobiology</em>, 203, 102077. https://doi.org/10.1016/j.pneurobio.2021.102077.
-            <a href="#" class="btn btn-outline-danger btn-sm ml-2 mb-2" target="_blank">
-              PDF
-            </a>
-            <a href="https://pubmed.ncbi.nlm.nih.gov/34033856/" class="btn btn-outline-secondary btn-sm mr-2 mb-2" target="_blank">
-              PubMed
-            </a>
-            <a href="https://www.sciencedirect.com/science/article/pii/S0301008221000915" class="btn btn-outline-primary btn-sm mr-2 mb-2" target="_blank">
-              www
-            </a>
-          </div>
-
-          <div class="accordion-body">
-            <span class="text-muted">Bharadwaj, H., & Shinn-Cunningham, B. (2021). </span>
-            <strong>What's been hidden in hidden hearing loss. </strong>
-            <em> Neuron</em>, 109(6), 909–911. https://doi.org/10.1016/j.neuron.2021.02.025.
-            <a href="#" class="btn btn-outline-danger btn-sm ml-2 mb-2" target="_blank">
-              PDF
-            </a>
-            <a href="https://pubmed.ncbi.nlm.nih.gov/33735611/" class="btn btn-outline-secondary btn-sm mr-2 mb-2" target="_blank">
-              PubMed
-            </a>
-            <a href="https://www.sciencedirect.com/science/article/pii/S0896627321001252" class="btn btn-outline-primary btn-sm mr-2 mb-2" target="_blank">
-              www
-            </a>
-          </div>
-
-          <div class="accordion-body">
-            <span class="text-muted">Parida, S., Bharadwaj, H., & Heinz, M. G. (2021). </span>
-            <strong>Spectrally specific temporal analyses of spike-train responses to complex sounds: A unifying framework. </strong>
-            <em> PLoS computational biology</em>, 17(2), e1008155. https://doi.org/10.1371/journal.pcbi.1008155.
-            <a href="#" class="btn btn-outline-danger btn-sm ml-2 mb-2" target="_blank">
-              PDF
-            </a>
-            <a href="https://pubmed.ncbi.nlm.nih.gov/33617548/" class="btn btn-outline-secondary btn-sm mr-2 mb-2" target="_blank">
-              PubMed
-            </a>
-            <a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1008155" class="btn btn-outline-primary btn-sm mr-2 mb-2" target="_blank">
-              www
-            </a>
-          </div>
-
-          <div class="accordion-body">
-            <span class="text-muted">Viswanathan, V., Bharadwaj, H. M., Shinn-Cunningham, B. G., & Heinz, M. G. (2021). </span>
-            <strong>Modulation masking and fine structure shape neural envelope coding to predict speech intelligibility across diverse listening conditions. </strong>
-            <em>  The Journal of the Acoustical Society of America</em>, 150(3), 2230. https://doi.org/10.1121/10.0006385.
-            <a href="#" class="btn btn-outline-danger btn-sm ml-2 mb-2" target="_blank">
-              PDF
-            </a>
-            <a href="https://pubmed.ncbi.nlm.nih.gov/34598642/" class="btn btn-outline-secondary btn-sm mr-2 mb-2" target="_blank">
-              PubMed
-            </a>
-            <a href="https://pubs.aip.org/asa/jasa/article/150/3/2230/1058429/" class="btn btn-outline-primary btn-sm mr-2 mb-2" target="_blank">
-              www
-            </a>
-          </div>
-
-          <div class="accordion-body">
-            <span class="text-muted">Ahmed, H., Wilbur, R. B., Bharadwaj*, H. M., & Siskind*, J. M. (2021). </span>
-            <strong>Object classification from randomized EEG trials. </strong>
-            <em>  In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition</em>, (pp. 3845-3854). [*Equal contribution as senior author]
-            <a href="#" class="btn btn-outline-danger btn-sm ml-2 mb-2" target="_blank">
-              PDF
-            </a>
-            <a href="https://openaccess.thecvf.com/content/CVPR2021/html/Ahmed_Object_Classification_From_Randomized_EEG_Trials_CVPR_2021_paper.html" class="btn btn-outline-primary btn-sm mr-2 mb-2" target="_blank">
-              www
-            </a>
-          </div>
-        </div>
+      <div class="accordion-body">
+       <span class="text-muted">
+        Borjigin, A., Kokkinakis, K., Bharadwaj, H. M., &amp; Stohl, J. S. (2023).
+       </span>
+       <strong>
+        Deep learning restores speech intelligibility in multi-talker interference for cochlear implant users.
+       </strong>
+       <em>
+        Scientific reports
+       </em>
+       , 14(1), 13241. DOI: 10.1038/s41598-024-63675-8
+       <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="https://www.nature.com/articles/s41598-024-63675-8.pdf" target="_blank">
+        PDF
+       </a>
+       <a class="btn btn-outline-secondary btn-sm mr-2 mb-2" href="https://pubmed.ncbi.nlm.nih.gov/38853168/" target="_blank">
+        PubMed
+       </a>
+       <a class="btn btn-outline-primary btn-sm mr-2 mb-2" href="https://doi.org/10.1038/s41598-024-63675-8" target="_blank">
+        www
+       </a>
       </div>
-
-
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="heading2020">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2020" aria-expanded="true" aria-controls="collapse2020">
-            <h4>2020
-            </h4>
-          </button>
-        </h2>
-        <div id="collapse2020" class="accordion-collapse collapse" aria-labelledby="heading2020" data-bs-parent="#accordionExample">
-          <div class="accordion-body">
-            <span class="text-muted"> Li, R., Johansen, J. S., Ahmed, H., Ilyevsky, T. V., Wilbur, R. B., Bharadwaj*, H. M., & Siskind*, J. M. (2020). </span>
-            <strong>The Perils and Pitfalls of Block Design for EEG Classification Experiments. </strong>
-            <em> IEEE transactions on pattern analysis and machine intelligence</em>, 43(1) 316-333. https://doi.org/10.1109/TPAMI.2020.2973153. [*Equal contribution as senior author]
-            <a href="#" class="btn btn-outline-danger btn-sm ml-2 mb-2" target="_blank">
-              PDF
-            </a>
-            <a href="https://pubmed.ncbi.nlm.nih.gov/33211652/" class="btn btn-outline-secondary btn-sm mr-2 mb-2" target="_blank">
-              PubMed
-            </a>
-            <a href="https://ieeexplore.ieee.org/document/9264220" class="btn btn-outline-primary btn-sm mr-2 mb-2" target="_blank">
-              www
-            </a>
-          </div>
-
-          <div class="accordion-body">
-            <span class="text-muted">Lu, H., Mehta, A. H., Bharadwaj, H. M., Shinn-Cunningham, B. G., & Oxenham, A. J. (2020).</span>
-            <strong>Comment on ‘Rapid acquisition of auditory subcortical steady state responses using multichannel recordings’.</strong>
-            <em>Clinical Neurophysiology</em>, 131(8), 1833. https://doi.org/10.1016/j.clinph.2020.04.063.
-            <a href="#" class="btn btn-outline-danger btn-sm ml-2 mb-2" target="_blank">
-                PDF
-            </a>
-            <a href="#" class="btn btn-outline-secondary btn-sm mr-2 mb-2" target="_blank">
-                PubMed
-            </a>
-            <a href="#" class="btn btn-outline-primary btn-sm mr-2 mb-2" target="_blank">
-                www
-            </a>
-          </div>
-
-        <div class="accordion-body">
-          <span class="text-muted">Peng, E., Buss, E., Shen, Y., Bharadwaj, H., Stecker, C., Beim, J., et al. (2020).</span>
-          <strong>Remote testing for psychological and physiological acoustics: Initial report of the ASA P&P Task Force on Remote Testing.</strong>
-          <em>Proceedings of Meetings on Acoustics</em>, 42, 050009. https://doi.org/10.1121/2.0001409.
-          <a href="#" class="btn btn-outline-danger btn-sm ml-2 mb-2" target="_blank">
-              PDF
-          </a>
-        </div>
-
-
-        </div>
+      <div class="accordion-body">
+       <span class="text-muted">
+        Bharadwaj, H., Parida, S., Kafi, H., Alexander, J., &amp; Heinz, M. (2024).
+       </span>
+       <strong>
+        Overzealous Tail: Distorted Tonotopy Degrades Suprathreshold Sound Coding in Sensorineural Hearing Loss.
+       </strong>
+       <em>
+        Mechanics of Hearing Workshop 2024 (MoH 2024)
+       </em>
+       , Ann Arbor, Michigan, USA. Zenodo. DOI: 10.5281/zenodo.13334652
+       <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">
+        PDF
+       </a>
+       <a class="btn btn-outline-primary btn-sm mr-2 mb-2" href="https://doi.org/10.5281/zenodo.13334673" target="_blank">
+        www
+       </a>
       </div>
-
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="heading2019">
-          <button aria-controls="collapse2019" aria-expanded="false" class="accordion-button collapsed" data-bs-target="#collapse2019" data-bs-toggle="collapse" type="button">
-            <h4>2019</h4>
-          </button>
-        </h2>
-        <div aria-labelledby="heading2019" class="accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapse2019">
-          <div class="accordion-body">
-
-            <div class="accordion-body">
-              <span class="text-muted">Bharadwaj, H. M., Mai, A. R., Choi, I., Simpson, J. M., Heinz, M. G., &amp; Shinn-Cunningham,
-              B. G. (2019). </span>
-              <strong>Non-Invasive Assays of Cochlear Synaptopathy – Candidates and Considerations.</strong>
-              <em>Neuroscience, 407, 53-66.</em>
-              <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">PDF</a>
-              <a class="btn btn-outline-secondary btn-sm mr-2 mb-2" href="" target="_blank">PubMed</a>
-            </div>
-
-            <div class="accordion-body">
-              <span class="text-muted">Wang, L., Bharadwaj, H. M., &amp; Shinn-Cunningham, B. G. (2019). </span>
-              <strong>Assessing cochlear-place speciﬁc temporal coding using multi-band complex tones to measure envelope-following responses. </strong>
-              <em> Neuroscience, 407, 67-74.</em>
-              <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">PDF</a>
-              <a class="btn btn-outline-secondary btn-sm mr-2 mb-2" href="" target="_blank">PubMed</a>
-            </div>
-
-            <div class="accordion-body">
-              <span class="text-muted">Viswanathan, V., Bharadwaj, H. M., &amp; Shinn-Cunningham, B. G. (2019). </span>
-              <strong> Electroencephalographic Signatures of the Neural Representation of Speech during Selective Attention.</strong>
-              <em>eNeuro, 6(5).</em>
-              <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">PDF</a>
-              <a class="btn btn-outline-secondary btn-sm mr-2 mb-2" href="" target="_blank">PubMed</a>
-            </div>
-          </div>
-        </div>
+      <div class="accordion-body">
+       <span class="text-muted">
+        Hauser, S., Sivaprakasam, A., Bharadwaj, H., &amp; Heinz, M. (2024).
+       </span>
+       <strong>
+        Precision Diagnostics for Complex Sensorineural Hearing Loss.
+       </strong>
+       <em>
+        Mechanics of Hearing Workshop 2024 (MoH 2024)
+       </em>
+       , Ann Arbor, Michigan, USA. Zenodo. DOI: 10.5281/zenodo.13334652
+       <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">
+        PDF
+       </a>
+       <a class="btn btn-outline-primary btn-sm mr-2 mb-2" href="https://doi.org/10.5281/zenodo.13334652" target="_blank">
+        www
+       </a>
       </div>
-
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="heading2018">
-          <button aria-controls="collapse2018" aria-expanded="false" class="accordion-button collapsed" data-bs-target="#collapse2018" data-bs-toggle="collapse" type="button">
-            <h4>2018</h4>
-          </button>
-        </h2>
-        <div aria-labelledby="heading2018" class="accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapse2018">
-          <div class="accordion-body">
-
-            <div class="accordion-body">
-              <span class="text-muted">Mamashli, F., Khan, S., Bharadwaj, H. M., Losh, A., Pawlyszyn, S. M., Hamalainen, M. S.,&amp; Kenet, T. (2018). </span>
-              <strong> Maturational trajectories of local and long-range functional connectivity in autism during face processing. </strong>
-              <em> Human Brain Mapping, 39(10), 4094-4104.</em>
-              <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">PDF</a>
-              <a class="btn btn-outline-secondary btn-sm mr-2 mb-2" href="" target="_blank">PubMed</a>
-            </div>
-
-            <div class="accordion-body">
-              <span class="text-muted">Khan, S., Hashmi, J. A., Mamashli, F., Michmizos, K.,Bharadwaj, H. M., ... &amp; Kenet, T. (2018). </span>
-              <strong>Maturation Trajectories of Cortical Resting-State Networks Depend on the Mediating Frequency Band. </strong>
-              <em> NeuroImage, 174, 57-68. doi: 10.1016/j.neuroimage.2018.02.018</em>
-              <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">PDF</a>
-              <a class="btn btn-outline-secondary btn-sm mr-2 mb-2" href="" target="_blank">PubMed</a>
-            </div>
-          </div>
-        </div>
+      <div class="accordion-body">
+       <span class="text-muted">
+        Whiteford, K. L., Baltzell, L. S., Chiu, M., Cooper, J. K., Faucher, S., Goh, P. Y., Hagedorn, A., Irsik, V. C., Irvine, A., Lim, S. J., Mesik, J., Mesquita, B., Oakes, B., Rajappa, N., Roverud, E., Schrlau, A. E., Van Hedger, S. C., Bharadwaj, H. M., Johnsrude, I. S., Kidd, G., Jr, … Oxenham, A. J. (2024).
+       </span>
+       <strong>
+        Musical training does not enhance neural sound encoding at early stages of the auditory system: A large-scale multisite investigation.
+       </strong>
+       <em>
+        bioRxiv : the preprint server for biology
+       </em>
+       , 2024.09.02.610856. DOI: 10.1101/2024.09.02.610856
+       <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">
+        PDF
+       </a>
+       <a class="btn btn-outline-secondary btn-sm mr-2 mb-2" href="https://pubmed.ncbi.nlm.nih.gov/39282463/" target="_blank">
+        PubMed
+       </a>
+       <a class="btn btn-outline-primary btn-sm mr-2 mb-2" href="https://doi.org/10.1101/2024.09.02.610856" target="_blank">
+        www
+       </a>
+       <span class="badge rounded-pill text-bg-warning">
+        PREPRINT
+       </span>
       </div>
-
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="heading2017">
-          <button aria-controls="collapse2017" aria-expanded="false" class="accordion-button collapsed" data-bs-target="#collapse2017" data-bs-toggle="collapse" type="button">
-            <h4>2017</h4>
-          </button>
-        </h2>
-        <div aria-labelledby="heading2017" class="accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapse2017">
-          <div class="accordion-body">
-
-            <div class="accordion-body">
-              <span class="text-muted">Shinn-Cunningham, B. G., Varghese, L., Wang, L., & Bharadwaj, H. M. (2017).</span>
-              <strong>Individual differences in temporal perception, and their implications for everyday listening.</strong>
-              <em>Frequency Following Response: A Window into Human Communication</em>, Springer Handbook of Auditory Research 61, 159-192. Springer Verlag. 
-              <a href="#" class="btn btn-outline-danger btn-sm ml-2 mb-2" target="_blank">
-                  PDF
-              </a>
-              <span class="badge rounded-pill text-bg-success">INVITED BOOK CHAPTER</span>
-            </div>
-          </div>
-        </div>
+      <div class="accordion-body">
+       <span class="text-muted">
+        Salloom, W. B., Wade, K., Bharadwaj, H., &amp; Strickland, E. A. (2024).
+       </span>
+       <strong>
+        The effect of broadband elicitor duration on transient-evoked otoacoustic emissions and a psychoacoustic measure of gain reduction.
+       </strong>
+       <em>
+        In AIP Conference Proceedings
+       </em>
+       , (Vol. 3062, No. 1). AIP Publishing.
+       <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">
+        PDF
+       </a>
+       <a class="btn btn-outline-secondary btn-sm mr-2 mb-2" href="https://pubmed.ncbi.nlm.nih.gov/33211652/" target="_blank">
+        PubMed
+       </a>
+       <a class="btn btn-outline-primary btn-sm mr-2 mb-2" href="https://pubs.aip.org/aip/acp/article-abstract/3062/1/030006/3267426/" target="_blank">
+        www
+       </a>
       </div>
-
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="heading2016">
-          <button aria-controls="collapse2016" aria-expanded="false" class="accordion-button collapsed" data-bs-target="#collapse2016" data-bs-toggle="collapse" type="button">
-            <h4>2016</h4>
-          </button>
-        </h2>
-        <div aria-labelledby="heading2016" class="accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapse2016">
-          <div class="accordion-body">
-
-            <div class="accordion-body">
-              <span class="text-muted">Mamashli, F., Khan, S., Bharadwaj, H. M., Michmizos, K., Ganesan, S., Garel, K. L. A.,... &amp; Kenet, T. (2016). </span>
-              <strong>Auditory processing in noise is associated with complex patterns of disrupted functional connectivity in autism spectrum disorder. </strong>
-              <em> Autism Research. doi:</em>
-              <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">PDF</a>
-              <a class="btn btn-outline-secondary btn-sm mr-2 mb-2" href="" target="_blank">PubMed</a>
-            </div>
-
-            <div class="accordion-body">
-              <span class="text-muted">Khan, S., Hashmi, J. A., Mamashli, F., Bharadwaj, H. M., Ganesan, S., Michmizos, K., ...&amp;Kenet, T.(2016). </span>
-              <strong>Altered Onset Response Dynamics in Somatosensory Processing in Autism Spectrum Disorder. </strong>
-              <em> Frontiers in Neuroscience. 10: 255. doi: 10.3389/fnins.2016.00255.</em>
-              <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">PDF</a>
-              <a class="btn btn-outline-secondary btn-sm mr-2 mb-2" href="" target="_blank">PubMed</a>
-            </div>
-
-            <div class="accordion-body">
-              <span class="text-muted">Mehraei, G., Hickox, A. E., Bharadwaj, H. M., Goldberg, H., Verhulst, S., Liberman, M.C., &amp; Shinn-Cunningham, B. G. (2016). </span>
-              <strong> Auditory Brainstem Response Latency in Noise as a Marker of Cochlear Synaptopathy. </strong>
-              <em> The Journal of Neuroscience, 36(13), 3755-3764. doi:</em>
-              <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">PDF</a>
-              <a class="btn btn-outline-secondary btn-sm mr-2 mb-2" href="" target="_blank">PubMed</a>
-            </div>
-          </div>
-        </div>
+      <div class="accordion-body">
+       <span class="text-muted">
+        Mok, B. A., Viswanathan, V., Borjigin, A., Singh, R., Kafi, H., &amp; Bharadwaj, H. M. (2024).
+       </span>
+       <strong>
+        Web-based psychoacoustics: Hearing screening, infrastructure, and validation.
+       </strong>
+       <em>
+        Behavior Research Methods
+       </em>
+       , Volume 56, pages 1433–1448. DOI: 10.3758/s13428-023-02101-9.
+       <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">
+        PDF
+       </a>
+       <a class="btn btn-outline-secondary btn-sm mr-2 mb-2" href="https://pubmed.ncbi.nlm.nih.gov/37326771/" target="_blank">
+        PubMed
+       </a>
+       <a class="btn btn-outline-primary btn-sm mr-2 mb-2" href="https://doi.org/10.3758/s13428-023-02101-9" target="_blank">
+        www
+       </a>
       </div>
-
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="heading2015">
-          <button aria-controls="collapse2015" aria-expanded="false" class="accordion-button collapsed" data-bs-target="#collapse2015" data-bs-toggle="collapse" type="button">
-            <h4>2015</h4>
-          </button>
-        </h2>
-        <div aria-labelledby="heading2015" class="accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapse2015">
-          <div class="accordion-body">
-
-            <div class="accordion-body">
-              <span class="text-muted">Varghese, L., Bharadwaj, H. M., &amp; Shinn-Cunningham, B. G. (2015). </span>
-              <strong> Evidence against attentional state modulating scalp-recorded auditory brainstem steady-state responses. </strong>
-              <em>Brain Research, 1626, 146-164. doi: 10.1016/j.brainres.2015.06.038.</em>
-              <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">PDF</a>
-              <a class="btn btn-outline-secondary btn-sm mr-2 mb-2" href="" target="_blank">PubMed</a>
-            </div>
-
-            <div class="accordion-body">
-              <span class="text-muted">Bharadwaj, H. M., Masud, S., Verhulst, S., Mehraei, G., &amp; Shinn-Cunningham, B. G. (2015). </span>
-              <strong> Individual diﬀerences reveal correlates of hidden hearing deﬁcits. </strong>
-              <em> The Journal of Neuroscience, 35(5): 2161-2172. doi: 10.1523/jneurosci.3915-14.2015.</em>
-              <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">PDF</a>
-              <a class="btn btn-outline-secondary btn-sm mr-2 mb-2" href="" target="_blank">PubMed</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="heading2014">
-          <button aria-controls="collapse2014" aria-expanded="false" class="accordion-button collapsed" data-bs-target="#collapse2014" data-bs-toggle="collapse" type="button">
-            <h4>2014</h4>
-          </button>
-        </h2>
-        <div aria-labelledby="heading2014" class="accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapse2014">
-          <div class="accordion-body">
-
-            <div class="accordion-body">
-              <span class="text-muted">Choi, I., Bharadwaj, H. M., Bressler, S., Loui, P., Lee, K., &amp; Shinn-Cunningham, B. G. (2014). </span>
-              <strong> Automatic processing of abstract musical tonality. </strong>
-              <em> Frontiers in Human Neuroscience, 8: 988. doi: 10.3389/fnhum.2014.00988.</em>
-              <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">PDF</a>
-              <a class="btn btn-outline-secondary btn-sm mr-2 mb-2" href="" target="_blank">PubMed</a>
-            </div>
-
-            <div class="accordion-body">
-              <span class="text-muted">Choi, I., Wang, L., Bharadwaj, H. M., &amp; Shinn-Cunningham, B. G. (2014). </span>
-              <strong> Individual differences in attentional modulation of cortical responses correlate with selective attention performance. </strong>
-              <em> Hearing research, 314, 10-19. doi: 10.1016/j.heares.2014.04.008.</em>
-              <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">PDF</a>
-              <a class="btn btn-outline-secondary btn-sm mr-2 mb-2" href="" target="_blank">PubMed</a>
-            </div>
-
-            <div class="accordion-body">
-              <span class="text-muted">Bressler,S., Masud,S., Bharadwaj H. M., &amp; Shinn-Cunningham,B.G.(2014). </span>
-              <strong> Bottom-up inﬂuences of voice continuity in focusing selective auditory attention. </strong>
-              <em> Psychological Research, 78(3), 349-360. doi: 10.1007/s00426-014-0555-7.</em>
-              <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">PDF</a>
-              <a class="btn btn-outline-secondary btn-sm mr-2 mb-2" href="" target="_blank">PubMed</a>
-            </div>
-
-            <div class="accordion-body">
-              <span class="text-muted">Bharadwaj, H. M., Verhulst, S., Shaheen, L., Liberman, M. C., &amp; Shinn-Cunningham, B.G. (2014). </span>
-              <strong>Cochlear Neuropathy and the Coding of Supra-threshold Sound. </strong>
-              <em> Frontiers in Systems Neuroscience, 8: 26. doi:10.3389/fnsys.2014.00026.</em>
-              <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">PDF</a>
-              <a class="btn btn-outline-secondary btn-sm mr-2 mb-2" href="" target="_blank">PubMed</a>
-            </div>
-
-            <div class="accordion-body">
-              <span class="text-muted">Bharadwaj, H. M., &amp; Shinn-Cunningham, B. G. (2014). </span>
-              <strong>Rapid acquisition of auditory subcortical steady-state responses using multichannel recordings. </strong>
-              <em> Clinical Neurophysiology, 125(9): 1878–1888. doi: 10.1016/j.clinph.2014.01.011.</em>
-              <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">PDF</a>
-              <a class="btn btn-outline-secondary btn-sm mr-2 mb-2" href="" target="_blank">PubMed</a>
-            </div>
-
-            <div class="accordion-body">
-              <span class="text-muted">Bharadwaj, H. M., Lee, A. K., &amp; Shinn-Cunningham, B. G. (2014). Measuring Auditory</span>
-              <strong>Selective Attention using Frequency Tagging. </strong>
-              <em> Frontiers in Integrative Neuroscience, 8: 6. doi: 10.3389/fnint.2014.00006.</em>
-              <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">PDF</a>
-              <a class="btn btn-outline-secondary btn-sm mr-2 mb-2" href="" target="_blank">PubMed</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="heading2013">
-          <button aria-controls="collapse2013" aria-expanded="false" class="accordion-button collapsed" data-bs-target="#collapse2013" data-bs-toggle="collapse" type="button">
-            <h4>2013</h4>
-          </button>
-        </h2>
-        <div aria-labelledby="heading2013" class="accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapse2013">
-          <div class="accordion-body">
-
-            <div class="accordion-body">
-              <span class="text-muted">Zhu, L., Bharadwaj, H. M., Xia, J., &amp; Shinn-Cunningham, B. (2013).</span>
-              <strong> A comparison of spectral magnitude and phase-locking value analyses of the frequency-following response to complex tones. </strong>
-              <em> The Journal of the Acoustical Society of America, 134(1), 384-395.</em>
-              <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">PDF</a>
-              <a class="btn btn-outline-secondary btn-sm mr-2 mb-2" href="" target="_blank">PubMed</a>
-            </div>
-
-            <div class="accordion-body">
-              <span class="text-muted">Bharadwaj, H. M., Masud, S., & Shinn-Cunningham, B. G. (2013).</span>
-              <strong>The role of high-frequency cues for spatial hearing in rooms.</strong>
-              <em>Proceedings of Meetings on Acoustics</em>, 19:015049.
-              <a href="#" class="btn btn-outline-danger btn-sm ml-2 mb-2" target="_blank">
-                  PDF
-              </a>
-            </div>
-
-            <div class="accordion-body">
-              <span class="text-muted">Shinn-Cunningham, B. G., Ruggles, D. R., & Bharadwaj, H. M. (2013).</span>
-              <strong>How Early Aging and Environment Interact in Everyday Listening: From Brainstem to Behavior Through Modeling.</strong>
-              <em>Basic Aspects of Hearing: Physiology and Perception</em>, 501-510. Springer New York.
-              <a href="#" class="btn btn-outline-danger btn-sm ml-2 mb-2" target="_blank">
-                  PDF
-              </a>
-              <span class="badge rounded-pill text-bg-success">BOOK CHAPTER</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="heading2012">
-          <button aria-controls="collapse2012" aria-expanded="false" class="accordion-button collapsed" data-bs-target="#collapse2012" data-bs-toggle="collapse" type="button">
-            <h4>2012</h4>
-          </button>
-        </h2>
-        <div aria-labelledby="heading2012" class="accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapse2012">
-          <div class="accordion-body">
-
-            <div class="accordion-body">
-              <span class="text-muted">Kenet, T., Orekhova, E. V., Bharadwaj, H. M., Shetty, N. R., Israeli, E., Lee, A. K. C. et al. (2012). </span>
-              <strong> Disconnectivity of the cortical ocular motor control network in autism spectrum disorders. </strong>
-              <em> NeuroImage, 61(4), 1226-1234.</em>
-              <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">PDF</a>
-              <a class="btn btn-outline-secondary btn-sm mr-2 mb-2" href="" target="_blank">PubMed</a>
-            </div>
-
-            <div class="accordion-body">
-              <span class="text-muted">Lee, A. K. C., Rajaram, S., Xia, J., Bharadwaj, H. M., Larson, E., Hamalainen, M. S., &amp; Shinn-Cunningham, B. G. (2012). </span>
-              <strong> Auditory selective attention reveals preparatory activity in diﬀerent cortical regions for selection based on source location and source pitch. </strong>
-              <em> Frontiers in Neuroscience, 6: 190.</em>
-              <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">PDF</a>
-              <a class="btn btn-outline-secondary btn-sm mr-2 mb-2" href="" target="_blank">PubMed</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="heading2011">
-          <button aria-controls="collapse2011" aria-expanded="false" class="accordion-button collapsed" data-bs-target="#collapse2011" data-bs-toggle="collapse" type="button">
-            <h4>2011</h4>
-          </button>
-        </h2>
-        <div aria-labelledby="heading2011" class="accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapse2011">
-          <div class="accordion-body">
-
-            <div class="accordion-body">
-              <span class="text-muted">Ruggles, D., Bharadwaj, H. M., &amp; Shinn-Cunningham, B. G. (2011). </span>
-              <strong> Normal hearing is not enough to guarantee robust encoding of suprathreshold features important in everyday communication. </strong>
-              <em> Proceedings of the National Academy of Sciences of U.S.A, 108(37), 15516-15521.</em>
-              <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">PDF</a>
-              <a class="btn btn-outline-secondary btn-sm mr-2 mb-2" href="" target="_blank">PubMed</a>
-            </div>
-
-            <div class="accordion-body">
-              <span class="text-muted">Rajaram, S., Bharadwaj, H. M., Shinn-Cunningham, B. G., & Lee, A. K. C. (2011).</span>
-              <strong>Cortical functional connectivity inference using MEG.</strong>
-              <em>Noninvasive Functional Source Imaging of the Brain and Heart & 8th International Conference on Bioelectromagnetism</em>, 77-80. IEEE.
-              <a href="http://www.isbem.org/conf/2011/proceedi/05936824.pdf" class="btn btn-outline-danger btn-sm ml-2 mb-2" target="_blank">
-                  PDF
-              </a>
-              <a href="https://ieeexplore.ieee.org/abstract/document/5936824" class="btn btn-outline-secondary btn-sm mr-2 mb-2" target="_blank">
-                  www
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
+     </div>
     </div>
-
-
-
+    <div class="accordion-item">
+     <h2 class="accordion-header" id="heading2023">
+      <button aria-controls="collapse2023" aria-expanded="true" class="accordion-button collapsed" data-bs-target="#collapse2023" data-bs-toggle="collapse" type="button">
+       <h4>
+        2023
+       </h4>
+      </button>
+     </h2>
+     <div aria-labelledby="heading2023" class="accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapse2023">
+      <div class="accordion-body">
+       <span class="text-muted">
+        Borjigin, A., &amp; Bharadwaj, H. M. (2023).
+       </span>
+       <strong>
+        Individual Differences Reveal the Utility of Temporal Fine-Structure Processing for Speech Perception in Noise.
+       </strong>
+       <em>
+        bioRxiv : the preprint server for biology
+       </em>
+       , 2023.09.20.558670. https://doi.org/10.1101/2023.09.20.558670.
+       <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">
+        PDF
+       </a>
+       <a class="btn btn-outline-secondary btn-sm mr-2 mb-2" href="https://pubmed.ncbi.nlm.nih.gov/37790457/" target="_blank">
+        PubMed
+       </a>
+       <a class="btn btn-outline-primary btn-sm mr-2 mb-2" href="https://www.biorxiv.org/content/10.1101/2023.09.20.558670v1" target="_blank">
+        www
+       </a>
+       <span class="badge rounded-pill text-bg-warning">
+        PREPRINT
+       </span>
+      </div>
+      <div class="accordion-body">
+       <span class="text-muted">
+        Singh, R., &amp; Bharadwaj, H. M. (2023).
+       </span>
+       <strong>
+        Cortical temporal integration can account for limits of temporal perception: investigations in the binaural system.
+       </strong>
+       <em>
+        Communications biology
+       </em>
+       , 6(1), 981. https://doi.org/10.1038/s42003-023-05361-5.
+       <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">
+        PDF
+       </a>
+       <a class="btn btn-outline-secondary btn-sm mr-2 mb-2" href="https://pubmed.ncbi.nlm.nih.gov/37752215/" target="_blank">
+        PubMed
+       </a>
+       <a class="btn btn-outline-primary btn-sm mr-2 mb-2" href="https://doi.org/10.1038/s42003-023-05361-5" target="_blank">
+        www
+       </a>
+      </div>
+      <div class="accordion-body">
+       <span class="text-muted">
+        Ginsberg, H., Singh, R., Bharadwaj, H. M., &amp; Heinz, M. G. (2023).
+       </span>
+       <strong>
+        A multi-channel EEG mini-cap can improve reliability for recording auditory brainstem responses in chinchillas.
+       </strong>
+       <em>
+        Journal of Neuroscience Methods
+       </em>
+       , 398, 109954.
+       <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">
+        PDF
+       </a>
+       <a class="btn btn-outline-secondary btn-sm mr-2 mb-2" href="https://pubmed.ncbi.nlm.nih.gov/37625650/" target="_blank">
+        PubMed
+       </a>
+       <a class="btn btn-outline-primary btn-sm mr-2 mb-2" href="https://doi.org/10.1016/j.jneumeth.2023.109954" target="_blank">
+        www
+       </a>
+      </div>
+      <div class="accordion-body">
+       <span class="text-muted">
+        Alho, J., Samuelsson, J. G., Khan, S., Mamashli, F., Bharadwaj, H., Losh, A., McGuiggan, N. M., Graham, S., Nayal, Z., Perrachione, T. K., Joseph, R. M., Stoodley, C. J., Hämäläinen, M. S., &amp; Kenet, T. (2023).
+       </span>
+       <strong>
+        Both stronger and weaker cerebro-cerebellar functional connectivity patterns during processing of spoken sentences in autism spectrum disorder.
+       </strong>
+       <em>
+        Human Brain Mapping
+       </em>
+       , 10.1002/hbm.26478. Advance online publication.
+       <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">
+        PDF
+       </a>
+       <a class="btn btn-outline-secondary btn-sm mr-2 mb-2" href="https://pubmed.ncbi.nlm.nih.gov/37688547/" target="_blank">
+        PubMed
+       </a>
+       <a class="btn btn-outline-primary btn-sm mr-2 mb-2" href="https://doi.org/10.1002/hbm.26478" target="_blank">
+        www
+       </a>
+      </div>
+      <div class="accordion-body">
+       <span class="text-muted">
+        Bharadwaj, H. M., Wilbur, R. B., &amp; Siskind, J. M. (2023).
+       </span>
+       <strong>
+        Still an Ineffective Method With Supertrials/ERPs-Comments on "Decoding Brain Representations by Multimodal Learning of Neural Activity and Visual Features".
+       </strong>
+       <em>
+        IEEE transactions on pattern analysis and machine intelligence
+       </em>
+       , 45(11), 14052–14054.
+       <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">
+        PDF
+       </a>
+       <a class="btn btn-outline-secondary btn-sm mr-2 mb-2" href="https://pubmed.ncbi.nlm.nih.gov/37402186/" target="_blank">
+        PubMed
+       </a>
+       <a class="btn btn-outline-primary btn-sm mr-2 mb-2" href="https://doi.org/10.1109/TPAMI.2023.3292062" target="_blank">
+        www
+       </a>
+      </div>
+      <div class="accordion-body">
+       <span class="text-muted">
+        Viswanathan, V., Bharadwaj, H. M., Heinz, M. G., &amp; Shinn-Cunningham, B. G. (2023).
+       </span>
+       <strong>
+        Induced alpha and beta electroencephalographic rhythms covary with single-trial speech intelligibility in competition.
+       </strong>
+       <em>
+        Scientific Reports
+       </em>
+       ,  13(1), 10216. https://doi.org/10.1038/s41598-023-37173-2.
+       <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">
+        PDF
+       </a>
+       <a class="btn btn-outline-secondary btn-sm mr-2 mb-2" href="https://pubmed.ncbi.nlm.nih.gov/37353552/" target="_blank">
+        PubMed
+       </a>
+       <a class="btn btn-outline-primary btn-sm mr-2 mb-2" href="https://doi.org/10.1038/s41598-023-37173-2" target="_blank">
+        www
+       </a>
+      </div>
+      <div class="accordion-body">
+       <span class="text-muted">
+        Salloom, W. B., Bharadwaj, H., &amp; Strickland, E. A. (2023).
+       </span>
+       <strong>
+        The effects of broadband elicitor duration on a psychoacoustic measure of cochlear gain reduction.
+       </strong>
+       <em>
+        The Journal of the Acoustical Society of America
+       </em>
+       , 153(4), 2482. https://doi.org/10.1121/10.0017925.
+       <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">
+        PDF
+       </a>
+       <a class="btn btn-outline-secondary btn-sm mr-2 mb-2" href="https://pubmed.ncbi.nlm.nih.gov/37092950/" target="_blank">
+        PubMed
+       </a>
+       <a class="btn btn-outline-primary btn-sm mr-2 mb-2" href="https://doi.org/10.1121/10.0017925" target="_blank">
+        www
+       </a>
+      </div>
+      <div class="accordion-body">
+       <span class="text-muted">
+        Ahlfors, S. P., Graham, S., Bharadwaj, H., Mamashli, F., Khan, S., Joseph, R. M., Losh, A., Pawlyszyn, S., McGuiggan, N. M., Vangel, M., Hämäläinen, M. S., &amp; Kenet, T. (2023).
+       </span>
+       <strong>
+        No Differences in Auditory Steady-State Responses in Children with Autism Spectrum Disorder and Typically Developing Children.
+       </strong>
+       <em>
+        Journal of autism and developmental disorders
+       </em>
+       , 10.1007/s10803-023-05907-w. Advance online publication. https://doi.org/10.1007/s10803-023-05907-w.
+       <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">
+        PDF
+       </a>
+       <a class="btn btn-outline-secondary btn-sm mr-2 mb-2" href="https://pubmed.ncbi.nlm.nih.gov/36932270/" target="_blank">
+        PubMed
+       </a>
+       <a class="btn btn-outline-primary btn-sm mr-2 mb-2" href="https://doi.org/10.1007/s10803-023-05907-w" target="_blank">
+        www
+       </a>
+      </div>
+      <div class="accordion-body">
+       <span class="text-muted">
+        Alho, J., Khan, S., Mamashli, F., Perrachione, T. K., Losh, A., McGuiggan, N. M., Graham, S., Nayal, Z., Joseph, R. M., Hämäläinen, M. S., Bharadwaj*, H., &amp; Kenet*, T. (2023).
+       </span>
+       <strong>
+        Atypical cortical processing of bottom-up speech binding cues in children with autism spectrum disorders.
+       </strong>
+       <em>
+        NeuroImage. Clinical
+       </em>
+       , 37, 103336. https://doi.org/10.1016/j.nicl.2023.103336. [* Equal contribution as senior authors]
+       <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">
+        PDF
+       </a>
+       <a class="btn btn-outline-secondary btn-sm mr-2 mb-2" href="https://pubmed.ncbi.nlm.nih.gov/36724734/" target="_blank">
+        PubMed
+       </a>
+       <a class="btn btn-outline-primary btn-sm mr-2 mb-2" href="https://doi.org/10.1016/j.nicl.2023.103336" target="_blank">
+        www
+       </a>
+      </div>
+     </div>
+    </div>
+    <div class="accordion-item">
+     <h2 class="accordion-header" id="heading2022">
+      <button aria-controls="collapse2022" aria-expanded="true" class="accordion-button collapsed" data-bs-target="#collapse2022" data-bs-toggle="collapse" type="button">
+       <h4>
+        2022
+       </h4>
+      </button>
+     </h2>
+     <div aria-labelledby="heading2022" class="accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapse2022">
+      <div class="accordion-body">
+       <span class="text-muted">
+        Bharadwaj, H. M., Hustedt-Mai, A. R., Ginsberg, H. M., Dougherty, K. M., Muthaiah, V. P. K., Hagedorn, A., Simpson, J. M., &amp; Heinz, M. G. (2022).
+       </span>
+       <strong>
+        Cross-species experiments reveal widespread cochlear neural damage in normal hearing.
+       </strong>
+       <em>
+        Communications biology
+       </em>
+       , 5(1), 733. https://doi.org/10.1038/s42003-022-03691-4.
+       <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">
+        PDF
+       </a>
+       <a class="btn btn-outline-secondary btn-sm mr-2 mb-2" href="https://pubmed.ncbi.nlm.nih.gov/35869142/" target="_blank">
+        PubMed
+       </a>
+       <a class="btn btn-outline-primary btn-sm mr-2 mb-2" href="https://doi.org/10.1038/s42003-022-03691-4" target="_blank">
+        www
+       </a>
+      </div>
+      <div class="accordion-body">
+       <span class="text-muted">
+        Ahmed, H., Wilbur, R. B., Bharadwaj, H. M., &amp; Siskind, J. M. (2022).
+       </span>
+       <strong>
+        Confounds in the Data-Comments on "Decoding Brain Representations by Multimodal Learning of Neural Activity and Visual Features".
+       </strong>
+       <em>
+        IEEE transactions on pattern analysis and machine intelligence
+       </em>
+       , 44(12), 9217–9220. https://doi.org/10.1109/TPAMI.2021.3121268.
+       <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">
+        PDF
+       </a>
+       <a class="btn btn-outline-secondary btn-sm mr-2 mb-2" href="https://pubmed.ncbi.nlm.nih.gov/34665721/" target="_blank">
+        PubMed
+       </a>
+       <a class="btn btn-outline-primary btn-sm mr-2 mb-2" href="https://doi.org/10.1109/TPAMI.2021.3121268" target="_blank">
+        www
+       </a>
+      </div>
+      <div class="accordion-body">
+       <span class="text-muted">
+        Peng, Z. E., Waz, S., Buss, E., Shen, Y., Richards, V., Bharadwaj, H., Stecker, G. C., Beim, J. A., Bosen, A. K., Braza, M. D., Diedesch, A. C., Dorey, C. M., Dykstra, A. R., Gallun, F. J., Goldsworthy, R. L., Gray, L., Hoover, E. C., Ihlefeld, A., Koelewijn, T., Kopun, J. G., … Venezia, J. H. (2022).
+       </span>
+       <strong>
+        FORUM: Remote testing for psychological and physiological acoustics.
+       </strong>
+       <em>
+        The Journal of the Acoustical Society of America
+       </em>
+       , 151(5), 3116. https://doi.org/10.1121/10.0010422.
+       <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">
+        PDF
+       </a>
+       <a class="btn btn-outline-secondary btn-sm mr-2 mb-2" href="https://pubmed.ncbi.nlm.nih.gov/35649891/" target="_blank">
+        PubMed
+       </a>
+       <a class="btn btn-outline-primary btn-sm mr-2 mb-2" href="https://doi.org/10.1121/10.0010422" target="_blank">
+        www
+       </a>
+      </div>
+      <div class="accordion-body">
+       <span class="text-muted">
+        Kim, S., Wu, Y. H., Bharadwaj, H. M., &amp; Choi, I. (2022).
+       </span>
+       <strong>
+        Effect of Noise Reduction on Cortical Speech-in-Noise Processing and Its Variance due to Individual Noise Tolerance.
+       </strong>
+       <em>
+        Ear and hearing
+       </em>
+       , 43(3), 849–861. https://doi.org/10.1097/AUD.0000000000001144.
+       <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">
+        PDF
+       </a>
+       <a class="btn btn-outline-secondary btn-sm mr-2 mb-2" href="https://pubmed.ncbi.nlm.nih.gov/34751679/" target="_blank">
+        PubMed
+       </a>
+       <a class="btn btn-outline-primary btn-sm mr-2 mb-2" href="https://doi.org/10.1097/AUD.0000000000001144" target="_blank">
+        www
+       </a>
+      </div>
+      <div class="accordion-body">
+       <span class="text-muted">
+        Borjigin, A., Hustedt-Mai, A. R., &amp; Bharadwaj, H. M. (2022).
+       </span>
+       <strong>
+        Individualized Assays of Temporal Coding in the Ascending Human Auditory System.
+       </strong>
+       <em>
+        eNeuro
+       </em>
+       , 9(2), ENEURO.0378-21.2022. https://doi.org/10.1523/ENEURO.0378-21.2022.
+       <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">
+        PDF
+       </a>
+       <a class="btn btn-outline-secondary btn-sm mr-2 mb-2" href="https://pubmed.ncbi.nlm.nih.gov/35193890/" target="_blank">
+        PubMed
+       </a>
+       <a class="btn btn-outline-primary btn-sm mr-2 mb-2" href="https://doi.org/10.1523/ENEURO.0378-21.2022" target="_blank">
+        www
+       </a>
+      </div>
+      <div class="accordion-body">
+       <span class="text-muted">
+        Bharadwaj, H., Mamashli, F., Khan, S., Singh, R., Joseph, R. M., Losh, A., Pawlyszyn, S., McGuiggan, N. M., Graham, S., Hämäläinen, M. S., &amp; Kenet, T. (2022).
+       </span>
+       <strong>
+        Cortical signatures of auditory object binding in children with autism spectrum disorder are anomalous in concordance with behavior and diagnosis.
+       </strong>
+       <em>
+        PLoS biology
+       </em>
+       , 20(2), e3001541. https://doi.org/10.1371/journal.pbio.3001541.
+       <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">
+        PDF
+       </a>
+       <a class="btn btn-outline-secondary btn-sm mr-2 mb-2" href="https://pubmed.ncbi.nlm.nih.gov/35167585/" target="_blank">
+        PubMed
+       </a>
+       <a class="btn btn-outline-primary btn-sm mr-2 mb-2" href="https://doi.org/10.1371/journal.pbio.3001541" target="_blank">
+        www
+       </a>
+      </div>
+     </div>
+    </div>
+    <div class="accordion-item">
+     <h2 class="accordion-header" id="heading2021">
+      <button aria-controls="collapse2021" aria-expanded="true" class="accordion-button collapsed" data-bs-target="#collapse2021" data-bs-toggle="collapse" type="button">
+       <h4>
+        2021
+       </h4>
+      </button>
+     </h2>
+     <div aria-labelledby="heading2021" class="accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapse2021">
+      <div class="accordion-body">
+       <span class="text-muted">
+        Alho, J., Bharadwaj, H., Khan, S., Mamashli, F., Perrachione, T. K., Losh, A., McGuiggan, N. M., Joseph, R. M., Hämäläinen, M. S., &amp; Kenet, T. (2021).
+       </span>
+       <strong>
+        Altered maturation and atypical cortical processing of spoken sentences in autism spectrum disorder.
+       </strong>
+       <em>
+        Progress in neurobiology
+       </em>
+       , 203, 102077. https://doi.org/10.1016/j.pneurobio.2021.102077.
+       <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">
+        PDF
+       </a>
+       <a class="btn btn-outline-secondary btn-sm mr-2 mb-2" href="https://pubmed.ncbi.nlm.nih.gov/34033856/" target="_blank">
+        PubMed
+       </a>
+       <a class="btn btn-outline-primary btn-sm mr-2 mb-2" href="https://doi.org/10.1016/j.pneurobio.2021.102077" target="_blank">
+        www
+       </a>
+      </div>
+      <div class="accordion-body">
+       <span class="text-muted">
+        Bharadwaj, H., &amp; Shinn-Cunningham, B. (2021).
+       </span>
+       <strong>
+        What's been hidden in hidden hearing loss.
+       </strong>
+       <em>
+        Neuron
+       </em>
+       , 109(6), 909–911. https://doi.org/10.1016/j.neuron.2021.02.025.
+       <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">
+        PDF
+       </a>
+       <a class="btn btn-outline-secondary btn-sm mr-2 mb-2" href="https://pubmed.ncbi.nlm.nih.gov/33735611/" target="_blank">
+        PubMed
+       </a>
+       <a class="btn btn-outline-primary btn-sm mr-2 mb-2" href="https://doi.org/10.1016/j.neuron.2021.02.025" target="_blank">
+        www
+       </a>
+      </div>
+      <div class="accordion-body">
+       <span class="text-muted">
+        Parida, S., Bharadwaj, H., &amp; Heinz, M. G. (2021).
+       </span>
+       <strong>
+        Spectrally specific temporal analyses of spike-train responses to complex sounds: A unifying framework.
+       </strong>
+       <em>
+        PLoS computational biology
+       </em>
+       , 17(2), e1008155. https://doi.org/10.1371/journal.pcbi.1008155.
+       <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">
+        PDF
+       </a>
+       <a class="btn btn-outline-secondary btn-sm mr-2 mb-2" href="https://pubmed.ncbi.nlm.nih.gov/33617548/" target="_blank">
+        PubMed
+       </a>
+       <a class="btn btn-outline-primary btn-sm mr-2 mb-2" href="https://doi.org/10.1371/journal.pcbi.1008155" target="_blank">
+        www
+       </a>
+      </div>
+      <div class="accordion-body">
+       <span class="text-muted">
+        Viswanathan, V., Bharadwaj, H. M., Shinn-Cunningham, B. G., &amp; Heinz, M. G. (2021).
+       </span>
+       <strong>
+        Modulation masking and fine structure shape neural envelope coding to predict speech intelligibility across diverse listening conditions.
+       </strong>
+       <em>
+        The Journal of the Acoustical Society of America
+       </em>
+       , 150(3), 2230. https://doi.org/10.1121/10.0006385.
+       <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">
+        PDF
+       </a>
+       <a class="btn btn-outline-secondary btn-sm mr-2 mb-2" href="https://pubmed.ncbi.nlm.nih.gov/34598642/" target="_blank">
+        PubMed
+       </a>
+       <a class="btn btn-outline-primary btn-sm mr-2 mb-2" href="https://doi.org/10.1121/10.0006385" target="_blank">
+        www
+       </a>
+      </div>
+      <div class="accordion-body">
+       <span class="text-muted">
+        Ahmed, H., Wilbur, R. B., Bharadwaj*, H. M., &amp; Siskind*, J. M. (2021).
+       </span>
+       <strong>
+        Object classification from randomized EEG trials.
+       </strong>
+       <em>
+        In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition
+       </em>
+       , (pp. 3845-3854). [*Equal contribution as senior author]
+       <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">
+        PDF
+       </a>
+       <a class="btn btn-outline-primary btn-sm mr-2 mb-2" href="https://openaccess.thecvf.com/content/CVPR2021/html/Ahmed_Object_Classification_From_Randomized_EEG_Trials_CVPR_2021_paper.html" target="_blank">
+        www
+       </a>
+      </div>
+     </div>
+    </div>
+    <div class="accordion-item">
+     <h2 class="accordion-header" id="heading2020">
+      <button aria-controls="collapse2020" aria-expanded="true" class="accordion-button collapsed" data-bs-target="#collapse2020" data-bs-toggle="collapse" type="button">
+       <h4>
+        2020
+       </h4>
+      </button>
+     </h2>
+     <div aria-labelledby="heading2020" class="accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapse2020">
+      <div class="accordion-body">
+       <span class="text-muted">
+        Li, R., Johansen, J. S., Ahmed, H., Ilyevsky, T. V., Wilbur, R. B., Bharadwaj*, H. M., &amp; Siskind*, J. M. (2020).
+       </span>
+       <strong>
+        The Perils and Pitfalls of Block Design for EEG Classification Experiments.
+       </strong>
+       <em>
+        IEEE transactions on pattern analysis and machine intelligence
+       </em>
+       , 43(1) 316-333. https://doi.org/10.1109/TPAMI.2020.2973153. [*Equal contribution as senior author]
+       <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">
+        PDF
+       </a>
+       <a class="btn btn-outline-secondary btn-sm mr-2 mb-2" href="https://pubmed.ncbi.nlm.nih.gov/33211652/" target="_blank">
+        PubMed
+       </a>
+       <a class="btn btn-outline-primary btn-sm mr-2 mb-2" href="https://doi.org/10.1109/TPAMI.2020.2973153" target="_blank">
+        www
+       </a>
+      </div>
+      <div class="accordion-body">
+       <span class="text-muted">
+        Lu, H., Mehta, A. H., Bharadwaj, H. M., Shinn-Cunningham, B. G., &amp; Oxenham, A. J. (2020).
+       </span>
+       <strong>
+        Comment on ‘Rapid acquisition of auditory subcortical steady state responses using multichannel recordings’.
+       </strong>
+       <em>
+        Clinical Neurophysiology
+       </em>
+       , 131(8), 1833. https://doi.org/10.1016/j.clinph.2020.04.063.
+       <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">
+        PDF
+       </a>
+       <a class="btn btn-outline-secondary btn-sm mr-2 mb-2" href="https://pubmed.ncbi.nlm.nih.gov/32559638/" target="_blank">
+        PubMed
+       </a>
+       <a class="btn btn-outline-primary btn-sm mr-2 mb-2" href="https://doi.org/10.1016/j.clinph.2020.05.018" target="_blank">
+        www
+       </a>
+      </div>
+      <div class="accordion-body">
+       <span class="text-muted">
+        Peng, E., Buss, E., Shen, Y., Bharadwaj, H., Stecker, C., Beim, J., et al. (2020).
+       </span>
+       <strong>
+        Remote testing for psychological and physiological acoustics: Initial report of the ASA P&amp;P Task Force on Remote Testing.
+       </strong>
+       <em>
+        Proceedings of Meetings on Acoustics
+       </em>
+       , 42, 050009. https://doi.org/10.1121/2.0001409.
+       <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">
+        PDF
+       </a>
+      </div>
+     </div>
+    </div>
+    <div class="accordion-item">
+     <h2 class="accordion-header" id="heading2019">
+      <button aria-controls="collapse2019" aria-expanded="false" class="accordion-button collapsed" data-bs-target="#collapse2019" data-bs-toggle="collapse" type="button">
+       <h4>
+        2019
+       </h4>
+      </button>
+     </h2>
+     <div aria-labelledby="heading2019" class="accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapse2019">
+      <div class="accordion-body">
+       <div class="accordion-body">
+        <span class="text-muted">
+         Bharadwaj, H. M., Mai, A. R., Choi, I., Simpson, J. M., Heinz, M. G., &amp; Shinn-Cunningham,
+         B. G. (2019).
+        </span>
+        <strong>
+         Non-Invasive Assays of Cochlear Synaptopathy – Candidates and Considerations.
+        </strong>
+        <em>
+         Neuroscience, 407, 53-66.
+        </em>
+        <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">
+         PDF
+        </a>
+        <a class="btn btn-outline-secondary btn-sm mr-2 mb-2" href="https://pubmed.ncbi.nlm.nih.gov/30853540/" target="_blank">
+         PubMed
+        </a>
+        <a class="btn btn-outline-primary btn-sm mr-2 mb-2" class_="btn btn-outline-primary btn-sm mr-2 mb-2" href="https://doi.org/10.1016/j.neuroscience.2019.02.031" target="_blank">
+         www
+        </a>
+       </div>
+       <div class="accordion-body">
+        <span class="text-muted">
+         Wang, L., Bharadwaj, H. M., &amp; Shinn-Cunningham, B. G. (2019).
+        </span>
+        <strong>
+         Assessing cochlear-place speciﬁc temporal coding using multi-band complex tones to measure envelope-following responses.
+        </strong>
+        <em>
+         Neuroscience, 407, 67-74.
+        </em>
+        <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">
+         PDF
+        </a>
+        <a class="btn btn-outline-secondary btn-sm mr-2 mb-2" href="https://pubmed.ncbi.nlm.nih.gov/30826519/" target="_blank">
+         PubMed
+        </a>
+        <a class="btn btn-outline-primary btn-sm mr-2 mb-2" class_="btn btn-outline-primary btn-sm mr-2 mb-2" href="https://doi.org/10.1016/j.neuroscience.2019.02.003" target="_blank">
+         www
+        </a>
+       </div>
+       <div class="accordion-body">
+        <span class="text-muted">
+         Viswanathan, V., Bharadwaj, H. M., &amp; Shinn-Cunningham, B. G. (2019).
+        </span>
+        <strong>
+         Electroencephalographic Signatures of the Neural Representation of Speech during Selective Attention.
+        </strong>
+        <em>
+         eNeuro, 6(5).
+        </em>
+        <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">
+         PDF
+        </a>
+        <a class="btn btn-outline-secondary btn-sm mr-2 mb-2" href="https://pubmed.ncbi.nlm.nih.gov/31585928/" target="_blank">
+         PubMed
+        </a>
+        <a class="btn btn-outline-primary btn-sm mr-2 mb-2" class_="btn btn-outline-primary btn-sm mr-2 mb-2" href="https://doi.org/10.1523/ENEURO.0057-19.2019" target="_blank">
+         www
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="accordion-item">
+     <h2 class="accordion-header" id="heading2018">
+      <button aria-controls="collapse2018" aria-expanded="false" class="accordion-button collapsed" data-bs-target="#collapse2018" data-bs-toggle="collapse" type="button">
+       <h4>
+        2018
+       </h4>
+      </button>
+     </h2>
+     <div aria-labelledby="heading2018" class="accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapse2018">
+      <div class="accordion-body">
+       <div class="accordion-body">
+        <span class="text-muted">
+         Mamashli, F., Khan, S., Bharadwaj, H. M., Losh, A., Pawlyszyn, S. M., Hamalainen, M. S.,&amp; Kenet, T. (2018).
+        </span>
+        <strong>
+         Maturational trajectories of local and long-range functional connectivity in autism during face processing.
+        </strong>
+        <em>
+         Human Brain Mapping, 39(10), 4094-4104.
+        </em>
+        <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">
+         PDF
+        </a>
+        <a class="btn btn-outline-secondary btn-sm mr-2 mb-2" href="https://pubmed.ncbi.nlm.nih.gov/29947148/" target="_blank">
+         PubMed
+        </a>
+        <a class="btn btn-outline-primary btn-sm mr-2 mb-2" class_="btn btn-outline-primary btn-sm mr-2 mb-2" href="https://doi.org/10.1002/hbm.24234" target="_blank">
+         www
+        </a>
+       </div>
+       <div class="accordion-body">
+        <span class="text-muted">
+         Khan, S., Hashmi, J. A., Mamashli, F., Michmizos, K.,Bharadwaj, H. M., ... &amp; Kenet, T. (2018).
+        </span>
+        <strong>
+         Maturation Trajectories of Cortical Resting-State Networks Depend on the Mediating Frequency Band.
+        </strong>
+        <em>
+         NeuroImage, 174, 57-68. doi: 10.1016/j.neuroimage.2018.02.018
+        </em>
+        <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">
+         PDF
+        </a>
+        <a class="btn btn-outline-secondary btn-sm mr-2 mb-2" href="https://pubmed.ncbi.nlm.nih.gov/29462724/" target="_blank">
+         PubMed
+        </a>
+        <a class="btn btn-outline-primary btn-sm mr-2 mb-2" class_="btn btn-outline-primary btn-sm mr-2 mb-2" href="https://doi.org/10.1016/j.neuroimage.2018.02.018" target="_blank">
+         www
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="accordion-item">
+     <h2 class="accordion-header" id="heading2017">
+      <button aria-controls="collapse2017" aria-expanded="false" class="accordion-button collapsed" data-bs-target="#collapse2017" data-bs-toggle="collapse" type="button">
+       <h4>
+        2017
+       </h4>
+      </button>
+     </h2>
+     <div aria-labelledby="heading2017" class="accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapse2017">
+      <div class="accordion-body">
+       <div class="accordion-body">
+        <span class="text-muted">
+         Shinn-Cunningham, B. G., Varghese, L., Wang, L., &amp; Bharadwaj, H. M. (2017).
+        </span>
+        <strong>
+         Individual differences in temporal perception, and their implications for everyday listening.
+        </strong>
+        <em>
+         Frequency Following Response: A Window into Human Communication
+        </em>
+        , Springer Handbook of Auditory Research 61, 159-192. Springer Verlag.
+        <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">
+         PDF
+        </a>
+        <span class="badge rounded-pill text-bg-success">
+         INVITED BOOK CHAPTER
+        </span>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="accordion-item">
+     <h2 class="accordion-header" id="heading2016">
+      <button aria-controls="collapse2016" aria-expanded="false" class="accordion-button collapsed" data-bs-target="#collapse2016" data-bs-toggle="collapse" type="button">
+       <h4>
+        2016
+       </h4>
+      </button>
+     </h2>
+     <div aria-labelledby="heading2016" class="accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapse2016">
+      <div class="accordion-body">
+       <div class="accordion-body">
+        <span class="text-muted">
+         Mamashli, F., Khan, S., Bharadwaj, H. M., Michmizos, K., Ganesan, S., Garel, K. L. A.,... &amp; Kenet, T. (2016).
+        </span>
+        <strong>
+         Auditory processing in noise is associated with complex patterns of disrupted functional connectivity in autism spectrum disorder.
+        </strong>
+        <em>
+         Autism Research. doi:
+        </em>
+        <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">
+         PDF
+        </a>
+        <a class="btn btn-outline-secondary btn-sm mr-2 mb-2" href="https://pubmed.ncbi.nlm.nih.gov/27910247/" target="_blank">
+         PubMed
+        </a>
+        <a class="btn btn-outline-primary btn-sm mr-2 mb-2" class_="btn btn-outline-primary btn-sm mr-2 mb-2" href="https://doi.org/10.1002/aur.1714" target="_blank">
+         www
+        </a>
+       </div>
+       <div class="accordion-body">
+        <span class="text-muted">
+         Khan, S., Hashmi, J. A., Mamashli, F., Bharadwaj, H. M., Ganesan, S., Michmizos, K., ...&amp;Kenet, T.(2016).
+        </span>
+        <strong>
+         Altered Onset Response Dynamics in Somatosensory Processing in Autism Spectrum Disorder.
+        </strong>
+        <em>
+         Frontiers in Neuroscience. 10: 255. doi: 10.3389/fnins.2016.00255.
+        </em>
+        <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">
+         PDF
+        </a>
+        <a class="btn btn-outline-secondary btn-sm mr-2 mb-2" href="https://pubmed.ncbi.nlm.nih.gov/27375417/" target="_blank">
+         PubMed
+        </a>
+        <a class="btn btn-outline-primary btn-sm mr-2 mb-2" class_="btn btn-outline-primary btn-sm mr-2 mb-2" href="https://doi.org/10.3389/fnins.2016.00255" target="_blank">
+         www
+        </a>
+       </div>
+       <div class="accordion-body">
+        <span class="text-muted">
+         Mehraei, G., Hickox, A. E., Bharadwaj, H. M., Goldberg, H., Verhulst, S., Liberman, M.C., &amp; Shinn-Cunningham, B. G. (2016).
+        </span>
+        <strong>
+         Auditory Brainstem Response Latency in Noise as a Marker of Cochlear Synaptopathy.
+        </strong>
+        <em>
+         The Journal of Neuroscience, 36(13), 3755-3764. doi:
+        </em>
+        <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">
+         PDF
+        </a>
+        <a class="btn btn-outline-secondary btn-sm mr-2 mb-2" href="https://pubmed.ncbi.nlm.nih.gov/27030760/" target="_blank">
+         PubMed
+        </a>
+        <a class="btn btn-outline-primary btn-sm mr-2 mb-2" class_="btn btn-outline-primary btn-sm mr-2 mb-2" href="https://doi.org/10.1523/JNEUROSCI.4460-15.2016" target="_blank">
+         www
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="accordion-item">
+     <h2 class="accordion-header" id="heading2015">
+      <button aria-controls="collapse2015" aria-expanded="false" class="accordion-button collapsed" data-bs-target="#collapse2015" data-bs-toggle="collapse" type="button">
+       <h4>
+        2015
+       </h4>
+      </button>
+     </h2>
+     <div aria-labelledby="heading2015" class="accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapse2015">
+      <div class="accordion-body">
+       <div class="accordion-body">
+        <span class="text-muted">
+         Varghese, L., Bharadwaj, H. M., &amp; Shinn-Cunningham, B. G. (2015).
+        </span>
+        <strong>
+         Evidence against attentional state modulating scalp-recorded auditory brainstem steady-state responses.
+        </strong>
+        <em>
+         Brain Research, 1626, 146-164. doi: 10.1016/j.brainres.2015.06.038.
+        </em>
+        <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">
+         PDF
+        </a>
+        <a class="btn btn-outline-secondary btn-sm mr-2 mb-2" href="https://pubmed.ncbi.nlm.nih.gov/26187756/" target="_blank">
+         PubMed
+        </a>
+        <a class="btn btn-outline-primary btn-sm mr-2 mb-2" class_="btn btn-outline-primary btn-sm mr-2 mb-2" href="https://doi.org/10.1016/j.brainres.2015.06.038" target="_blank">
+         www
+        </a>
+       </div>
+       <div class="accordion-body">
+        <span class="text-muted">
+         Bharadwaj, H. M., Masud, S., Verhulst, S., Mehraei, G., &amp; Shinn-Cunningham, B. G. (2015).
+        </span>
+        <strong>
+         Individual diﬀerences reveal correlates of hidden hearing deﬁcits.
+        </strong>
+        <em>
+         The Journal of Neuroscience, 35(5): 2161-2172. doi: 10.1523/jneurosci.3915-14.2015.
+        </em>
+        <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">
+         PDF
+        </a>
+        <a class="btn btn-outline-secondary btn-sm mr-2 mb-2" href="https://pubmed.ncbi.nlm.nih.gov/25653371/" target="_blank">
+         PubMed
+        </a>
+        <a class="btn btn-outline-primary btn-sm mr-2 mb-2" class_="btn btn-outline-primary btn-sm mr-2 mb-2" href="https://doi.org/10.1523/JNEUROSCI.3915-14.2015" target="_blank">
+         www
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="accordion-item">
+     <h2 class="accordion-header" id="heading2014">
+      <button aria-controls="collapse2014" aria-expanded="false" class="accordion-button collapsed" data-bs-target="#collapse2014" data-bs-toggle="collapse" type="button">
+       <h4>
+        2014
+       </h4>
+      </button>
+     </h2>
+     <div aria-labelledby="heading2014" class="accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapse2014">
+      <div class="accordion-body">
+       <div class="accordion-body">
+        <span class="text-muted">
+         Choi, I., Bharadwaj, H. M., Bressler, S., Loui, P., Lee, K., &amp; Shinn-Cunningham, B. G. (2014).
+        </span>
+        <strong>
+         Automatic processing of abstract musical tonality.
+        </strong>
+        <em>
+         Frontiers in Human Neuroscience, 8: 988. doi: 10.3389/fnhum.2014.00988.
+        </em>
+        <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">
+         PDF
+        </a>
+        <a class="btn btn-outline-secondary btn-sm mr-2 mb-2" href="https://pubmed.ncbi.nlm.nih.gov/25538607/" target="_blank">
+         PubMed
+        </a>
+        <a class="btn btn-outline-primary btn-sm mr-2 mb-2" class_="btn btn-outline-primary btn-sm mr-2 mb-2" href="https://doi.org/10.3389/fnhum.2014.00988" target="_blank">
+         www
+        </a>
+       </div>
+       <div class="accordion-body">
+        <span class="text-muted">
+         Choi, I., Wang, L., Bharadwaj, H. M., &amp; Shinn-Cunningham, B. G. (2014).
+        </span>
+        <strong>
+         Individual differences in attentional modulation of cortical responses correlate with selective attention performance.
+        </strong>
+        <em>
+         Hearing research, 314, 10-19. doi: 10.1016/j.heares.2014.04.008.
+        </em>
+        <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">
+         PDF
+        </a>
+        <a class="btn btn-outline-secondary btn-sm mr-2 mb-2" href="https://pubmed.ncbi.nlm.nih.gov/24821552/" target="_blank">
+         PubMed
+        </a>
+        <a class="btn btn-outline-primary btn-sm mr-2 mb-2" class_="btn btn-outline-primary btn-sm mr-2 mb-2" href="https://doi.org/10.1016/j.heares.2014.04.008" target="_blank">
+         www
+        </a>
+       </div>
+       <div class="accordion-body">
+        <span class="text-muted">
+         Bressler,S., Masud,S., Bharadwaj H. M., &amp; Shinn-Cunningham,B.G.(2014).
+        </span>
+        <strong>
+         Bottom-up inﬂuences of voice continuity in focusing selective auditory attention.
+        </strong>
+        <em>
+         Psychological Research, 78(3), 349-360. doi: 10.1007/s00426-014-0555-7.
+        </em>
+        <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">
+         PDF
+        </a>
+        <a class="btn btn-outline-secondary btn-sm mr-2 mb-2" href="https://pubmed.ncbi.nlm.nih.gov/24633644/" target="_blank">
+         PubMed
+        </a>
+        <a class="btn btn-outline-primary btn-sm mr-2 mb-2" class_="btn btn-outline-primary btn-sm mr-2 mb-2" href="https://doi.org/10.1007/s00426-014-0555-7" target="_blank">
+         www
+        </a>
+       </div>
+       <div class="accordion-body">
+        <span class="text-muted">
+         Bharadwaj, H. M., Verhulst, S., Shaheen, L., Liberman, M. C., &amp; Shinn-Cunningham, B.G. (2014).
+        </span>
+        <strong>
+         Cochlear Neuropathy and the Coding of Supra-threshold Sound.
+        </strong>
+        <em>
+         Frontiers in Systems Neuroscience, 8: 26. doi:10.3389/fnsys.2014.00026.
+        </em>
+        <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">
+         PDF
+        </a>
+        <a class="btn btn-outline-secondary btn-sm mr-2 mb-2" href="https://pubmed.ncbi.nlm.nih.gov/24600357/" target="_blank">
+         PubMed
+        </a>
+        <a class="btn btn-outline-primary btn-sm mr-2 mb-2" class_="btn btn-outline-primary btn-sm mr-2 mb-2" href="https://doi.org/10.3389/fnsys.2014.00026" target="_blank">
+         www
+        </a>
+       </div>
+       <div class="accordion-body">
+        <span class="text-muted">
+         Bharadwaj, H. M., &amp; Shinn-Cunningham, B. G. (2014).
+        </span>
+        <strong>
+         Rapid acquisition of auditory subcortical steady-state responses using multichannel recordings.
+        </strong>
+        <em>
+         Clinical Neurophysiology, 125(9): 1878–1888. doi: 10.1016/j.clinph.2014.01.011.
+        </em>
+        <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">
+         PDF
+        </a>
+        <a class="btn btn-outline-secondary btn-sm mr-2 mb-2" href="https://pubmed.ncbi.nlm.nih.gov/24525091/" target="_blank">
+         PubMed
+        </a>
+        <a class="btn btn-outline-primary btn-sm mr-2 mb-2" class_="btn btn-outline-primary btn-sm mr-2 mb-2" href="https://doi.org/10.1016/j.clinph.2014.01.011" target="_blank">
+         www
+        </a>
+       </div>
+       <div class="accordion-body">
+        <span class="text-muted">
+         Bharadwaj, H. M., Lee, A. K., &amp; Shinn-Cunningham, B. G. (2014). Measuring Auditory
+        </span>
+        <strong>
+         Selective Attention using Frequency Tagging.
+        </strong>
+        <em>
+         Frontiers in Integrative Neuroscience, 8: 6. doi: 10.3389/fnint.2014.00006.
+        </em>
+        <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">
+         PDF
+        </a>
+        <a class="btn btn-outline-secondary btn-sm mr-2 mb-2" href="https://pubmed.ncbi.nlm.nih.gov/24550794/" target="_blank">
+         PubMed
+        </a>
+        <a class="btn btn-outline-primary btn-sm mr-2 mb-2" class_="btn btn-outline-primary btn-sm mr-2 mb-2" href="https://doi.org/10.3389/fnint.2014.00006" target="_blank">
+         www
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="accordion-item">
+     <h2 class="accordion-header" id="heading2013">
+      <button aria-controls="collapse2013" aria-expanded="false" class="accordion-button collapsed" data-bs-target="#collapse2013" data-bs-toggle="collapse" type="button">
+       <h4>
+        2013
+       </h4>
+      </button>
+     </h2>
+     <div aria-labelledby="heading2013" class="accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapse2013">
+      <div class="accordion-body">
+       <div class="accordion-body">
+        <span class="text-muted">
+         Zhu, L., Bharadwaj, H. M., Xia, J., &amp; Shinn-Cunningham, B. (2013).
+        </span>
+        <strong>
+         A comparison of spectral magnitude and phase-locking value analyses of the frequency-following response to complex tones.
+        </strong>
+        <em>
+         The Journal of the Acoustical Society of America, 134(1), 384-395.
+        </em>
+        <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">
+         PDF
+        </a>
+        <a class="btn btn-outline-secondary btn-sm mr-2 mb-2" href="https://pubmed.ncbi.nlm.nih.gov/23862815/" target="_blank">
+         PubMed
+        </a>
+        <a class="btn btn-outline-primary btn-sm mr-2 mb-2" class_="btn btn-outline-primary btn-sm mr-2 mb-2" href="https://doi.org/10.1121/1.4807498" target="_blank">
+         www
+        </a>
+       </div>
+       <div class="accordion-body">
+        <span class="text-muted">
+         Bharadwaj, H. M., Masud, S., &amp; Shinn-Cunningham, B. G. (2013).
+        </span>
+        <strong>
+         The role of high-frequency cues for spatial hearing in rooms.
+        </strong>
+        <em>
+         Proceedings of Meetings on Acoustics
+        </em>
+        , 19:015049.
+        <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">
+         PDF
+        </a>
+       </div>
+       <div class="accordion-body">
+        <span class="text-muted">
+         Shinn-Cunningham, B. G., Ruggles, D. R., &amp; Bharadwaj, H. M. (2013).
+        </span>
+        <strong>
+         How Early Aging and Environment Interact in Everyday Listening: From Brainstem to Behavior Through Modeling.
+        </strong>
+        <em>
+         Basic Aspects of Hearing: Physiology and Perception
+        </em>
+        , 501-510. Springer New York.
+        <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">
+         PDF
+        </a>
+        <span class="badge rounded-pill text-bg-success">
+         BOOK CHAPTER
+        </span>
+        <a class="btn btn-outline-primary btn-sm mr-2 mb-2" class_="btn btn-outline-primary btn-sm mr-2 mb-2" href="https://doi.org/10.1007/978-1-4614-1590-9_55" target="_blank">
+         www
+        </a>
+        <a class="btn btn-outline-secondary btn-sm mr-2 mb-2" class_="btn btn-outline-secondary btn-sm mr-2 mb-2" href="https://pubmed.ncbi.nlm.nih.gov/23716257/" target="_blank">
+         PubMed
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="accordion-item">
+     <h2 class="accordion-header" id="heading2012">
+      <button aria-controls="collapse2012" aria-expanded="false" class="accordion-button collapsed" data-bs-target="#collapse2012" data-bs-toggle="collapse" type="button">
+       <h4>
+        2012
+       </h4>
+      </button>
+     </h2>
+     <div aria-labelledby="heading2012" class="accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapse2012">
+      <div class="accordion-body">
+       <div class="accordion-body">
+        <span class="text-muted">
+         Kenet, T., Orekhova, E. V., Bharadwaj, H. M., Shetty, N. R., Israeli, E., Lee, A. K. C. et al. (2012).
+        </span>
+        <strong>
+         Disconnectivity of the cortical ocular motor control network in autism spectrum disorders.
+        </strong>
+        <em>
+         NeuroImage, 61(4), 1226-1234.
+        </em>
+        <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">
+         PDF
+        </a>
+        <a class="btn btn-outline-secondary btn-sm mr-2 mb-2" href="https://pubmed.ncbi.nlm.nih.gov/22433660/" target="_blank">
+         PubMed
+        </a>
+        <a class="btn btn-outline-primary btn-sm mr-2 mb-2" class_="btn btn-outline-primary btn-sm mr-2 mb-2" href="https://doi.org/10.1016/j.neuroimage.2012.03.010" target="_blank">
+         www
+        </a>
+       </div>
+       <div class="accordion-body">
+        <span class="text-muted">
+         Lee, A. K. C., Rajaram, S., Xia, J., Bharadwaj, H. M., Larson, E., Hamalainen, M. S., &amp; Shinn-Cunningham, B. G. (2012).
+        </span>
+        <strong>
+         Auditory selective attention reveals preparatory activity in diﬀerent cortical regions for selection based on source location and source pitch.
+        </strong>
+        <em>
+         Frontiers in Neuroscience, 6: 190.
+        </em>
+        <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">
+         PDF
+        </a>
+        <a class="btn btn-outline-secondary btn-sm mr-2 mb-2" href="https://pubmed.ncbi.nlm.nih.gov/23335874/" target="_blank">
+         PubMed
+        </a>
+        <a class="btn btn-outline-primary btn-sm mr-2 mb-2" class_="btn btn-outline-primary btn-sm mr-2 mb-2" href="https://doi.org/10.3389/fnins.2012.00190" target="_blank">
+         www
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="accordion-item">
+     <h2 class="accordion-header" id="heading2011">
+      <button aria-controls="collapse2011" aria-expanded="false" class="accordion-button collapsed" data-bs-target="#collapse2011" data-bs-toggle="collapse" type="button">
+       <h4>
+        2011
+       </h4>
+      </button>
+     </h2>
+     <div aria-labelledby="heading2011" class="accordion-collapse collapse" data-bs-parent="#accordionExample" id="collapse2011">
+      <div class="accordion-body">
+       <div class="accordion-body">
+        <span class="text-muted">
+         Ruggles, D., Bharadwaj, H. M., &amp; Shinn-Cunningham, B. G. (2011).
+        </span>
+        <strong>
+         Normal hearing is not enough to guarantee robust encoding of suprathreshold features important in everyday communication.
+        </strong>
+        <em>
+         Proceedings of the National Academy of Sciences of U.S.A, 108(37), 15516-15521.
+        </em>
+        <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="#" target="_blank">
+         PDF
+        </a>
+        <a class="btn btn-outline-secondary btn-sm mr-2 mb-2" href="https://pubmed.ncbi.nlm.nih.gov/21844339/" target="_blank">
+         PubMed
+        </a>
+        <a class="btn btn-outline-primary btn-sm mr-2 mb-2" class_="btn btn-outline-primary btn-sm mr-2 mb-2" href="https://doi.org/10.1073/pnas.1108912108" target="_blank">
+         www
+        </a>
+       </div>
+       <div class="accordion-body">
+        <span class="text-muted">
+         Rajaram, S., Bharadwaj, H. M., Shinn-Cunningham, B. G., &amp; Lee, A. K. C. (2011).
+        </span>
+        <strong>
+         Cortical functional connectivity inference using MEG.
+        </strong>
+        <em>
+         Noninvasive Functional Source Imaging of the Brain and Heart &amp; 8th International Conference on Bioelectromagnetism
+        </em>
+        , 77-80. IEEE.
+        <a class="btn btn-outline-danger btn-sm ml-2 mb-2" href="http://www.isbem.org/conf/2011/proceedi/05936824.pdf" target="_blank">
+         PDF
+        </a>
+        <a class="btn btn-outline-secondary btn-sm mr-2 mb-2" href="https://ieeexplore.ieee.org/abstract/document/5936824" target="_blank">
+         www
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
   </main>
-  
-
   <footer class="custom-footer">
-    <div class="container">
-      <div class="row">
-        <!-- Left Column: Logo, Address, Copyright -->
-        <div class="col-md-4">
-          <h5>Contact</h5>
-          <img src="static/images/pittsecondaryreverse.png" alt="Pitt Logo" class="footer-logo">
-          <address class="smaller-text">
-            3600 Atwood Street<br>
-            Forbes Tower 5011<br>
-            Pittsburgh, PA 15213
-          </address>
-          <p class="smallest-text">Revised: October 14, 2023. &copy; 2023 SNAPlab</p>
-        </div>
-        <!-- Middle Column: Links -->
-        <div class="col-md-4">
-          <h5>Links</h5>
-          <a href="https://www.shrs.pitt.edu/csd" target="_blank" class="footer-link">Department of Communication Science and Disorders</a><br>
-          <a href="https://www.shrs.pitt.edu/" target="_blank" class="footer-link">School of Health and Rehabilitation Sciences</a><br>
-          <a href="#" target="_blank" class="footer-link">Pittsburgh Hearing & Cookies Seminar Series</a><br>
-          <a href="https://engineering.purdue.edu/TPAN" target="_blank" class="footer-link">Purdue University Interdisciplinary Training Program in Auditory Neuroscience</a><br>
-        </div>
-        <!-- Right Column: Social Media Icons -->
-        <div class="col-md-4 text-end">
-          <h5>Connect</h5>
-          <div class="social-icons">
-            <a href="https://scholar.google.com/citations?user=Ay6wT1MAAAAJ&hl=en" target="_blank"><i class="fab fa-google"></i></a>
-            <a href="https://github.com/SNAPsoftware/" target="_blank"><i class="fab fa-github"></i></a>
-          </div>
-        </div>
+   <div class="container">
+    <div class="row">
+     <!-- Left Column: Logo, Address, Copyright -->
+     <div class="col-md-4">
+      <h5>
+       Contact
+      </h5>
+      <img alt="Pitt Logo" class="footer-logo" src="static/images/pittsecondaryreverse.png"/>
+      <address class="smaller-text">
+       3600 Atwood Street
+       <br/>
+       Forbes Tower 5011
+       <br/>
+       Pittsburgh, PA 15213
+      </address>
+      <p class="smallest-text">
+       Revised: October 14, 2023. © 2023 SNAPlab
+      </p>
+     </div>
+     <!-- Middle Column: Links -->
+     <div class="col-md-4">
+      <h5>
+       Links
+      </h5>
+      <a class="footer-link" href="https://www.shrs.pitt.edu/csd" target="_blank">
+       Department of Communication Science and Disorders
+      </a>
+      <br/>
+      <a class="footer-link" href="https://www.shrs.pitt.edu/" target="_blank">
+       School of Health and Rehabilitation Sciences
+      </a>
+      <br/>
+      <a class="footer-link" href="#" target="_blank">
+       Pittsburgh Hearing &amp; Cookies Seminar Series
+      </a>
+      <br/>
+      <a class="footer-link" href="https://engineering.purdue.edu/TPAN" target="_blank">
+       Purdue University Interdisciplinary Training Program in Auditory Neuroscience
+      </a>
+      <br/>
+     </div>
+     <!-- Right Column: Social Media Icons -->
+     <div class="col-md-4 text-end">
+      <h5>
+       Connect
+      </h5>
+      <div class="social-icons">
+       <a href="https://scholar.google.com/citations?user=Ay6wT1MAAAAJ&amp;hl=en" target="_blank">
+        <i class="fab fa-google">
+        </i>
+       </a>
+       <a href="https://github.com/SNAPsoftware/" target="_blank">
+        <i class="fab fa-github">
+        </i>
+       </a>
       </div>
+     </div>
     </div>
+   </div>
   </footer>
-
-
-
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-</body>
-
+  <script crossorigin="anonymous" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
+  </script>
+ </body>
 </html>
-
