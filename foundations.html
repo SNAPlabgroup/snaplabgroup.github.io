@@ -3,878 +3,921 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>SNAPlab</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" 
+          rel="stylesheet" 
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" 
+          crossorigin="anonymous">
 
     <!-- Font Awesome 6.7.2 -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+    <link rel="stylesheet" 
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" 
+          integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" 
+          crossorigin="anonymous" 
+          referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" type="text/css" href="static/css/main.css">
     <link rel="icon" type="image/x-icon" href="static/images/favicons/favicon.ico">
   </head>
 
-
   <body>
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg custom-navbar sticky-top">
-    <div class="container">
-      <a class="navbar-brand custom-navbar-brand" href="https://www.pitt.edu/">
-        <img src="static/images/pittsecondaryreverse.png" width="135" alt="Pitt">
-      </a>
-      <span class="border-start">
-        <h3 class="custom-navbar-text ms-4 mt-2">SNAPlab </h3>
-      </span>
-      <button class="navbar-toggler custom-navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="true" aria-label="Toggle navigation">
-        <span class="menu-label">Menu</span>
-        <i class="fas fa-bars-staggered"></i> <!-- FontAwesome icon -->
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item custom-nav-item">
-            <a class="nav-link custom-nav-link active" href="#">Home</a>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg custom-navbar sticky-top">
+      <div class="container">
+        <a class="navbar-brand custom-navbar-brand" href="https://www.pitt.edu/">
+          <img src="static/images/pittsecondaryreverse.png" width="135" alt="Pitt">
+        </a>
+        <span class="border-start">
+          <h3 class="custom-navbar-text ms-4 mt-2">SNAPlab </h3>
+        </span>
+        <button class="navbar-toggler custom-navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="true" aria-label="Toggle navigation">
+          <span class="menu-label">Menu</span>
+          <i class="fas fa-bars-staggered"></i> <!-- FontAwesome icon -->
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item custom-nav-item">
+              <a class="nav-link custom-nav-link active" href="#">Home</a>
+            </li>
+            <li class="nav-item custom-nav-item">
+              <a class="nav-link custom-nav-link" href="people.html">People</a>
+            </li>
+            <li class="nav-item custom-nav-item">
+              <a class="nav-link custom-nav-link" href="research.html">Research</a>
+            </li>
+            <li class="nav-item custom-nav-item">
+              <a class="nav-link custom-nav-link" href="publications.html">Publications</a>
+            </li>
+            <li class="nav-item custom-nav-item">
+              <a class="nav-link custom-nav-link" href="join.html">Join Us!</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <main role="main" class="container">
+      <h1 class="mb-4 mt-4">Private foundations suppording CSD and related neuroscience research</h1>
+
+      <section class="mb-4">
+        <h4>Large databases:</h4>
+        <ul>
+          <li>
+            <a href="https://candid.org/" target="_blank" rel="noopener noreferrer">Candid (formerly Foundation Center)</a>: Comprehensive database of foundations and grants.
           </li>
-          <li class="nav-item custom-nav-item">
-            <a class="nav-link custom-nav-link" href="people.html">People</a>
+          <li>
+            <a href="https://spin.infoedglobal.com" target="_blank" rel="noopener noreferrer">SPIN (InfoEd Global)</a>: Searchable database of funding opportunities across all research areas.
           </li>
-          <li class="nav-item custom-nav-item">
-            <a class="nav-link custom-nav-link" href="research.html">Research</a>
-          </li>
-          <li class="nav-item custom-nav-item">
-            <a class="nav-link custom-nav-link" href="publications.html">Publications</a>
-          </li>
-          <li class="nav-item custom-nav-item">
-            <a class="nav-link custom-nav-link" href="join.html">Join Us!</a>
+          <li>
+            <a href="https://www.researchprofessional.com/" target="_blank" rel="noopener noreferrer">Research Professional</a>: International funding database widely used by universities.
           </li>
         </ul>
-      </div>
-    </div>
-  </nav>
+      </section>
 
+      <p>
+        Below is a small snapshot of private foundations, charitable trusts, and associations that may provide research grants or fellowships relevant to speech, language, hearing, and swallowing science, and related neuroscience fields. Because this list <strong>was automatically curated</strong> and is neither exhaustive nor constantly updated, <strong>please confirm details directly on each organization’s official website</strong> as open funding opportunities, program requirements, deadlines, and eligibility criteria are subject to change. If you find any errors, broken links, or have suggestions for other funding sources to add to the list, please contact Hari Bharadwaj.
+      </p>
 
-  <!-- Page Content -->
-  <main role="main" class="container">
-    <h1 class="mb-4 mt-4">Private foundations suppording CSD and related neuroscience research</h1>
+      <!-- Add an id to the table for JavaScript sorting -->
+      <table id="foundationTable" class="table table-striped table-bordered align-middle">
+        <thead class="table-dark">
+          <tr>
+            <th>Foundation / Organization</th>
+            <th>Focus</th>
+            <th>Funding Types</th>
+            <th>Link</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- 1 -->
+          <tr>
+            <td>Hearing Health Foundation (HHF)</td>
+            <td>Hearing loss, tinnitus</td>
+            <td>Research Grants (Emerging Research Grants)</td>
+            <td><a href="https://hearinghealthfoundation.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 2 -->
+          <tr>
+            <td>American Hearing Research Foundation (AHRF)</td>
+            <td>Hearing and balance disorders</td>
+            <td>Research Grants</td>
+            <td><a href="https://www.american-hearing.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 3 -->
+          <tr>
+            <td>National Organization for Hearing Research Foundation (NOHR)</td>
+            <td>Hearing research (basic and clinical)</td>
+            <td>Research Grants</td>
+            <td><a href="https://nohrfoundation.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 4 -->
+          <tr>
+            <td>Stuttering Foundation</td>
+            <td>Stuttering, speech disorders</td>
+            <td>Research Grants, Educational Initiatives</td>
+            <td><a href="https://www.stutteringhelp.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 5 -->
+          <tr>
+            <td>American Speech-Language-Hearing Foundation (ASHFoundation)</td>
+            <td>Speech, language, hearing research and clinical work</td>
+            <td>Research Grants, Student Scholarships</td>
+            <td><a href="https://www.ashfoundation.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 6 -->
+          <tr>
+            <td>Brain &amp; Behavior Research Foundation (BBRF)</td>
+            <td>Neuroscience, mental health</td>
+            <td>Research Grants, Fellowships (NARSAD)</td>
+            <td><a href="https://www.bbrfoundation.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 7 -->
+          <tr>
+            <td>The Dana Foundation</td>
+            <td>Neuroscience research &amp; public engagement</td>
+            <td>Research Grants (varied cycles)</td>
+            <td><a href="https://dana.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 8 -->
+          <tr>
+            <td>Simons Foundation (SFARI)</td>
+            <td>Autism, basic &amp; translational neuroscience</td>
+            <td>Research Grants, Fellowships</td>
+            <td><a href="https://www.simonsfoundation.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 9 -->
+          <tr>
+            <td>Autism Speaks</td>
+            <td>Autism spectrum disorders</td>
+            <td>Research Grants, Fellowships</td>
+            <td><a href="https://www.autismspeaks.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 10 -->
+          <tr>
+            <td>Robert Wood Johnson Foundation</td>
+            <td>Broad public health, including mental/behavioral health</td>
+            <td>Research Grants, Fellowships</td>
+            <td><a href="https://www.rwjf.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 11 -->
+          <tr>
+            <td>Alzheimer’s Association</td>
+            <td>Alzheimer’s disease &amp; related dementias</td>
+            <td>Research Grants, Fellowships</td>
+            <td><a href="https://www.alz.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 12 -->
+          <tr>
+            <td>The McKnight Foundation</td>
+            <td>Neuroscience (memory, cognitive function, disorders)</td>
+            <td>Research Grants, Scholar Awards</td>
+            <td><a href="https://www.mcknight.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 13 -->
+          <tr>
+            <td>Klingenstein Fund</td>
+            <td>Neuroscience (basic &amp; translational)</td>
+            <td>Fellowships (Klingenstein-Simons)</td>
+            <td><a href="https://klingenstein.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 14 -->
+          <tr>
+            <td>Cure Alzheimer’s Fund</td>
+            <td>Alzheimer’s disease (basic &amp; clinical)</td>
+            <td>Research Grants</td>
+            <td><a href="https://curealz.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 15 -->
+          <tr>
+            <td>BrightFocus Foundation</td>
+            <td>Alzheimer’s, macular degeneration, glaucoma</td>
+            <td>Research Grants, Postdoc Fellowships</td>
+            <td><a href="https://www.brightfocus.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 16 -->
+          <tr>
+            <td>Christopher &amp; Dana Reeve Foundation</td>
+            <td>Spinal cord injury &amp; paralysis research</td>
+            <td>Research Grants</td>
+            <td><a href="https://www.christopherreeve.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 17 -->
+          <tr>
+            <td>Michael J. Fox Foundation</td>
+            <td>Parkinson’s disease research</td>
+            <td>Research Grants, Collaborative Awards</td>
+            <td><a href="https://www.michaeljfox.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 18 -->
+          <tr>
+            <td>CurePSP</td>
+            <td>Progressive supranuclear palsy &amp; other tauopathies</td>
+            <td>Research Grants</td>
+            <td><a href="https://www.psp.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 19 -->
+          <tr>
+            <td>Parkinson’s Foundation</td>
+            <td>Parkinson’s disease research &amp; support</td>
+            <td>Research Grants, Fellowships</td>
+            <td><a href="https://www.parkinson.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 20 -->
+          <tr>
+            <td>CHDI Foundation</td>
+            <td>Huntington’s disease research</td>
+            <td>Research Grants, Collaborative Programs</td>
+            <td><a href="https://chdifoundation.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 21 -->
+          <tr>
+            <td>Doris Duke Charitable Foundation</td>
+            <td>Medical research, especially clinical/translational</td>
+            <td>Fellowships, Research Grants</td>
+            <td><a href="https://www.ddcf.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 22 -->
+          <tr>
+            <td>The Rockefeller Foundation</td>
+            <td>Global health, innovation (occasionally supports neuro/health)</td>
+            <td>Research Grants (varied)</td>
+            <td><a href="https://www.rockefellerfoundation.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 23 -->
+          <tr>
+            <td>The Pew Charitable Trusts (Pew Scholars)</td>
+            <td>Biomedical research (various areas, including neuroscience)</td>
+            <td>Fellowships, Research Grants</td>
+            <td><a href="https://www.pewtrusts.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 24 -->
+          <tr>
+            <td>Bill &amp; Melinda Gates Foundation</td>
+            <td>Global health and development (broad scope)</td>
+            <td>Research Grants (e.g., Grand Challenges)</td>
+            <td><a href="https://www.gatesfoundation.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 25 -->
+          <tr>
+            <td>Gatsby Charitable Foundation</td>
+            <td>Neuroscience &amp; related fields</td>
+            <td>Research Grants (select institutions)</td>
+            <td><a href="https://www.gatsby.org.uk" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 26 -->
+          <tr>
+            <td>Wellcome Trust</td>
+            <td>Biomedical research (global), strong neuroscience portfolio</td>
+            <td>Research Grants, Fellowships, Collaborative Awards</td>
+            <td><a href="https://wellcome.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 27 -->
+          <tr>
+            <td>Brain Canada Foundation</td>
+            <td>Brain research (Canada)</td>
+            <td>Research Grants, Team Grants, Fellowships</td>
+            <td><a href="https://braincanada.ca" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 28 -->
+          <tr>
+            <td>Weston Brain Institute (Canada/UK)</td>
+            <td>Neurodegenerative diseases of aging</td>
+            <td>Research Grants, Translational Funding</td>
+            <td><a href="https://westonbraininstitute.ca" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 29 -->
+          <tr>
+            <td>Tinnitus Research Initiative (TRI)</td>
+            <td>Tinnitus research &amp; therapies</td>
+            <td>Support for Collaborative Research</td>
+            <td><a href="https://www.tinnitusresearch.net" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 30 -->
+          <tr>
+            <td>Tinnitus Hub (charitable org.)</td>
+            <td>Tinnitus awareness, patient support, research collaboration</td>
+            <td>Small-Scale Research Partnerships</td>
+            <td><a href="https://www.tinnitushub.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 31 -->
+          <tr>
+            <td>The Voice Foundation</td>
+            <td>Voice research, voice disorders</td>
+            <td>Research Grants, Awards</td>
+            <td><a href="https://voicefoundation.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 32 -->
+          <tr>
+            <td>National Aphasia Association</td>
+            <td>Aphasia awareness, resources; occasional small grants</td>
+            <td>Small Research Grants/Support</td>
+            <td><a href="https://www.aphasia.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 33 -->
+          <tr>
+            <td>March of Dimes</td>
+            <td>Maternal-child health, includes neurodevelopment</td>
+            <td>Research Grants</td>
+            <td><a href="https://www.marchofdimes.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 34 -->
+          <tr>
+            <td>John Merck Fund</td>
+            <td>Developmental conditions</td>
+            <td>Research Grants (historical focus on autism)</td>
+            <td><a href="https://johnmerckfund.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 35 -->
+          <tr>
+            <td>Howard Hughes Medical Institute (HHMI)</td>
+            <td>Biomedical research, includes neuroscience programs</td>
+            <td>Investigator Programs, Fellowships</td>
+            <td><a href="https://www.hhmi.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 36 -->
+          <tr>
+            <td>Dravet Syndrome Foundation</td>
+            <td>Dravet syndrome (epilepsy), other neurological disorders</td>
+            <td>Research Grants, Fellowships</td>
+            <td><a href="https://www.dravetfoundation.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 37 -->
+          <tr>
+            <td>Burroughs Wellcome Fund</td>
+            <td>Biomedical research, including neuroscience</td>
+            <td>Career Awards, Research Grants</td>
+            <td><a href="https://www.bwfund.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 38 -->
+          <tr>
+            <td>The Gruber Foundation</td>
+            <td>Neuroscience Prize &amp; support</td>
+            <td>Neuroscience Prize, Some Grants</td>
+            <td><a href="https://gruber.yale.edu" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 39 -->
+          <tr>
+            <td>Helen Keller International</td>
+            <td>Vision &amp; hearing impairment (global health)</td>
+            <td>Limited Grants, Support Programs</td>
+            <td><a href="https://www.hki.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 40 -->
+          <tr>
+            <td>Whitehall Foundation</td>
+            <td>Basic biological research, emphasis on neural mechanisms</td>
+            <td>Research Grants, Grants-in-Aid</td>
+            <td><a href="http://www.whitehall.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 41 -->
+          <tr>
+            <td>Fondation Leducq</td>
+            <td>Cardiovascular &amp; neurovascular disease</td>
+            <td>Transatlantic Network of Excellence Grants</td>
+            <td><a href="https://www.fondationleducq.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 42 -->
+          <tr>
+            <td>G. Harold &amp; Leila Y. Mathers Charitable Foundation</td>
+            <td>Basic science, neuroscience, immunology</td>
+            <td>Research Grants (by invitation)</td>
+            <td><a href="https://www.mathersfoundation.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 43 -->
+          <tr>
+            <td>Alzheimer Research &amp; Prevention Foundation</td>
+            <td>Alzheimer’s prevention, integrative approaches</td>
+            <td>Small Research Grants</td>
+            <td><a href="https://alzheimersprevention.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 44 -->
+          <tr>
+            <td>Cure SMA</td>
+            <td>Spinal muscular atrophy</td>
+            <td>Research Grants</td>
+            <td><a href="https://www.curesma.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 45 -->
+          <tr>
+            <td>Muscular Dystrophy Association (MDA)</td>
+            <td>Muscular dystrophy &amp; related neuromuscular diseases</td>
+            <td>Research &amp; Development Grants</td>
+            <td><a href="https://www.mda.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 46 -->
+          <tr>
+            <td>Alexander von Humboldt Foundation</td>
+            <td>German-based, all science fields (supports neuroscience, etc.)</td>
+            <td>Fellowships, Research Awards</td>
+            <td><a href="https://www.humboldt-foundation.de" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 47 -->
+          <tr>
+            <td>Parkinson’s UK</td>
+            <td>Parkinson’s disease (UK-based)</td>
+            <td>Research Grants, Fellowships</td>
+            <td><a href="https://www.parkinsons.org.uk" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 48 -->
+          <tr>
+            <td>W. Garfield Weston Foundation (Canada)</td>
+            <td>Brain research, neurodegenerative diseases</td>
+            <td>Research Grants (via Weston Brain Institute)</td>
+            <td><a href="https://westonfoundation.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 49 -->
+          <tr>
+            <td>The Ellison Medical Foundation</td>
+            <td>Aging &amp; age-related diseases, includes neuro-aging</td>
+            <td>Senior Scholar, New Scholar Awards</td>
+            <td><a href="http://www.ellison-med-fn.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 50 (Removed duplicate Burroughs Wellcome Fund) -->
+          
+          <!-- 51 -->
+          <tr>
+            <td>The L’Oréal-UNESCO For Women in Science Program</td>
+            <td>Women scientists in all fields (including neuroscience)</td>
+            <td>Fellowships, Awards</td>
+            <td><a href="https://www.forwomeninscience.com" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 52 -->
+          <tr>
+            <td>Rett Syndrome Research Trust</td>
+            <td>Rett syndrome, related neurodevelopmental disorders</td>
+            <td>Research Grants</td>
+            <td><a href="https://reverserett.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 53 -->
+          <tr>
+            <td>Angelman Syndrome Foundation</td>
+            <td>Angelman syndrome (AS), neurodevelopment</td>
+            <td>Research Grants</td>
+            <td><a href="https://www.angelman.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 54 -->
+          <tr>
+            <td>CURE Epilepsy</td>
+            <td>Epilepsy research (basic &amp; translational)</td>
+            <td>Research Grants, Postdoc Awards</td>
+            <td><a href="https://www.cureepilepsy.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 55 -->
+          <tr>
+            <td>Hearing Loss Association of America (HLAA)</td>
+            <td>Hearing loss advocacy; limited research sponsorship</td>
+            <td>Occasional Funding, Partnerships</td>
+            <td><a href="https://www.hearingloss.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 56 (Removed Deafness Research UK duplicate/merge) -->
+          <!-- 57 -->
+          <tr>
+            <td>RNID (Royal National Institute for Deaf People)</td>
+            <td>Hearing loss, tinnitus (UK)</td>
+            <td>Research Grants, Fellowships</td>
+            <td><a href="https://rnid.org.uk" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 58 -->
+          <tr>
+            <td>Tuberous Sclerosis Alliance</td>
+            <td>Tuberous sclerosis complex (TSC), often neurological</td>
+            <td>Research Grants</td>
+            <td><a href="https://www.tscalliance.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 59 -->
+          <tr>
+            <td>The Lowe Syndrome Trust</td>
+            <td>Lowe syndrome</td>
+            <td>Research Grants</td>
+            <td><a href="http://www.lowetrust.com" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 60 -->
+          <tr>
+            <td>Mind &amp; Life Institute</td>
+            <td>Contemplative science, neuroscience of mindfulness</td>
+            <td>Research Grants, Fellowships</td>
+            <td><a href="https://www.mindandlife.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 61 -->
+          <tr>
+            <td>ALS Association</td>
+            <td>Amyotrophic lateral sclerosis research</td>
+            <td>Research Grants, Fellowships</td>
+            <td><a href="https://www.als.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 62 -->
+          <tr>
+            <td>Dystonia Medical Research Foundation</td>
+            <td>Dystonia</td>
+            <td>Research Grants, Fellowships</td>
+            <td><a href="https://dystonia-foundation.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 63 -->
+          <tr>
+            <td>Charcot-Marie-Tooth Association</td>
+            <td>Charcot-Marie-Tooth disease (neuromuscular)</td>
+            <td>Research Grants</td>
+            <td><a href="https://www.cmtausa.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 64 -->
+          <tr>
+            <td>Hydrocephalus Association</td>
+            <td>Hydrocephalus</td>
+            <td>Research Grants</td>
+            <td><a href="https://www.hydroassoc.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 65 -->
+          <tr>
+            <td>Cure Brain Cancer Foundation (Australia)</td>
+            <td>Brain cancer research</td>
+            <td>Research Grants, Fellowships</td>
+            <td><a href="https://www.curebraincancer.org.au" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 66 -->
+          <tr>
+            <td>Brain Tumour Foundation of Canada</td>
+            <td>Brain tumors, neurosurgery, therapy</td>
+            <td>Research Grants</td>
+            <td><a href="https://www.braintumour.ca" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 67 -->
+          <tr>
+            <td>National Brain Tumor Society (NBTS)</td>
+            <td>Brain tumors (US-based), advocacy, research</td>
+            <td>Collaborative Grants, Partnerships</td>
+            <td><a href="https://www.braintumor.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 68 -->
+          <tr>
+            <td>The Aneurysm and AVM Foundation</td>
+            <td>Brain aneurysm, vascular malformations</td>
+            <td>Research Grants</td>
+            <td><a href="https://taafonline.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 69 -->
+          <tr>
+            <td>Keystone Symposia (nonprofit)</td>
+            <td>Scientific conferences, some scholarships</td>
+            <td>Travel Awards, Scholarships</td>
+            <td><a href="https://www.keystonesymposia.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 70 -->
+          <tr>
+            <td>The Gairdner Foundation</td>
+            <td>Awards in biomedical research, includes neuroscience</td>
+            <td>Gairdner Awards (recognition &amp; monetary)</td>
+            <td><a href="https://gairdner.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 71 -->
+          <tr>
+            <td>Brain Research Foundation</td>
+            <td>Brain research (US-based), innovative science</td>
+            <td>Scientific Innovations Award, Seed Grants</td>
+            <td><a href="https://www.thebrf.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 72 -->
+          <tr>
+            <td>Josiah Macy Jr. Foundation</td>
+            <td>Healthcare education, some mental/behavioral health overlap</td>
+            <td>Research Grants</td>
+            <td><a href="https://macyfoundation.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 73 -->
+          <tr>
+            <td>Arnold and Mabel Beckman Foundation</td>
+            <td>Basic science research (chemistry, life sciences)</td>
+            <td>Fellowships, Young Investigator Awards</td>
+            <td><a href="https://www.beckman-foundation.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 74 -->
+          <tr>
+            <td>Paul G. Allen Family Foundation / Allen Institute</td>
+            <td>Neuroscience &amp; cell science (Allen Institute for Brain Science)</td>
+            <td>Research Grants (limited, mostly internal)</td>
+            <td><a href="https://alleninstitute.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 75 -->
+          <tr>
+            <td>Deaf Children's Society (various local charities)</td>
+            <td>Services &amp; interventions for deaf children</td>
+            <td>Small Grants (varies by region)</td>
+            <td>Check local chapters</td>
+          </tr>
+          <!-- 76 -->
+          <tr>
+            <td>Royal National Institute of Blind People (RNIB) (UK)</td>
+            <td>Primarily vision, but sometimes hearing-vision comorbidities</td>
+            <td>Research Grants (occasional calls)</td>
+            <td><a href="https://www.rnib.org.uk" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 77 -->
+          <tr>
+            <td>The M.J. Murdock Charitable Trust</td>
+            <td>Science research in the Pacific NW (US), can include neuroscience</td>
+            <td>Research Grants, Equipment Grants</td>
+            <td><a href="https://murdocktrust.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 78 -->
+          <tr>
+            <td>The Rees-Jones Foundation</td>
+            <td>Health &amp; human services (Texas-based), includes disability support</td>
+            <td>Research Grants</td>
+            <td><a href="https://www.rees-jonesfoundation.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 79 -->
+          <tr>
+            <td>The Lundbeck Foundation (Denmark)</td>
+            <td>Biomedical &amp; health science, large emphasis on neuroscience</td>
+            <td>Fellowships, Research Grants</td>
+            <td><a href="https://www.lundbeckfonden.com" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 80 -->
+          <tr>
+            <td>Novo Nordisk Foundation (Denmark)</td>
+            <td>Medical sciences, including neuroscience &amp; endocrinology</td>
+            <td>Research Grants, Fellowships</td>
+            <td><a href="https://novonordiskfonden.dk" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 81 -->
+          <tr>
+            <td>The Carlsberg Foundation (Denmark)</td>
+            <td>Basic research in natural sciences, includes neurobiology</td>
+            <td>Research Grants, Fellowships</td>
+            <td><a href="https://www.carlsbergfondet.dk" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 82 -->
+          <tr>
+            <td>The Velux Foundations (Denmark)</td>
+            <td>Healthy aging, gerontology (includes cognitive/neurological aspects)</td>
+            <td>Research Grants</td>
+            <td><a href="https://veluxfoundations.dk" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 83 -->
+          <tr>
+            <td>FRAXA Research Foundation</td>
+            <td>Fragile X syndrome</td>
+            <td>Research Grants, Postdoc Fellowships</td>
+            <td><a href="https://www.fraxa.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 84 -->
+          <tr>
+            <td>Ataxia Foundation (National Ataxia Foundation)</td>
+            <td>Ataxia research (various forms)</td>
+            <td>Research Grants, Young Investigator Awards</td>
+            <td><a href="https://ataxia.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 85 -->
+          <tr>
+            <td>Foundation for Angelman Syndrome Therapeutics (FAST)</td>
+            <td>Angelman syndrome (neurodevelopmental)</td>
+            <td>Research Grants</td>
+            <td><a href="https://cureangelman.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 86 -->
+          <tr>
+            <td>Brain Research UK (formerly Brain Research Trust)</td>
+            <td>Brain disorders, including dementia, stroke, injuries</td>
+            <td>Research Grants, PhD Studentships</td>
+            <td><a href="https://www.brainresearchuk.org.uk" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 87 -->
+          <tr>
+            <td>Child Brain Research (CBR) Foundation</td>
+            <td>Childhood neurological conditions</td>
+            <td>Research Grants</td>
+            <td><a href="http://childbrainresearch.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 88 -->
+          <tr>
+            <td>Deutsche Forschungsgemeinschaft (DFG) <em>(major German funding body)</em></td>
+            <td>All areas of science, including neuroscience</td>
+            <td>Research Grants, Collaborative Research Centers</td>
+            <td><a href="https://www.dfg.de" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 89 -->
+          <tr>
+            <td>Zonta International Foundation</td>
+            <td>Women’s empowerment &amp; education (STEM scholarships)</td>
+            <td>Amelia Earhart Fellowships, etc.</td>
+            <td><a href="https://www.zonta.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 90 -->
+          <tr>
+            <td>Cure Mito Foundation</td>
+            <td>Mitochondrial disease, includes neuro manifestations</td>
+            <td>Research Grants</td>
+            <td><a href="https://www.mitoresearchfund.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 91 -->
+          <tr>
+            <td>Wilson Disease Association</td>
+            <td>Wilson disease (neurologic &amp; hepatic)</td>
+            <td>Research Grants</td>
+            <td><a href="https://www.wilsonsdisease.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 92 -->
+          <tr>
+            <td>PSC Partners Seeking a Cure</td>
+            <td>Primary sclerosing cholangitis (liver disease, can have neuro overlap)</td>
+            <td>Research Grants</td>
+            <td><a href="https://pscpartners.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 93 -->
+          <tr>
+            <td>Fibrous Dysplasia Foundation</td>
+            <td>Fibrous dysplasia, McCune-Albright syndrome</td>
+            <td>Research Grants</td>
+            <td><a href="https://www.fibrousdysplasia.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 94 (Removed Angelman duplicate) -->
+          <!-- 95 -->
+          <tr>
+            <td>The Little Baby Face Foundation</td>
+            <td>Facial deformities in children (surgical &amp; research aspects)</td>
+            <td>Limited Research Funding</td>
+            <td><a href="https://www.littlebabyface.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- (Removed #96 Action on Hearing Loss duplicate, #97 Tinnitus Hub duplicate) -->
+          <!-- 98 -->
+          <tr>
+            <td>The Cavali Foundation</td>
+            <td>Broad philanthropic giving, includes healthcare/neuroscience (select calls)</td>
+            <td>Research Grants (by invitation)</td>
+            <td><a href="https://cavalifoundation.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 99 -->
+          <tr>
+            <td>The Brain &amp; Spine Foundation (UK)</td>
+            <td>Neurological conditions, patient support, some research support</td>
+            <td>Occasional Research Grants</td>
+            <td><a href="https://www.brainandspine.org.uk" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 100 -->
+          <tr>
+            <td>American Brain Foundation</td>
+            <td>Neurological disorder research (US-based)</td>
+            <td>Research Grants, Fellowships</td>
+            <td><a href="https://www.americanbrainfoundation.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- 101 -->
+          <tr>
+            <td>PSC Foundation (UK) <em>(not the same as PSC Partners)</em></td>
+            <td>Primary sclerosing cholangitis (UK-based), potential neuro overlap</td>
+            <td>Research Grants</td>
+            <td><a href="https://pscsupport.org.uk" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <!-- (Removed #102 Macy duplicate) -->
+          <!-- 103 -->
+          <tr>
+            <td>ALS Therapy Development Institute (nonprofit org.)</td>
+            <td>ALS research &amp; drug development</td>
+            <td>Collaborative Research Grants</td>
+            <td><a href="https://www.als.net" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          
+          <!-- NEW ENTRIES FOR LANGUAGE, SPEECH, VOICE, SWALLOWING -->
+          <tr>
+            <td>International Dyslexia Association (IDA)</td>
+            <td>Dyslexia, language-based learning disabilities</td>
+            <td>Small Research Grants, Awards (varies)</td>
+            <td><a href="https://dyslexiaida.org/" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <tr>
+            <td>Apraxia Kids (Childhood Apraxia of Speech Association)</td>
+            <td>Childhood apraxia of speech</td>
+            <td>Occasional Research Funding, Small Grants</td>
+            <td><a href="https://www.apraxia-kids.org/" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <tr>
+            <td>Dysphagia Research Society</td>
+            <td>Swallowing disorders, dysphagia science</td>
+            <td>Travel/Conference Awards, Some Grant Opportunities</td>
+            <td><a href="https://www.dysphagiaresearch.org/" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <tr>
+            <td>International Association of Logopedics and Phoniatrics (IALP)</td>
+            <td>Communication disorders (speech, language, voice, hearing, swallowing)</td>
+            <td>Occasional Research/Conference Grants</td>
+            <td><a href="https://ialp-org.com/" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <tr>
+            <td>Speech Pathology Australia</td>
+            <td>Speech, language, communication, swallowing (Australia)</td>
+            <td>Research Grants, Scholarships</td>
+            <td><a href="https://www.speechpathologyaustralia.org.au/" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <tr>
+            <td>Voice Health Institute</td>
+            <td>Voice disorders, vocal health research</td>
+            <td>Philanthropic Funding, Collaborative Projects</td>
+            <td><a href="https://voicehealthinst.org/" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
+          <tr>
+            <td>American Academy of Otolaryngology–Head and Neck Surgery Foundation (AAO-HNSF)</td>
+            <td>Otolaryngology, head/neck conditions (including swallowing &amp; voice)</td>
+            <td>CORE Research Grants, Fellowships</td>
+            <td><a href="https://www.entnet.org/" target="_blank" rel="noopener noreferrer">Official Website</a></td>
+          </tr>
 
-    <section class="mb-4">
-      <h4>Large databases:</h4>
-      <ul>
-        <li>
-          <a href="https://candid.org/" target="_blank" rel="noopener noreferrer">Candid (formerly Foundation Center)</a>: Comprehensive database of foundations and grants.
-        </li>
-        <li>
-          <a href="https://spin.infoedglobal.com" target="_blank" rel="noopener noreferrer">SPIN (InfoEd Global)</a>: Searchable database of funding opportunities across all research areas.
-        </li>
-        <li>
-          <a href="https://www.researchprofessional.com/" target="_blank" rel="noopener noreferrer">Research Professional</a>: International funding database widely used by universities.
-        </li>
-      </ul>
-    </section>
+        </tbody>
+      </table>
+    </main>
 
-    <p>
-      Below is a small snapshot of private foundations, charitable trusts, and associations that may provide research grants or fellowships relevant to speech, language, hearing, and swallowing science, and related neuroscience fields. Because this list <strong>was automatically curated</strong> and is neither exhaustive nor constantly updated, <strong>please confirm details directly on each organization’s official website</strong> as open funding opportunities, program requirements, deadlines, and eligibility criteria are subject to change.   If you find any errors, broken links, or have suggestions for other funding sources to add to the list, please contact Hari Bharadwaj.
-    </p>
-
-
-    <table class="table table-striped table-bordered align-middle">
-      <thead class="table-dark">
-        <tr>
-          <th>Foundation / Organization</th>
-          <th>Focus</th>
-          <th>Funding Types</th>
-          <th>Link</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- 1 -->
-        <tr>
-          <td>Hearing Health Foundation (HHF)</td>
-          <td>Hearing loss, tinnitus</td>
-          <td>Research Grants (Emerging Research Grants)</td>
-          <td><a href="https://hearinghealthfoundation.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 2 -->
-        <tr>
-          <td>American Hearing Research Foundation (AHRF)</td>
-          <td>Hearing and balance disorders</td>
-          <td>Research Grants</td>
-          <td><a href="https://www.american-hearing.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 3 -->
-        <tr>
-          <td>National Organization for Hearing Research Foundation (NOHR)</td>
-          <td>Hearing research (basic and clinical)</td>
-          <td>Research Grants</td>
-          <td><a href="https://nohrfoundation.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 4 -->
-        <tr>
-          <td>Stuttering Foundation</td>
-          <td>Stuttering, speech disorders</td>
-          <td>Research Grants, Educational Initiatives</td>
-          <td><a href="https://www.stutteringhelp.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 5 -->
-        <tr>
-          <td>American Speech-Language-Hearing Foundation (ASHFoundation)</td>
-          <td>Speech, language, hearing research and clinical work</td>
-          <td>Research Grants, Student Scholarships</td>
-          <td><a href="https://www.ashfoundation.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 6 -->
-        <tr>
-          <td>Brain &amp; Behavior Research Foundation (BBRF)</td>
-          <td>Neuroscience, mental health</td>
-          <td>Research Grants, Fellowships (NARSAD)</td>
-          <td><a href="https://www.bbrfoundation.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 7 -->
-        <tr>
-          <td>The Dana Foundation</td>
-          <td>Neuroscience research &amp; public engagement</td>
-          <td>Research Grants (varied cycles)</td>
-          <td><a href="https://dana.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 8 -->
-        <tr>
-          <td>Simons Foundation (SFARI)</td>
-          <td>Autism, basic &amp; translational neuroscience</td>
-          <td>Research Grants, Fellowships</td>
-          <td><a href="https://www.simonsfoundation.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 9 -->
-        <tr>
-          <td>Autism Speaks</td>
-          <td>Autism spectrum disorders</td>
-          <td>Research Grants, Fellowships</td>
-          <td><a href="https://www.autismspeaks.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 10 -->
-        <tr>
-          <td>Robert Wood Johnson Foundation</td>
-          <td>Broad public health, including mental/behavioral health</td>
-          <td>Research Grants, Fellowships</td>
-          <td><a href="https://www.rwjf.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 11 -->
-        <tr>
-          <td>Alzheimer’s Association</td>
-          <td>Alzheimer’s disease &amp; related dementias</td>
-          <td>Research Grants, Fellowships</td>
-          <td><a href="https://www.alz.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 12 -->
-        <tr>
-          <td>The McKnight Foundation</td>
-          <td>Neuroscience (memory, cognitive function, disorders)</td>
-          <td>Research Grants, Scholar Awards</td>
-          <td><a href="https://www.mcknight.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 13 -->
-        <tr>
-          <td>Klingenstein Fund</td>
-          <td>Neuroscience (basic &amp; translational)</td>
-          <td>Fellowships (Klingenstein-Simons)</td>
-          <td><a href="https://klingenstein.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 14 -->
-        <tr>
-          <td>Cure Alzheimer’s Fund</td>
-          <td>Alzheimer’s disease (basic &amp; clinical)</td>
-          <td>Research Grants</td>
-          <td><a href="https://curealz.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 15 -->
-        <tr>
-          <td>BrightFocus Foundation</td>
-          <td>Alzheimer’s, macular degeneration, glaucoma</td>
-          <td>Research Grants, Postdoc Fellowships</td>
-          <td><a href="https://www.brightfocus.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 16 -->
-        <tr>
-          <td>Christopher &amp; Dana Reeve Foundation</td>
-          <td>Spinal cord injury &amp; paralysis research</td>
-          <td>Research Grants</td>
-          <td><a href="https://www.christopherreeve.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 17 -->
-        <tr>
-          <td>Michael J. Fox Foundation</td>
-          <td>Parkinson’s disease research</td>
-          <td>Research Grants, Collaborative Awards</td>
-          <td><a href="https://www.michaeljfox.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 18 -->
-        <tr>
-          <td>CurePSP</td>
-          <td>Progressive supranuclear palsy &amp; other tauopathies</td>
-          <td>Research Grants</td>
-          <td><a href="https://www.psp.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 19 -->
-        <tr>
-          <td>Parkinson’s Foundation</td>
-          <td>Parkinson’s disease research &amp; support</td>
-          <td>Research Grants, Fellowships</td>
-          <td><a href="https://www.parkinson.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 20 -->
-        <tr>
-          <td>CHDI Foundation</td>
-          <td>Huntington’s disease research</td>
-          <td>Research Grants, Collaborative Programs</td>
-          <td><a href="https://chdifoundation.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 21 -->
-        <tr>
-          <td>Doris Duke Charitable Foundation</td>
-          <td>Medical research, especially clinical/translational</td>
-          <td>Fellowships, Research Grants</td>
-          <td><a href="https://www.ddcf.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 22 -->
-        <tr>
-          <td>The Rockefeller Foundation</td>
-          <td>Global health, innovation (occasionally supports neuro/health)</td>
-          <td>Research Grants (varied)</td>
-          <td><a href="https://www.rockefellerfoundation.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 23 -->
-        <tr>
-          <td>The Pew Charitable Trusts (Pew Scholars)</td>
-          <td>Biomedical research (various areas, including neuroscience)</td>
-          <td>Fellowships, Research Grants</td>
-          <td><a href="https://www.pewtrusts.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 24 -->
-        <tr>
-          <td>Bill &amp; Melinda Gates Foundation</td>
-          <td>Global health and development (broad scope)</td>
-          <td>Research Grants (e.g., Grand Challenges)</td>
-          <td><a href="https://www.gatesfoundation.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 25 -->
-        <tr>
-          <td>Gatsby Charitable Foundation</td>
-          <td>Neuroscience &amp; related fields</td>
-          <td>Research Grants (select institutions)</td>
-          <td><a href="https://www.gatsby.org.uk" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 26 -->
-        <tr>
-          <td>Wellcome Trust</td>
-          <td>Biomedical research (global), strong neuroscience portfolio</td>
-          <td>Research Grants, Fellowships, Collaborative Awards</td>
-          <td><a href="https://wellcome.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 27 -->
-        <tr>
-          <td>Brain Canada Foundation</td>
-          <td>Brain research (Canada)</td>
-          <td>Research Grants, Team Grants, Fellowships</td>
-          <td><a href="https://braincanada.ca" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 28 -->
-        <tr>
-          <td>Weston Brain Institute (Canada/UK)</td>
-          <td>Neurodegenerative diseases of aging</td>
-          <td>Research Grants, Translational Funding</td>
-          <td><a href="https://westonbraininstitute.ca" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 29 -->
-        <tr>
-          <td>Tinnitus Research Initiative (TRI)</td>
-          <td>Tinnitus research &amp; therapies</td>
-          <td>Support for Collaborative Research</td>
-          <td><a href="https://www.tinnitusresearch.net" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 30 -->
-        <tr>
-          <td>Tinnitus Hub (charitable org.)</td>
-          <td>Tinnitus awareness, patient support, research collaboration</td>
-          <td>Small-Scale Research Partnerships</td>
-          <td><a href="https://www.tinnitushub.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 31 -->
-        <tr>
-          <td>The Voice Foundation</td>
-          <td>Voice research, voice disorders</td>
-          <td>Research Grants, Awards</td>
-          <td><a href="https://voicefoundation.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 32 -->
-        <tr>
-          <td>National Aphasia Association</td>
-          <td>Aphasia awareness, resources; occasional small grants</td>
-          <td>Small Research Grants/Support</td>
-          <td><a href="https://www.aphasia.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 33 -->
-        <tr>
-          <td>March of Dimes</td>
-          <td>Maternal-child health, includes neurodevelopment</td>
-          <td>Research Grants</td>
-          <td><a href="https://www.marchofdimes.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 34 -->
-        <tr>
-          <td>John Merck Fund</td>
-          <td>Developmental conditions</td>
-          <td>Research Grants (historical focus on autism)</td>
-          <td><a href="https://johnmerckfund.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 35 -->
-        <tr>
-          <td>Howard Hughes Medical Institute (HHMI)</td>
-          <td>Biomedical research, includes neuroscience programs</td>
-          <td>Investigator Programs, Fellowships</td>
-          <td><a href="https://www.hhmi.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 36 -->
-        <tr>
-          <td>Dravet Syndrome Foundation</td>
-          <td>Dravet syndrome (epilepsy), other neurological disorders</td>
-          <td>Research Grants, Fellowships</td>
-          <td><a href="https://www.dravetfoundation.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 37 -->
-        <tr>
-          <td>Burroughs Wellcome Fund</td>
-          <td>Biomedical research, including neuroscience</td>
-          <td>Career Awards, Research Grants</td>
-          <td><a href="https://www.bwfund.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 38 -->
-        <tr>
-          <td>The Gruber Foundation</td>
-          <td>Neuroscience Prize &amp; support</td>
-          <td>Neuroscience Prize, Some Grants</td>
-          <td><a href="https://gruber.yale.edu" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 39 -->
-        <tr>
-          <td>Helen Keller International</td>
-          <td>Vision &amp; hearing impairment (global health)</td>
-          <td>Limited Grants, Support Programs</td>
-          <td><a href="https://www.hki.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 40 -->
-        <tr>
-          <td>Whitehall Foundation</td>
-          <td>Basic biological research, emphasis on neural mechanisms</td>
-          <td>Research Grants, Grants-in-Aid</td>
-          <td><a href="http://www.whitehall.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 41 -->
-        <tr>
-          <td>Fondation Leducq</td>
-          <td>Cardiovascular &amp; neurovascular disease</td>
-          <td>Transatlantic Network of Excellence Grants</td>
-          <td><a href="https://www.fondationleducq.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 42 -->
-        <tr>
-          <td>G. Harold &amp; Leila Y. Mathers Charitable Foundation</td>
-          <td>Basic science, neuroscience, immunology</td>
-          <td>Research Grants (by invitation)</td>
-          <td><a href="https://www.mathersfoundation.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 43 -->
-        <tr>
-          <td>Alzheimer Research &amp; Prevention Foundation</td>
-          <td>Alzheimer’s prevention, integrative approaches</td>
-          <td>Small Research Grants</td>
-          <td><a href="https://alzheimersprevention.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 44 -->
-        <tr>
-          <td>Cure SMA</td>
-          <td>Spinal muscular atrophy</td>
-          <td>Research Grants</td>
-          <td><a href="https://www.curesma.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 45 -->
-        <tr>
-          <td>Muscular Dystrophy Association (MDA)</td>
-          <td>Muscular dystrophy &amp; related neuromuscular diseases</td>
-          <td>Research &amp; Development Grants</td>
-          <td><a href="https://www.mda.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 46 -->
-        <tr>
-          <td>Alexander von Humboldt Foundation</td>
-          <td>German-based, all science fields (supports neuroscience, etc.)</td>
-          <td>Fellowships, Research Awards</td>
-          <td><a href="https://www.humboldt-foundation.de" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 47 -->
-        <tr>
-          <td>Parkinson’s UK</td>
-          <td>Parkinson’s disease (UK-based)</td>
-          <td>Research Grants, Fellowships</td>
-          <td><a href="https://www.parkinsons.org.uk" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 48 -->
-        <tr>
-          <td>W. Garfield Weston Foundation (Canada)</td>
-          <td>Brain research, neurodegenerative diseases</td>
-          <td>Research Grants (via Weston Brain Institute)</td>
-          <td><a href="https://westonfoundation.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 49 -->
-        <tr>
-          <td>The Ellison Medical Foundation</td>
-          <td>Aging &amp; age-related diseases, includes neuro-aging</td>
-          <td>Senior Scholar, New Scholar Awards</td>
-          <td><a href="http://www.ellison-med-fn.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 50 (Removed duplicate Burroughs Wellcome Fund) -->
-        
-        <!-- 51 -->
-        <tr>
-          <td>The L’Oréal-UNESCO For Women in Science Program</td>
-          <td>Women scientists in all fields (including neuroscience)</td>
-          <td>Fellowships, Awards</td>
-          <td><a href="https://www.forwomeninscience.com" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 52 -->
-        <tr>
-          <td>Rett Syndrome Research Trust</td>
-          <td>Rett syndrome, related neurodevelopmental disorders</td>
-          <td>Research Grants</td>
-          <td><a href="https://reverserett.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 53 -->
-        <tr>
-          <td>Angelman Syndrome Foundation</td>
-          <td>Angelman syndrome (AS), neurodevelopment</td>
-          <td>Research Grants</td>
-          <td><a href="https://www.angelman.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 54 -->
-        <tr>
-          <td>CURE Epilepsy</td>
-          <td>Epilepsy research (basic &amp; translational)</td>
-          <td>Research Grants, Postdoc Awards</td>
-          <td><a href="https://www.cureepilepsy.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 55 -->
-        <tr>
-          <td>Hearing Loss Association of America (HLAA)</td>
-          <td>Hearing loss advocacy; limited research sponsorship</td>
-          <td>Occasional Funding, Partnerships</td>
-          <td><a href="https://www.hearingloss.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 56 (Removed Deafness Research UK duplicate/merge) -->
-        <!-- 57 -->
-        <tr>
-          <td>RNID (Royal National Institute for Deaf People)</td>
-          <td>Hearing loss, tinnitus (UK)</td>
-          <td>Research Grants, Fellowships</td>
-          <td><a href="https://rnid.org.uk" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 58 -->
-        <tr>
-          <td>Tuberous Sclerosis Alliance</td>
-          <td>Tuberous sclerosis complex (TSC), often neurological</td>
-          <td>Research Grants</td>
-          <td><a href="https://www.tscalliance.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 59 -->
-        <tr>
-          <td>The Lowe Syndrome Trust</td>
-          <td>Lowe syndrome</td>
-          <td>Research Grants</td>
-          <td><a href="http://www.lowetrust.com" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 60 -->
-        <tr>
-          <td>Mind &amp; Life Institute</td>
-          <td>Contemplative science, neuroscience of mindfulness</td>
-          <td>Research Grants, Fellowships</td>
-          <td><a href="https://www.mindandlife.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 61 -->
-        <tr>
-          <td>ALS Association</td>
-          <td>Amyotrophic lateral sclerosis research</td>
-          <td>Research Grants, Fellowships</td>
-          <td><a href="https://www.als.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 62 -->
-        <tr>
-          <td>Dystonia Medical Research Foundation</td>
-          <td>Dystonia</td>
-          <td>Research Grants, Fellowships</td>
-          <td><a href="https://dystonia-foundation.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 63 -->
-        <tr>
-          <td>Charcot-Marie-Tooth Association</td>
-          <td>Charcot-Marie-Tooth disease (neuromuscular)</td>
-          <td>Research Grants</td>
-          <td><a href="https://www.cmtausa.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 64 -->
-        <tr>
-          <td>Hydrocephalus Association</td>
-          <td>Hydrocephalus</td>
-          <td>Research Grants</td>
-          <td><a href="https://www.hydroassoc.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 65 -->
-        <tr>
-          <td>Cure Brain Cancer Foundation (Australia)</td>
-          <td>Brain cancer research</td>
-          <td>Research Grants, Fellowships</td>
-          <td><a href="https://www.curebraincancer.org.au" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 66 -->
-        <tr>
-          <td>Brain Tumour Foundation of Canada</td>
-          <td>Brain tumors, neurosurgery, therapy</td>
-          <td>Research Grants</td>
-          <td><a href="https://www.braintumour.ca" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 67 -->
-        <tr>
-          <td>National Brain Tumor Society (NBTS)</td>
-          <td>Brain tumors (US-based), advocacy, research</td>
-          <td>Collaborative Grants, Partnerships</td>
-          <td><a href="https://www.braintumor.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 68 -->
-        <tr>
-          <td>The Aneurysm and AVM Foundation</td>
-          <td>Brain aneurysm, vascular malformations</td>
-          <td>Research Grants</td>
-          <td><a href="https://taafonline.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 69 -->
-        <tr>
-          <td>Keystone Symposia (nonprofit)</td>
-          <td>Scientific conferences, some scholarships</td>
-          <td>Travel Awards, Scholarships</td>
-          <td><a href="https://www.keystonesymposia.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 70 -->
-        <tr>
-          <td>The Gairdner Foundation</td>
-          <td>Awards in biomedical research, includes neuroscience</td>
-          <td>Gairdner Awards (recognition &amp; monetary)</td>
-          <td><a href="https://gairdner.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 71 -->
-        <tr>
-          <td>Brain Research Foundation</td>
-          <td>Brain research (US-based), innovative science</td>
-          <td>Scientific Innovations Award, Seed Grants</td>
-          <td><a href="https://www.thebrf.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 72 -->
-        <tr>
-          <td>Josiah Macy Jr. Foundation</td>
-          <td>Healthcare education, some mental/behavioral health overlap</td>
-          <td>Research Grants</td>
-          <td><a href="https://macyfoundation.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 73 -->
-        <tr>
-          <td>Arnold and Mabel Beckman Foundation</td>
-          <td>Basic science research (chemistry, life sciences)</td>
-          <td>Fellowships, Young Investigator Awards</td>
-          <td><a href="https://www.beckman-foundation.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 74 -->
-        <tr>
-          <td>Paul G. Allen Family Foundation / Allen Institute</td>
-          <td>Neuroscience &amp; cell science (Allen Institute for Brain Science)</td>
-          <td>Research Grants (limited, mostly internal)</td>
-          <td><a href="https://alleninstitute.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 75 -->
-        <tr>
-          <td>Deaf Children's Society (various local charities)</td>
-          <td>Services &amp; interventions for deaf children</td>
-          <td>Small Grants (varies by region)</td>
-          <td>Check local chapters</td>
-        </tr>
-        <!-- 76 -->
-        <tr>
-          <td>Royal National Institute of Blind People (RNIB) (UK)</td>
-          <td>Primarily vision, but sometimes hearing-vision comorbidities</td>
-          <td>Research Grants (occasional calls)</td>
-          <td><a href="https://www.rnib.org.uk" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 77 -->
-        <tr>
-          <td>The M.J. Murdock Charitable Trust</td>
-          <td>Science research in the Pacific NW (US), can include neuroscience</td>
-          <td>Research Grants, Equipment Grants</td>
-          <td><a href="https://murdocktrust.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 78 -->
-        <tr>
-          <td>The Rees-Jones Foundation</td>
-          <td>Health &amp; human services (Texas-based), includes disability support</td>
-          <td>Research Grants</td>
-          <td><a href="https://www.rees-jonesfoundation.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 79 -->
-        <tr>
-          <td>The Lundbeck Foundation (Denmark)</td>
-          <td>Biomedical &amp; health science, large emphasis on neuroscience</td>
-          <td>Fellowships, Research Grants</td>
-          <td><a href="https://www.lundbeckfonden.com" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 80 -->
-        <tr>
-          <td>Novo Nordisk Foundation (Denmark)</td>
-          <td>Medical sciences, including neuroscience &amp; endocrinology</td>
-          <td>Research Grants, Fellowships</td>
-          <td><a href="https://novonordiskfonden.dk" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 81 -->
-        <tr>
-          <td>The Carlsberg Foundation (Denmark)</td>
-          <td>Basic research in natural sciences, includes neurobiology</td>
-          <td>Research Grants, Fellowships</td>
-          <td><a href="https://www.carlsbergfondet.dk" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 82 -->
-        <tr>
-          <td>The Velux Foundations (Denmark)</td>
-          <td>Healthy aging, gerontology (includes cognitive/neurological aspects)</td>
-          <td>Research Grants</td>
-          <td><a href="https://veluxfoundations.dk" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 83 -->
-        <tr>
-          <td>FRAXA Research Foundation</td>
-          <td>Fragile X syndrome</td>
-          <td>Research Grants, Postdoc Fellowships</td>
-          <td><a href="https://www.fraxa.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 84 -->
-        <tr>
-          <td>Ataxia Foundation (National Ataxia Foundation)</td>
-          <td>Ataxia research (various forms)</td>
-          <td>Research Grants, Young Investigator Awards</td>
-          <td><a href="https://ataxia.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 85 -->
-        <tr>
-          <td>Foundation for Angelman Syndrome Therapeutics (FAST)</td>
-          <td>Angelman syndrome (neurodevelopmental)</td>
-          <td>Research Grants</td>
-          <td><a href="https://cureangelman.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 86 -->
-        <tr>
-          <td>Brain Research UK (formerly Brain Research Trust)</td>
-          <td>Brain disorders, including dementia, stroke, injuries</td>
-          <td>Research Grants, PhD Studentships</td>
-          <td><a href="https://www.brainresearchuk.org.uk" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 87 -->
-        <tr>
-          <td>Child Brain Research (CBR) Foundation</td>
-          <td>Childhood neurological conditions</td>
-          <td>Research Grants</td>
-          <td><a href="http://childbrainresearch.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 88 -->
-        <tr>
-          <td>Deutsche Forschungsgemeinschaft (DFG) <em>(major German funding body)</em></td>
-          <td>All areas of science, including neuroscience</td>
-          <td>Research Grants, Collaborative Research Centers</td>
-          <td><a href="https://www.dfg.de" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 89 -->
-        <tr>
-          <td>Zonta International Foundation</td>
-          <td>Women’s empowerment &amp; education (STEM scholarships)</td>
-          <td>Amelia Earhart Fellowships, etc.</td>
-          <td><a href="https://www.zonta.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 90 -->
-        <tr>
-          <td>Cure Mito Foundation</td>
-          <td>Mitochondrial disease, includes neuro manifestations</td>
-          <td>Research Grants</td>
-          <td><a href="https://www.mitoresearchfund.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 91 -->
-        <tr>
-          <td>Wilson Disease Association</td>
-          <td>Wilson disease (neurologic &amp; hepatic)</td>
-          <td>Research Grants</td>
-          <td><a href="https://www.wilsonsdisease.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 92 -->
-        <tr>
-          <td>PSC Partners Seeking a Cure</td>
-          <td>Primary sclerosing cholangitis (liver disease, can have neuro overlap)</td>
-          <td>Research Grants</td>
-          <td><a href="https://pscpartners.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 93 -->
-        <tr>
-          <td>Fibrous Dysplasia Foundation</td>
-          <td>Fibrous dysplasia, McCune-Albright syndrome</td>
-          <td>Research Grants</td>
-          <td><a href="https://www.fibrousdysplasia.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 94 (Removed Angelman duplicate) -->
-        <!-- 95 -->
-        <tr>
-          <td>The Little Baby Face Foundation</td>
-          <td>Facial deformities in children (surgical &amp; research aspects)</td>
-          <td>Limited Research Funding</td>
-          <td><a href="https://www.littlebabyface.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- (Removed #96 Action on Hearing Loss duplicate, #97 Tinnitus Hub duplicate) -->
-        <!-- 98 -->
-        <tr>
-          <td>The Cavali Foundation</td>
-          <td>Broad philanthropic giving, includes healthcare/neuroscience (select calls)</td>
-          <td>Research Grants (by invitation)</td>
-          <td><a href="https://cavalifoundation.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 99 -->
-        <tr>
-          <td>The Brain &amp; Spine Foundation (UK)</td>
-          <td>Neurological conditions, patient support, some research support</td>
-          <td>Occasional Research Grants</td>
-          <td><a href="https://www.brainandspine.org.uk" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 100 -->
-        <tr>
-          <td>American Brain Foundation</td>
-          <td>Neurological disorder research (US-based)</td>
-          <td>Research Grants, Fellowships</td>
-          <td><a href="https://www.americanbrainfoundation.org" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- 101 -->
-        <tr>
-          <td>PSC Foundation (UK) <em>(not the same as PSC Partners)</em></td>
-          <td>Primary sclerosing cholangitis (UK-based), potential neuro overlap</td>
-          <td>Research Grants</td>
-          <td><a href="https://pscsupport.org.uk" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <!-- (Removed #102 Macy duplicate) -->
-        <!-- 103 -->
-        <tr>
-          <td>ALS Therapy Development Institute (nonprofit org.)</td>
-          <td>ALS research &amp; drug development</td>
-          <td>Collaborative Research Grants</td>
-          <td><a href="https://www.als.net" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        
-        <!-- NEW ENTRIES FOR LANGUAGE, SPEECH, VOICE, SWALLOWING -->
-        <tr>
-          <td>International Dyslexia Association (IDA)</td>
-          <td>Dyslexia, language-based learning disabilities</td>
-          <td>Small Research Grants, Awards (varies)</td>
-          <td><a href="https://dyslexiaida.org/" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <tr>
-          <td>Apraxia Kids (Childhood Apraxia of Speech Association)</td>
-          <td>Childhood apraxia of speech</td>
-          <td>Occasional Research Funding, Small Grants</td>
-          <td><a href="https://www.apraxia-kids.org/" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <tr>
-          <td>Dysphagia Research Society</td>
-          <td>Swallowing disorders, dysphagia science</td>
-          <td>Travel/Conference Awards, Some Grant Opportunities</td>
-          <td><a href="https://www.dysphagiaresearch.org/" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <tr>
-          <td>International Association of Logopedics and Phoniatrics (IALP)</td>
-          <td>Communication disorders (speech, language, voice, hearing, swallowing)</td>
-          <td>Occasional Research/Conference Grants</td>
-          <td><a href="https://ialp-org.com/" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <tr>
-          <td>Speech Pathology Australia</td>
-          <td>Speech, language, communication, swallowing (Australia)</td>
-          <td>Research Grants, Scholarships</td>
-          <td><a href="https://www.speechpathologyaustralia.org.au/" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <tr>
-          <td>Voice Health Institute</td>
-          <td>Voice disorders, vocal health research</td>
-          <td>Philanthropic Funding, Collaborative Projects</td>
-          <td><a href="https://voicehealthinst.org/" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-        <tr>
-          <td>American Academy of Otolaryngology–Head and Neck Surgery Foundation (AAO-HNSF)</td>
-          <td>Otolaryngology, head/neck conditions (including swallowing &amp; voice)</td>
-          <td>CORE Research Grants, Fellowships</td>
-          <td><a href="https://www.entnet.org/" target="_blank" rel="noopener noreferrer">Official Website</a></td>
-        </tr>
-
-      </tbody>
-    </table>
-
-  </main>
-
-
-
-
-  <footer class="custom-footer">
-    <div class="container">
-      <div class="row">
-        <!-- Left Column: Logo, Address, Copyright -->
-        <div class="col-md-4">
-          <h5>Contact</h5>
-          <img src="static/images/pittsecondaryreverse.png" alt="Pitt Logo" class="footer-logo">
-          <address class="smaller-text">
-            3600 Atwood Street<br>
-            Forbes Tower 5011<br>
-            Pittsburgh, PA 15213
-          </address>
-          <p class="smallest-text">Revised: February 08, 2025. &copy; 2023-2025 SNAPlab</p>
-        </div>
-        <!-- Middle Column: Links -->
-        <div class="col-md-4">
-          <h5>Links</h5>
-          <a href="https://www.shrs.pitt.edu/csd" target="_blank" class="footer-link">Department of Communication Science and Disorders</a><br>
-          <a href="https://www.shrs.pitt.edu/" target="_blank" class="footer-link">School of Health and Rehabilitation Sciences</a><br>
-          <a href="#" target="_blank" class="footer-link">Pittsburgh Hearing & Cookies Seminar Series</a><br>
-          <a href="https://engineering.purdue.edu/TPAN" target="_blank" class="footer-link">Purdue University Interdisciplinary Training Program in Auditory Neuroscience</a><br>
-        </div>
-        <!-- Right Column: Social Media Icons -->
-        <div class="col-md-4 text-end">
-          <h5>Connect</h5>
-          <div class="social-icons">
-            <a href="https://scholar.google.com/citations?user=Ay6wT1MAAAAJ&hl=en" target="_blank">
-              <i class="fab fa-google"></i>
-            </a>
-            <a href="https://github.com/SNAPsoftware/" target="_blank">
-              <i class="fab fa-github"></i>
-            </a>
-            <a href="https://bsky.app/profile/snaplabgroup.bsky.social" target="_blank" title="Bluesky">
-              <i class="fa-brands fa-bluesky"></i>
-            </a>
+    <footer class="custom-footer">
+      <div class="container">
+        <div class="row">
+          <!-- Left Column: Logo, Address, etc. -->
+          <div class="col-md-4">
+            <h5>Contact</h5>
+            <img src="static/images/pittsecondaryreverse.png" alt="Pitt Logo" class="footer-logo">
+            <address class="smaller-text">
+              3600 Atwood Street<br>
+              Forbes Tower 5011<br>
+              Pittsburgh, PA 15213
+            </address>
+            <p class="smallest-text">Revised: February 08, 2025. &copy; 2023-2025 SNAPlab</p>
+          </div>
+          <!-- Middle Column: Links -->
+          <div class="col-md-4">
+            <h5>Links</h5>
+            <a href="https://www.shrs.pitt.edu/csd" target="_blank" class="footer-link">Department of Communication Science and Disorders</a><br>
+            <a href="https://www.shrs.pitt.edu/" target="_blank" class="footer-link">School of Health and Rehabilitation Sciences</a><br>
+            <a href="#" target="_blank" class="footer-link">Pittsburgh Hearing & Cookies Seminar Series</a><br>
+            <a href="https://engineering.purdue.edu/TPAN" target="_blank" class="footer-link">Purdue University Interdisciplinary Training Program in Auditory Neuroscience</a><br>
+          </div>
+          <!-- Right Column: Social Media Icons -->
+          <div class="col-md-4 text-end">
+            <h5>Connect</h5>
+            <div class="social-icons">
+              <a href="https://scholar.google.com/citations?user=Ay6wT1MAAAAJ&hl=en" target="_blank">
+                <i class="fab fa-google"></i>
+              </a>
+              <a href="https://github.com/SNAPsoftware/" target="_blank">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="https://bsky.app/profile/snaplabgroup.bsky.social" target="_blank" title="Bluesky">
+                <i class="fa-brands fa-bluesky"></i>
+              </a>
+            </div>
           </div>
         </div>
       </div>
-  </div>
-  </footer>
+    </footer>
 
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" 
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" 
+            crossorigin="anonymous"></script>
 
+    <!-- Vanilla JS for Sorting Table by Column -->
+    <script>
+      // Once the DOM is fully loaded, attach click events to the table headers
+      document.addEventListener('DOMContentLoaded', () => {
+        const table = document.getElementById('foundationTable');
+        const headers = table.querySelectorAll('th');
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        headers.forEach((header, colIndex) => {
+          header.addEventListener('click', () => {
+            sortTableByColumn(table, colIndex);
+          });
+        });
+      });
+
+      function sortTableByColumn(table, colIndex) {
+        const tBody = table.querySelector('tbody');
+        const rows = Array.from(tBody.querySelectorAll('tr'));
+
+        // Determine the current sort column & direction
+        const currentSortCol = table.getAttribute('data-sortcol');
+        const currentSortDir = table.getAttribute('data-sortdir') === 'asc';
+
+        let ascending = true;
+
+        if (String(colIndex) === currentSortCol) {
+          // If clicking the same column, reverse the current direction
+          ascending = !currentSortDir;
+        }
+
+        // Sort rows
+        rows.sort((a, b) => {
+          const cellA = a.children[colIndex].innerText.toLowerCase();
+          const cellB = b.children[colIndex].innerText.toLowerCase();
+
+          if (cellA < cellB) return ascending ? -1 : 1;
+          if (cellA > cellB) return ascending ? 1 : -1;
+          return 0;
+        });
+
+        // Re-append sorted rows
+        rows.forEach(row => tBody.appendChild(row));
+
+        // Update table attributes for next click
+        table.setAttribute('data-sortcol', colIndex);
+        table.setAttribute('data-sortdir', ascending ? 'asc' : 'desc');
+      }
+    </script>
   </body>
-
 </html>
