@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wiener kernels to characterize temporal coding properties of neurons</title>
+<style>
+:root{
+  --paper:#F5F7F9; --surface:#FFFFFF; --ink:#14202B; --muted:#5B6B7A;
+  --rule:#DAE1E8; --pos:#C7502A; --neg:#2C6FAF; --act:#4B45A8;
+  --fast:#0F7B6C; --slow:#B4762C; --plot:#EDF0F3;
+}
+@media (prefers-color-scheme:dark){
+  :root{--paper:#101820; --surface:#17212B; --ink:#E7EDF2; --muted:#9AABB8;
+        --rule:#2A3742; --act:#9A94F0; --fast:#4FC0AE; --slow:#DFA55A;}
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size:16px;line-height:1.5;-webkit-text-size-adjust:100%}
+.wrap{max-width:900px;margin:0 auto;padding:56px 20px 96px}
+h1{font-size:42px;line-height:1.05;letter-spacing:-0.02em;font-weight:600;margin:0 0 18px}
+h2{font-size:29px;line-height:1.15;letter-spacing:-0.015em;font-weight:600;margin:0 0 16px}
+h3{font-size:20px;line-height:1.25;letter-spacing:-0.01em;font-weight:600;margin:0 0 12px}
+p{margin:0 0 16px;max-width:68ch}
+.note{font-family:Georgia,"Times New Roman",serif;font-size:18px;line-height:1.68}
+.lede{font-family:Georgia,"Times New Roman",serif;font-size:21px;line-height:1.55;color:var(--muted);max-width:60ch;margin:0 0 28px}
+.caveat{font-size:14px;color:var(--muted);border-left:3px solid var(--rule);padding-left:14px;max-width:64ch}
+section{margin:0 0 84px}
+section > h2{padding-bottom:12px;border-bottom:1px solid var(--rule)}
+.sub{margin:0 0 64px}
+.fig{background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:18px 18px 14px;margin:24px 0}
+svg{display:block;width:100%;height:auto}
+.controls{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin:14px 0 0;font-size:14px;color:var(--muted)}
+.controls label{min-width:56px}
+input[type=range]{flex:1;min-width:160px;accent-color:var(--act);height:24px}
+.val{min-width:74px;text-align:right;color:var(--ink);font-variant-numeric:tabular-nums}
+button{font:inherit;font-size:14px;color:var(--ink);background:transparent;
+  border:1px solid var(--rule);border-radius:6px;padding:7px 13px;cursor:pointer}
+button:hover{background:var(--paper);border-color:var(--muted)}
+button:active{transform:scale(.98)}
+:focus-visible{outline:2px solid var(--act);outline-offset:2px}
+.readout{font-size:15px;color:var(--muted);line-height:1.65;margin:14px 0 0;max-width:70ch}
+.readout b{color:var(--ink);font-weight:600}
+.pills{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0 0}
+.pill{font-size:13px;color:var(--muted);display:flex;align-items:center;gap:7px}
+.sw{width:13px;height:13px;border-radius:3px;flex:none}
+.stats{display:flex;flex-wrap:wrap;gap:28px;margin:16px 0 0}
+.stat{min-width:150px}
+.stat .k{font-size:13px;color:var(--muted)}
+.stat .v{font-size:26px;font-weight:600;font-variant-numeric:tabular-nums;line-height:1.2}
+.eq{background:var(--surface);border:1px solid var(--rule);border-radius:8px;
+  padding:16px 18px;margin:0 0 20px;max-width:68ch;overflow-x:auto}
+.eq math{font-size:1.15rem;display:block;margin:6px 0}
+.eq math + math{margin-top:14px}
+.eq .gloss{font-size:13px;color:var(--muted);margin:10px 0 0;text-align:center}
+@supports not (display:math){.eq math{font-family:Georgia,serif;font-style:italic}}
+.refs{font-size:14px;line-height:1.6;max-width:76ch;padding-left:0;list-style:none;margin:0}
+.refs li{margin:0 0 10px;padding-left:22px;text-indent:-22px}
+a{color:var(--act)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+footer{border-top:1px solid var(--rule);padding-top:20px;font-size:14px;color:var(--muted);max-width:68ch}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>Wiener kernels to characterize temporal coding properties of neurons</h1>
+<p class="lede">How reverse correlation turns broadband noise and a spike train into a description of what a neuron listens for — first the waveform, then its envelope.</p>
+<p class="note">A healthy cochlea splits a sound into a bank of narrowly tuned frequency channels. The output of any one channel has two parts. There is a carrier oscillating near the characteristic frequency (CF) of that cochlear place, called temporal fine structure (TFS), and there is a slower fluctuation in the carrier's amplitude, called the envelope (ENV). Auditory nerve fibres signal both through the timing of their spikes (Joris and Yin, 1992). Fibres with CFs below roughly 4–5 kHz carry both cues; higher-CF fibres carry mainly the envelope (Recio-Spinoso et al., 2005).</p>
+<p class="note">Wiener-kernel analysis measures both in a single experiment. Play broadband Gaussian noise, record spikes, and cross-correlate the stimulus against the spike train. The first-order kernel describes the waveform the fibre responds to. The second-order kernel describes the envelope. Because the noise sits well above threshold, what comes out characterises coding under conditions resembling ordinary listening rather than at detection threshold (Eggermont et al., 1983; van Dijk et al., 1994; Lewis et al., 2002; Recio-Spinoso et al., 2005).</p>
+<p class="caveat">Every panel here is simulated. The cell in part 1 has a filter I chose; the kernels in part 2 are Gabor-shaped cartoons carrying the structure real fibres show. Real chinchilla auditory nerve fibres in the studies cited below have CFs from about 1 to 10 kHz, but this page gives its cell a 250 Hz carrier so that individual cycles are visible on screen. The shapes and the reasoning carry over; the numbers on the axes are illustrative.</p>
+
+<section>
+<h2>1. The first-order kernel: reverse correlation</h2>
+<p class="note">Play a cell some noise, record its spikes, and ask a simple question: what did the noise look like just before each spike? Cut out the 10 ms before every spike, stack those snippets up, and average them. Any part of the waveform unrelated to firing averages towards zero. What survives is the filter the cell applies to its input. In auditory work this average is the reverse correlation, or revcor, and it goes back to the earliest systems-identification work on the auditory periphery (Eggermont et al., 1983).</p>
+<div class="eq">
+<math display="block"><mrow>
+<msub><mi>R</mi><mn>1</mn></msub><mo stretchy="false">(</mo><mi>&#x3C4;</mi><mo stretchy="false">)</mo>
+<mo>=</mo>
+<mfrac><mn>1</mn><mi>N</mi></mfrac>
+<munderover><mo>&#x2211;</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>N</mi></munderover>
+<mi>x</mi><mo stretchy="false">(</mo><msub><mi>t</mi><mi>i</mi></msub><mo>&#x2212;</mo><mi>&#x3C4;</mi><mo stretchy="false">)</mo>
+</mrow></math>
+<math display="block"><mrow>
+<msub><mi>h</mi><mn>1</mn></msub><mo stretchy="false">(</mo><mi>&#x3C4;</mi><mo stretchy="false">)</mo>
+<mo>=</mo>
+<mfrac><mrow><msub><mi>R</mi><mn>1</mn></msub><mo stretchy="false">(</mo><mi>&#x3C4;</mi><mo stretchy="false">)</mo></mrow><mi>A</mi></mfrac>
+</mrow></math>
+</div>
+<p class="note">Here x is the noise waveform, t<sub>i</sub> are the spike times, and A is the mean power of the noise. Dividing by A is what turns a raw average into a kernel with units, so that <i>h</i><sub>1</sub> can predict responses rather than merely describe them. Two numbers are usually taken from it: the frequency of the dominant component of its Fourier transform is the best frequency (BF) of TFS coding, and the peak of its Hilbert envelope is the amplitude of TFS coding (Recio-Spinoso et al., 2005; Henry et al., 2016).</p>
+<div class="fig">
+<p class="sr">Add spikes one at a time and watch the average of the noise preceding them converge on the cell's filter.</p>
+<svg id="s0" viewBox="0 0 860 400">
+  <text x="60" y="26" fill="var(--muted)" font-size="13">the noise before each spike</text>
+  <text x="490" y="26" fill="var(--muted)" font-size="13">their running average, the revcor</text>
+  <rect x="60" y="40" width="370" height="160" fill="var(--plot)"/>
+  <rect x="490" y="40" width="350" height="160" fill="var(--plot)"/>
+  <line x1="60" y1="120" x2="430" y2="120" stroke="#B9C4CE" stroke-width="0.5"/>
+  <line x1="490" y1="120" x2="840" y2="120" stroke="#B9C4CE" stroke-width="0.5"/>
+  <g id="snips"></g>
+  <path id="snlast" fill="none" stroke="var(--act)" stroke-width="1.5"/>
+  <path id="tgt" fill="none" stroke="#8899A6" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <path id="avg" fill="none" stroke="var(--act)" stroke-width="2.25"/>
+  <rect x="60" y="40" width="370" height="160" fill="none" stroke="#B9C4CE"/>
+  <rect x="490" y="40" width="350" height="160" fill="none" stroke="#B9C4CE"/>
+  <text x="245" y="222" fill="var(--muted)" font-size="12" text-anchor="middle">delay before the spike (ms)</text>
+  <text x="60" y="216" fill="var(--muted)" font-size="11" text-anchor="middle">0</text>
+  <text x="430" y="216" fill="var(--muted)" font-size="11" text-anchor="middle">10</text>
+  <text x="665" y="222" fill="var(--muted)" font-size="12" text-anchor="middle">delay before the spike (ms)</text>
+  <text x="490" y="216" fill="var(--muted)" font-size="11" text-anchor="middle">0</text>
+  <text x="840" y="216" fill="var(--muted)" font-size="11" text-anchor="middle">10</text>
+  <text x="60" y="266" fill="var(--muted)" font-size="13">what the revcor says about frequency</text>
+  <rect x="60" y="278" width="780" height="92" fill="var(--plot)"/>
+  <g id="fgrid"></g>
+  <path id="fmag" fill="none" stroke="var(--act)" stroke-width="2"/>
+  <rect x="60" y="278" width="780" height="92" fill="none" stroke="#B9C4CE"/>
+  <text x="450" y="392" fill="var(--muted)" font-size="12" text-anchor="middle">frequency (Hz)</text>
+</svg>
+<div class="pills">
+  <span class="pill"><span class="sw" style="background:#8899A6"></span>the cell's real filter</span>
+  <span class="pill"><span class="sw" style="background:var(--act)"></span>your estimate so far</span>
+</div>
+<div class="controls">
+  <button onclick="addSp(1)">Add one spike</button>
+  <button onclick="addSp(24)">Add 25</button>
+  <button onclick="addSp(250)">Add 250</button>
+  <button onclick="resetSp()">Start over</button>
+  <button onclick="flipNoise()">Invert the noise</button>
+</div>
+<div class="stats">
+  <div class="stat"><div class="k">spikes averaged</div><div class="v" id="nsp">0</div></div>
+  <div class="stat"><div class="k">peak frequency</div><div class="v" id="pkf">–</div></div>
+</div>
+<div id="r0" class="readout"></div>
+</div>
+<p class="note">Two things worth drawing out. The first is how fast it converges: one snippet is pure noise, ten is a hint, a few hundred is a recognisable filter. Nothing about the cell changed while you clicked — you were only collecting evidence. Real experiments accumulate 5000–10,000 driven spikes per fibre for exactly this reason (Henry et al., 2019). The second is what happens when you invert the noise. The estimate flips upside down, because this kernel tracks the shape of the waveform, sign and all. Hold on to that, because it is precisely the property the second-order kernel does not have.</p>
+<p class="note">The limitation of <i>h</i><sub>1</sub> is that it captures only what is linear in the response. A fibre that phase-locks poorly, as high-CF fibres do, yields a small or non-significant <i>h</i><sub>1</sub> even while it responds vigorously to the noise (Johnson, 1980; Heinz et al., 2001; Recio-Spinoso et al., 2005). Something is plainly driving those spikes, and reverse correlation on single moments cannot see it.</p>
+</section>
+
+<section>
+<h2>2. The second-order kernel</h2>
+<p class="note">The revcor asks about single moments. The second-order kernel asks about pairs of them, and that one change is what lets a cell report the envelope of a sound rather than its waveform. The reason is worth stating plainly: a purely linear filter cannot represent the envelope of a zero-mean carrier at all, because the modulation averages out. Recovering an envelope requires an even nonlinearity — squaring or rectification — and a second-order term is exactly that.</p>
+<div class="eq">
+<math display="block"><mrow>
+<msub><mi>R</mi><mn>2</mn></msub><mo stretchy="false">(</mo><msub><mi>&#x3C4;</mi><mn>1</mn></msub><mo>,</mo><msub><mi>&#x3C4;</mi><mn>2</mn></msub><mo stretchy="false">)</mo>
+<mo>=</mo>
+<mfrac><mn>1</mn><mi>N</mi></mfrac>
+<munderover><mo>&#x2211;</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>N</mi></munderover>
+<mi>x</mi><mo stretchy="false">(</mo><msub><mi>t</mi><mi>i</mi></msub><mo>&#x2212;</mo><msub><mi>&#x3C4;</mi><mn>1</mn></msub><mo stretchy="false">)</mo>
+<mspace width="0.15em"/>
+<mi>x</mi><mo stretchy="false">(</mo><msub><mi>t</mi><mi>i</mi></msub><mo>&#x2212;</mo><msub><mi>&#x3C4;</mi><mn>2</mn></msub><mo stretchy="false">)</mo>
+</mrow></math>
+<math display="block"><mrow>
+<msub><mi>h</mi><mn>2</mn></msub><mo stretchy="false">(</mo><msub><mi>&#x3C4;</mi><mn>1</mn></msub><mo>,</mo><msub><mi>&#x3C4;</mi><mn>2</mn></msub><mo stretchy="false">)</mo>
+<mo>=</mo>
+<mfrac>
+<mrow>
+<msub><mi>R</mi><mn>2</mn></msub><mo stretchy="false">(</mo><msub><mi>&#x3C4;</mi><mn>1</mn></msub><mo>,</mo><msub><mi>&#x3C4;</mi><mn>2</mn></msub><mo stretchy="false">)</mo>
+<mo>&#x2212;</mo>
+<msub><mi>&#x3C6;</mi><mrow><mtext>xx</mtext></mrow></msub><mo stretchy="false">(</mo><msub><mi>&#x3C4;</mi><mn>2</mn></msub><mo>&#x2212;</mo><msub><mi>&#x3C4;</mi><mn>1</mn></msub><mo stretchy="false">)</mo>
+</mrow>
+<mrow><mn>2</mn><msup><mi>A</mi><mn>2</mn></msup></mrow>
+</mfrac>
+</mrow></math>
+</div>
+<p class="note"><i>R</i><sub>2</sub> is the average product of the stimulus at two lags before a spike. Subtracting the stimulus autocorrelation <i>φ</i><sub>xx</sub> removes the structure the noise has anyway, leaving what is attributable to the cell. Because Wiener kernels are orthogonalised against a Gaussian input, <i>h</i><sub>1</sub> and <i>h</i><sub>2</sub> can be estimated independently by cross-correlation, and truncating the series after the second term leaves the first unchanged — which is not true of the corresponding Volterra kernels (van Drongelen, 2010). A one-dimensional Fourier transform of <i>h</i><sub>2</sub> yields a spectro-temporal receptive field, readable as the mean stimulus spectrogram preceding a spike (Lewis and van Dijk, 2004).</p>
+
+<div class="sub">
+<h3>2.1 Every square is a question about two moments</h3>
+<p class="note">The first-order kernel is a list of weights over time. The second-order kernel is a grid, and each square in it asks about a <em>pair</em> of moments in the recent past: how much does this cell like it when those two moments agreed, both up or both down, versus disagreed? Drag the dot to pick a pair, or use the buttons to jump to the four cases worth talking through.</p>
+<div class="fig">
+<p class="sr">Drag a point on the kernel to see which pair of past moments it asks about.</p>
+<svg id="s1" viewBox="0 0 860 360" style="touch-action:none;cursor:crosshair">
+  <text x="60" y="26" fill="var(--muted)" font-size="13">the cell</text>
+  <text x="400" y="26" fill="var(--muted)" font-size="13">the stimulus it is asking about</text>
+  <rect x="60" y="40" width="260" height="260" fill="var(--plot)"/>
+  <g id="k1"></g>
+  <line x1="60" y1="300" x2="320" y2="40" stroke="#8899A6" stroke-width="0.75" stroke-dasharray="4 4"/>
+  <line id="c1x" x1="60" y1="209" x2="320" y2="209" stroke="var(--act)" stroke-width="0.75"/>
+  <line id="c1y" x1="151" y1="40" x2="151" y2="300" stroke="var(--act)" stroke-width="0.75"/>
+  <circle id="d1" cx="151" cy="209" r="7" fill="var(--act)" stroke="#fff" stroke-width="2"/>
+  <rect x="60" y="40" width="260" height="260" fill="none" stroke="#B9C4CE"/>
+  <text x="190" y="336" fill="var(--muted)" font-size="13" text-anchor="middle">how long ago, moment 1 (ms)</text>
+  <text x="60" y="316" fill="var(--muted)" font-size="12" text-anchor="middle">0</text>
+  <text x="190" y="316" fill="var(--muted)" font-size="12" text-anchor="middle">10</text>
+  <text x="320" y="316" fill="var(--muted)" font-size="12" text-anchor="middle">20</text>
+  <text x="52" y="304" fill="var(--muted)" font-size="12" text-anchor="end">0</text>
+  <text x="52" y="174" fill="var(--muted)" font-size="12" text-anchor="end">10</text>
+  <text x="52" y="44" fill="var(--muted)" font-size="12" text-anchor="end">20</text>
+  <text x="30" y="174" fill="var(--muted)" font-size="13" text-anchor="middle">moment 2</text>
+  <path id="e1a" fill="none" stroke="#8899A6" stroke-width="0.75" stroke-dasharray="3 3"/>
+  <path id="e1b" fill="none" stroke="#8899A6" stroke-width="0.75" stroke-dasharray="3 3"/>
+  <path id="t1" fill="none" stroke="var(--muted)" stroke-width="1.25"/>
+  <line id="p1l" x1="600" y1="45" x2="600" y2="195" stroke="#8899A6" stroke-width="0.75" stroke-dasharray="3 3"/>
+  <line id="p2l" x1="660" y1="45" x2="660" y2="195" stroke="#8899A6" stroke-width="0.75" stroke-dasharray="3 3"/>
+  <circle id="q1" cx="600" cy="120" r="5.5" fill="var(--act)"/>
+  <circle id="q2" cx="660" cy="120" r="5.5" fill="var(--act)"/>
+  <text x="400" y="216" fill="var(--muted)" font-size="12">25 ms ago</text>
+  <text x="840" y="216" fill="var(--muted)" font-size="12" text-anchor="end">now</text>
+  <text id="v1" x="400" y="252" font-size="19" font-weight="600" fill="var(--ink)">they agree</text>
+  <text id="v2" x="400" y="278" font-size="14" fill="var(--muted)">the cell rewards agreement here</text>
+</svg>
+<div class="pills">
+  <span class="pill"><span class="sw" style="background:var(--pos);opacity:.55"></span>likes agreement</span>
+  <span class="pill"><span class="sw" style="background:var(--neg);opacity:.55"></span>likes disagreement</span>
+</div>
+<div class="controls">
+  <button onclick="jump(7,7)">on the diagonal</button>
+  <button onclick="jump(8,6)">half a cycle apart</button>
+  <button onclick="jump(9,5)">a full cycle apart</button>
+  <button onclick="jump(16,12)">same gap, further back</button>
+</div>
+<div id="r1" class="readout"></div>
+</div>
+<p class="note">Two directions, two different questions. Across the diagonal is the gap between the moments, and a gap is what frequency means, so that direction carries the carrier the cell is tuned to. Along the diagonal is how long ago both moments were, so that direction carries <em>when</em>. The stripes say 250 Hz; the fade past about 14 ms says the cell has no memory beyond that.</p>
+<p class="note">Real kernels contain two kinds of banding, and they mean different things. Bands running parallel to the diagonal, like the ones above, reflect phase locking to the envelope, and their spacing identifies the carrier band whose envelope the fibre follows. Bands running perpendicular to the diagonal instead reflect nonlinearity in the phase-locked response to the fine structure. A fibre showing both gives the kernel a checkerboard appearance (Recio-Spinoso et al., 2005; Henry et al., 2016). The two components separate cleanly in the two-dimensional Fourier transform of <i>h</i><sub>2</sub>: envelope energy falls in the second and fourth quadrants and fine-structure energy in the first and third, so zeroing the first and third quadrants leaves a kernel driven primarily by envelope coding (Recio-Spinoso et al., 2005; Henry et al., 2016).</p>
+<p class="note">From there the usual step is eigenvector decomposition, which typically returns one or sometimes two pairs of significant eigenvectors in quadrature phase — the signature of a phase-insensitive energy detector. The Fourier transform of the first eigenvector gives the BF of envelope coding, the counterpart to what <i>h</i><sub>1</sub> gives for fine structure (Lewis et al., 2002; Recio-Spinoso et al., 2005). One caution when reading a published kernel: if the decomposition returns a single eigenvector that simply matches <i>h</i><sub>1</sub>, the kernel is reporting curvature of the cell's output nonlinearity rather than a new feature, and there is no envelope claim to make.</p>
+</div>
+
+<div class="sub">
+<h3>2.2 The kernel never moves. The stimulus slides under it.</h3>
+<p class="note">This is the step where the kernel stops being a picture and starts being a prediction. Multiply the kernel by the stimulus pairs happening right now, add up every square, and that sum is how hard the cell fires. Sweep through time and watch the left panel: it does not change, and it never will. Only the stimulus moves. What that sum computes is the second-order term of the Wiener series (van Drongelen, 2010).</p>
+<div class="eq">
+<math display="block"><mrow>
+<mi>y</mi><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo>
+<mo>=</mo>
+<msub><mi>h</mi><mn>0</mn></msub>
+<mo>+</mo>
+<mo>&#x222B;</mo><msub><mi>h</mi><mn>1</mn></msub><mo stretchy="false">(</mo><mi>&#x3C4;</mi><mo stretchy="false">)</mo>
+<mspace width="0.15em"/>
+<mi>x</mi><mo stretchy="false">(</mo><mi>t</mi><mo>&#x2212;</mo><mi>&#x3C4;</mi><mo stretchy="false">)</mo>
+<mspace width="0.15em"/><mi>d</mi><mi>&#x3C4;</mi>
+<mo>+</mo>
+<mo>&#x222C;</mo><msub><mi>h</mi><mn>2</mn></msub><mo stretchy="false">(</mo><msub><mi>&#x3C4;</mi><mn>1</mn></msub><mo>,</mo><msub><mi>&#x3C4;</mi><mn>2</mn></msub><mo stretchy="false">)</mo>
+<mspace width="0.15em"/>
+<mi>x</mi><mo stretchy="false">(</mo><mi>t</mi><mo>&#x2212;</mo><msub><mi>&#x3C4;</mi><mn>1</mn></msub><mo stretchy="false">)</mo>
+<mspace width="0.15em"/>
+<mi>x</mi><mo stretchy="false">(</mo><mi>t</mi><mo>&#x2212;</mo><msub><mi>&#x3C4;</mi><mn>2</mn></msub><mo stretchy="false">)</mo>
+<mspace width="0.15em"/><mi>d</mi><msub><mi>&#x3C4;</mi><mn>1</mn></msub>
+<mspace width="0.15em"/><mi>d</mi><msub><mi>&#x3C4;</mi><mn>2</mn></msub>
+</mrow></math>
+<p class="gloss">constant term, then the first-order term, then the second-order term</p>
+</div>
+<p class="note">Students often read a kernel plot as though it were a picture of a stimulus. It is not. It is a picture of the question the cell asks of every stimulus it ever hears, which is why the left panel stays put while the response follows the sound.</p>
+<div class="fig">
+<p class="sr">Sweep a now-marker to slide the stimulus under a fixed kernel and trace the predicted firing.</p>
+<svg id="s2" viewBox="0 0 860 470">
+  <text x="40" y="34" fill="var(--muted)" font-size="13">the cell, unchanging</text>
+  <text x="250" y="34" fill="var(--muted)" font-size="13">kernel × stimulus, right now</text>
+  <rect x="40" y="46" width="170" height="170" fill="var(--plot)"/>
+  <rect x="250" y="46" width="170" height="170" fill="var(--plot)"/>
+  <g id="k2"></g>
+  <g id="pd2"></g>
+  <line x1="40" y1="216" x2="210" y2="46" stroke="#8899A6" stroke-width="0.75" stroke-dasharray="4 4"/>
+  <line x1="250" y1="216" x2="420" y2="46" stroke="#8899A6" stroke-width="0.75" stroke-dasharray="4 4"/>
+  <rect x="40" y="46" width="170" height="170" fill="none" stroke="#B9C4CE"/>
+  <rect x="250" y="46" width="170" height="170" fill="none" stroke="#B9C4CE"/>
+  <text x="470" y="70" fill="var(--muted)" font-size="13">predicted firing now</text>
+  <text id="onum" x="470" y="108" font-size="30" font-weight="600" fill="var(--ink)">0.00</text>
+  <text id="ohint" x="470" y="132" font-size="14" fill="var(--muted)">quiet</text>
+  <text x="470" y="176" fill="var(--muted)" font-size="13">left panel is the neuron,</text>
+  <text x="470" y="194" fill="var(--muted)" font-size="13">right panel is what it sees</text>
+  <text x="40" y="248" fill="var(--muted)" font-size="13">stimulus, with the past 20 ms shaded</text>
+  <rect id="win" x="40" y="258" width="200" height="72" fill="#8899A6" opacity="0.16"/>
+  <line x1="40" y1="294" x2="840" y2="294" stroke="var(--rule)"/>
+  <path id="e2a" fill="none" stroke="#8899A6" stroke-width="0.75" stroke-dasharray="3 3"/>
+  <path id="e2b" fill="none" stroke="#8899A6" stroke-width="0.75" stroke-dasharray="3 3"/>
+  <path id="t2" fill="none" stroke="var(--muted)" stroke-width="1.25"/>
+  <line id="nowl" x1="240" y1="254" x2="240" y2="436" stroke="var(--act)" stroke-width="1.25"/>
+  <text x="40" y="356" fill="var(--muted)" font-size="13">predicted firing over time</text>
+  <line x1="40" y1="430" x2="840" y2="430" stroke="var(--rule)"/>
+  <path id="o2" fill="none" stroke="var(--act)" stroke-width="1.75"/>
+  <circle id="od" cx="240" cy="430" r="5.5" fill="var(--act)"/>
+  <text x="40" y="456" fill="var(--muted)" font-size="12">0 ms</text>
+  <text x="840" y="456" fill="var(--muted)" font-size="12" text-anchor="end">60 ms</text>
+</svg>
+<div class="controls">
+  <label for="nw">now</label>
+  <input type="range" id="nw" min="20" max="60" step="0.25" value="24">
+  <span class="val" id="nwo">24.0 ms</span>
+</div>
+<div class="controls">
+  <button id="swb">Sweep through time</button>
+  <button onclick="shiftStim()">Shift the stimulus</button>
+</div>
+<div id="r2" class="readout"></div>
+</div>
+<p class="note">Three things to point out. The response peaks later than the loud patch, because the kernel's weight sits about 7 ms into the past. The second, quieter patch drives far less than half the response of the first, because envelope power goes as amplitude squared. And when the carrier stops matching the stripe spacing, coral squares start landing on disagreeing pairs, the contributions cancel, and the sum collapses — that cancellation is what carrier tuning looks like.</p>
+</div>
+
+<div class="sub">
+<h3>2.3 Fast and slow envelope following</h3>
+<p class="note">These two cells are tuned to the same carrier. Their stripes are identical. The only difference is how far the kernel reaches along the diagonal, and that alone decides how quick an envelope each one can track. Narrow reach means a wide envelope passband; long reach means the cell averages over so much time that fast modulations wash out. Auditory nerve fibres are low-pass in the modulation domain, following slow envelopes faithfully and attenuating fast ones (Joris and Yin, 1992), and the diagonal extent of <i>h</i><sub>2</sub> is where that shows up.</p>
+<div class="fig">
+<p class="sr">Two kernels differing only in diagonal extent, with their envelope gain curves.</p>
+<svg id="s3a" viewBox="0 0 860 270">
+  <text x="30" y="26" fill="var(--fast)" font-size="14" font-weight="600">fast cell</text>
+  <text x="200" y="26" fill="var(--slow)" font-size="14" font-weight="600">slow cell</text>
+  <rect x="30" y="38" width="140" height="140" fill="var(--plot)"/>
+  <rect x="200" y="38" width="140" height="140" fill="var(--plot)"/>
+  <g id="kf"></g>
+  <g id="ks"></g>
+  <line x1="30" y1="178" x2="170" y2="38" stroke="#8899A6" stroke-width="0.75" stroke-dasharray="4 4"/>
+  <line x1="200" y1="178" x2="340" y2="38" stroke="#8899A6" stroke-width="0.75" stroke-dasharray="4 4"/>
+  <rect x="30" y="38" width="140" height="140" fill="none" stroke="var(--fast)"/>
+  <rect x="200" y="38" width="140" height="140" fill="none" stroke="var(--slow)"/>
+  <text x="100" y="198" fill="var(--muted)" font-size="12" text-anchor="middle">reaches ~2 ms</text>
+  <text x="270" y="198" fill="var(--muted)" font-size="12" text-anchor="middle">reaches ~11 ms</text>
+  <text x="185" y="222" fill="var(--muted)" font-size="12" text-anchor="middle">both axes 0–24 ms</text>
+  <text x="430" y="26" fill="var(--muted)" font-size="13">envelope gain</text>
+  <rect x="430" y="38" width="400" height="150" fill="var(--plot)"/>
+  <g id="gr3"></g>
+  <line id="l3db" x1="430" y1="53" x2="830" y2="53" stroke="#8899A6" stroke-width="0.75" stroke-dasharray="5 4"/>
+  <text x="826" y="49" fill="#5B6B7A" font-size="11" text-anchor="end">−3 dB</text>
+  <path id="mf" fill="none" stroke="var(--fast)" stroke-width="2"/>
+  <path id="ms" fill="none" stroke="var(--slow)" stroke-width="2" stroke-dasharray="6 4"/>
+  <line id="fel" x1="600" y1="38" x2="600" y2="188" stroke="var(--act)" stroke-width="1.25"/>
+  <circle id="mfd" cx="600" cy="60" r="5" fill="var(--fast)"/>
+  <circle id="msd" cx="600" cy="60" r="5" fill="var(--slow)"/>
+  <rect x="430" y="38" width="400" height="150" fill="none" stroke="#B9C4CE"/>
+  <text x="630" y="228" fill="var(--muted)" font-size="13" text-anchor="middle">envelope modulation rate (Hz)</text>
+  <text x="424" y="42" fill="var(--muted)" font-size="11" text-anchor="end">0</text>
+  <text x="424" y="192" fill="var(--muted)" font-size="11" text-anchor="end">−30 dB</text>
+</svg>
+<div class="stats">
+  <div class="stat"><div class="k">fast cell cutoff</div><div class="v" id="cf" style="color:var(--fast)">–</div></div>
+  <div class="stat"><div class="k">slow cell cutoff</div><div class="v" id="cs" style="color:var(--slow)">–</div></div>
+</div>
+</div>
+<p class="note">Now play both cells the same amplitude-modulated tone and turn the modulation rate up. Below about 30 Hz they behave alike. Push past that and the slow cell's output flattens into a steady line while the fast cell keeps following, even though the stimulus reaching them is identical.</p>
+<div class="fig">
+<p class="sr">Both cells' responses to an amplitude-modulated tone at an adjustable modulation rate.</p>
+<svg id="s3b" viewBox="0 0 860 250">
+  <text x="60" y="26" fill="var(--muted)" font-size="13">envelope power going in, and what each cell reports</text>
+  <rect x="60" y="38" width="780" height="170" fill="var(--plot)"/>
+  <path id="ain" fill="none" stroke="#8899A6" stroke-width="1.25" stroke-dasharray="4 3"/>
+  <path id="of" fill="none" stroke="var(--fast)" stroke-width="2"/>
+  <path id="os" fill="none" stroke="var(--slow)" stroke-width="2"/>
+  <rect x="60" y="38" width="780" height="170" fill="none" stroke="#B9C4CE"/>
+  <text x="60" y="228" fill="var(--muted)" font-size="12">0 ms</text>
+  <text x="840" y="228" fill="var(--muted)" font-size="12" text-anchor="end">80 ms</text>
+</svg>
+<div class="pills">
+  <span class="pill"><span class="sw" style="background:#8899A6"></span>envelope power in</span>
+  <span class="pill"><span class="sw" style="background:var(--fast)"></span>fast cell out</span>
+  <span class="pill"><span class="sw" style="background:var(--slow)"></span>slow cell out</span>
+</div>
+<div class="controls">
+  <label for="fe">AM rate</label>
+  <input type="range" id="fe" min="15" max="300" step="1" value="20">
+  <span class="val" id="feo">20 Hz</span>
+</div>
+<div class="stats">
+  <div class="stat"><div class="k">modulation the fast cell keeps</div><div class="v" id="df" style="color:var(--fast)">–</div></div>
+  <div class="stat"><div class="k">modulation the slow cell keeps</div><div class="v" id="ds" style="color:var(--slow)">–</div></div>
+</div>
+</div>
+<p class="note">This is the whole point of the diagonal direction. Nothing about carrier tuning changed between these two cells, and nothing about whether they code envelopes at all. Only the speed changed, and it changed because one kernel is punctate along the diagonal and the other is smeared. That is where an envelope cutoff lives.</p>
+<p class="note">Which matters for reading the published figures. When a paper shows the Fourier transform of <i>h</i><sub>2</sub> with frequency on one axis and time on the other, the frequency axis is <em>carrier</em> frequency, not modulation rate. A peak at 1.6 kHz says the fibre extracts the envelope of a 1.6 kHz band; it does not say the fibre responds to 1.6 kHz envelopes. The modulation tuning sits in the other, untransformed axis — the horizontal extent of the blob. Same kernel, perpendicular reading, different question.</p>
+</div>
+</section>
+
+<section>
+<h2>In a real experiment</h2>
+<p class="note">The chinchilla work these kernels are modelled on proceeds roughly as follows. A single auditory nerve fibre is isolated, a pure-tone threshold tuning curve establishes its CF, and a rate-level function for broadband noise fixes its noise threshold. Ten independent Gaussian noise tokens, 2.5 s long with a bandwidth of 16.5 kHz, are then presented repeatedly for several minutes at 10–20 dB above that threshold until 5000–10,000 driven spikes have accumulated. Correlations are computed with a sampling period of 0.02 ms out to a maximum lag of about 10 ms, or about 20 ms for fibres with CFs below 3 kHz, and spikes in the first 20 ms after stimulus onset are excluded to avoid onset transients (Recio-Spinoso et al., 2005; Henry et al., 2016, 2019).</p>
+<p class="note">Two practical points follow. The second-order kernel has on the order of half the square of the number of lags as free parameters, so it needs far more data than <i>h</i><sub>1</sub> for comparable reliability, which is why the spike counts are what they are. And significance has to be established rather than assumed: eigenvectors are kept only when their amplitude exceeds the noise floor by a stated margin, three standard deviations in this literature.</p>
+</section>
+
+<section>
+<h2>Why anyone measures this</h2>
+<p class="note">In a healthy ear both cues are coded tonotopically: the BF of TFS coding and the BF of ENV coding both sit close to the fibre's CF, so each fibre reports on the frequency region it is meant to. Noise-induced hearing loss breaks this. Even mild loss introduces pathological coding of fine structure well below CF, and with moderate loss the envelope coding shifts downward too (Henry et al., 2016). Metabolic hearing loss, the age-related form caused by deterioration of the stria vascularis, produces the same kind of distortion but only at much greater threshold elevation; the difference between the two etiologies tracks the tip-to-tail ratio of the tuning curve rather than threshold as such (Henry et al., 2019).</p>
+<p class="note">Since speech perception depends on both cues (Lorenzi et al., 2006; Jørgensen et al., 2013), that dissociation is a candidate explanation for something clinically puzzling: why two people with nearly identical audiograms can differ substantially in how well they understand amplified speech. Which is a reasonable answer to a student who asks why anyone bothers averaging noise snippets in the first place.</p>
+</section>
+
+<section>
+<h2>References</h2>
+<ul class="refs">
+<li>Eggermont JJ, Johannesma PM, Aertsen AM (1983). Reverse-correlation methods in auditory research. <i>Quarterly Reviews of Biophysics</i> 16:341–414.</li>
+<li>Heinz MG, Colburn HS, Carney LH (2001). Evaluating auditory performance limits: I. One-parameter discrimination using a computational model for the auditory nerve. <i>Neural Computation</i> 13:2273–2316.</li>
+<li>Henry KS, Kale S, Heinz MG (2016). Distorted tonotopic coding of temporal envelope and fine structure with noise-induced hearing loss. <i>Journal of Neuroscience</i> 36:2227–2237.</li>
+<li>Henry KS, Sayles M, Hickox AE, Heinz MG (2019). Divergent auditory nerve encoding deficits between two common etiologies of sensorineural hearing loss. <i>Journal of Neuroscience</i> 39:6879–6887. <a href="https://www.jneurosci.org/content/jneuro/39/35/6879.full.pdf">PDF</a></li>
+<li>Johnson DH (1980). The relationship between spike rate and synchrony in responses of auditory-nerve fibers to single tones. <i>Journal of the Acoustical Society of America</i> 68:1115–1122.</li>
+<li>Joris PX, Yin TCT (1992). Responses to amplitude-modulated tones in the auditory nerve of the cat. <i>Journal of the Acoustical Society of America</i> 91:215–232.</li>
+<li>Jørgensen S, Ewert SD, Dau T (2013). A multi-resolution envelope-power based model for speech intelligibility. <i>Journal of the Acoustical Society of America</i> 134:436–446.</li>
+<li>Lewis ER, Henry KR, Yamada WM (2002). Tuning and timing in the gerbil ear: Wiener-kernel analysis. <i>Hearing Research</i> 174:206–221.</li>
+<li>Lewis ER, van Dijk P (2004). New variation on the derivation of spectro-temporal receptive fields for primary auditory afferent axons. <i>Hearing Research</i> 189:120–136.</li>
+<li>Lorenzi C, Gilbert G, Carn H, Garnier S, Moore BCJ (2006). Speech perception problems of the hearing impaired reflect inability to use temporal fine structure. <i>PNAS</i> 103:18866–18869.</li>
+<li>Recio-Spinoso A, Temchin AN, van Dijk P, Fan YH, Ruggero MA (2005). Wiener-kernel analysis of responses to noise of chinchilla auditory nerve fibers. <i>Journal of Neurophysiology</i> 93:3615–3634.</li>
+<li>van Dijk P, Wit HP, Segenhout JM, Tubis A (1994). Wiener kernel analysis of inner ear function in the American bullfrog. <i>Journal of the Acoustical Society of America</i> 95:904–919.</li>
+<li>van Drongelen W (2010). Wiener series. In: <i>Signal Processing for Neuroscientists, A Companion Volume</i>, pp 61–90. Amsterdam: Elsevier.</li>
+</ul>
+</section>
+
+<footer>
+<p>Carrier is 250 Hz throughout. Part 1 simulates a gammatone-like filter driving a threshold-linear spike generator; the revcor is the plain average of the noise preceding each spike, mean-subtracted before its Fourier transform. Part 2 uses Gabor-shaped kernels with a low-pass envelope profile. Section 2.3 shows only the slow, phase-independent part of the quadratic response — the carrier-locked component at twice the carrier frequency is dropped, since it is not what envelope tuning is about.</p>
+</footer>
+
+</div>
+<script>
+var FC=0.25, U0=7, SV=2.2;
+function el(id){return document.getElementById(id);}
+function pth(node,d){node.setAttribute('d',d);}
+function ker(u,v,su){
+  return Math.exp(-(u-U0)*(u-U0)/(2*su*su))*Math.cos(2*Math.PI*FC*v)*Math.exp(-v*v/(2*SV*SV));
+}
+function raster(node,x0,y0,cell,n,su){
+  var h='',i,j,a,b,k;
+  for(i=0;i<n;i++)for(j=0;j<n;j++){
+    a=i+0.5; b=j+0.5;
+    k=ker((a+b)/2,a-b,su);
+    h+='<rect x="'+(x0+cell*i).toFixed(2)+'" y="'+(y0+cell*(n-1-j)).toFixed(2)+'" width="'+(cell+0.4).toFixed(2)+'" height="'+(cell+0.4).toFixed(2)+'" fill="'+(k>0?'#C7502A':'#2C6FAF')+'" opacity="'+Math.min(0.62,Math.abs(k)*0.82).toFixed(3)+'"/>';
+  }
+  node.innerHTML=h;
+}
+
+var DT=0.1, NL=100, NS=60000, SIGN=1;
+var HT=[], NZ=[], DR=[], SPK=[], SUM=[], NSP=0, RECENT=[];
+(function(){
+  var i,t,g,s=0;
+  for(i=0;i<NL;i++){
+    t=i*DT-1.5;
+    g=t<=0?0:t*t*Math.exp(-t/1.15)*Math.sin(2*Math.PI*FC*t);
+    HT.push(g); s+=g*g;
+  }
+  s=Math.sqrt(s);
+  for(i=0;i<NL;i++)HT[i]/=s;
+  var seed=20260910;
+  function rnd(){seed=(seed*1664525+1013904223)%4294967296;return seed/4294967296;}
+  for(i=0;i<NS;i++){
+    var u1=Math.max(1e-9,rnd()), u2=rnd();
+    NZ.push(Math.sqrt(-2*Math.log(u1))*Math.cos(2*Math.PI*u2));
+  }
+  for(i=0;i<NS;i++){
+    var d=0;
+    if(i>=NL){for(var k=0;k<NL;k++)d+=HT[k]*NZ[i-k];}
+    DR.push(d);
+  }
+})();
+function makeSpikes(){
+  var seed=777, i, last=-99;
+  function rnd(){seed=(seed*1664525+1013904223)%4294967296;return seed/4294967296;}
+  SPK=[];
+  for(i=NL;i<NS;i++){
+    var d=SIGN*DR[i];
+    if(d>0 && i-last>12 && rnd()<0.10*d){SPK.push(i);last=i;}
+  }
+}
+function resetSp(){NSP=0;RECENT=[];SUM=[];for(var i=0;i<NL;i++)SUM.push(0);draw0();}
+function addSp(n){
+  for(var q=0;q<n;q++){
+    if(NSP>=SPK.length)break;
+    var i=SPK[NSP], sn=[];
+    for(var k=0;k<NL;k++){var v=SIGN*NZ[i-k];SUM[k]+=v;sn.push(v);}
+    RECENT.push(sn); if(RECENT.length>12)RECENT.shift();
+    NSP++;
+  }
+  draw0();
+}
+function flipNoise(){SIGN=-SIGN;makeSpikes();resetSp();addSp(250);}
+function xa(k){return 60+37*k*DT;}
+function xb(k){return 490+35*k*DT;}
+function dft(g,fHz){
+  var re=0,im=0,w=2*Math.PI*fHz/1000;
+  for(var i=0;i<g.length;i++){re+=g[i]*Math.cos(w*i*DT);im+=g[i]*Math.sin(w*i*DT);}
+  return Math.sqrt(re*re+im*im);
+}
+(function(){
+  var h='',tk=[0,250,500,1000,1500,2000],i,x;
+  for(i=0;i<tk.length;i++){
+    x=60+0.39*tk[i];
+    h+='<line x1="'+x.toFixed(1)+'" y1="278" x2="'+x.toFixed(1)+'" y2="370" stroke="#C6D0D9" stroke-width="0.5"/>';
+    h+='<text x="'+x.toFixed(1)+'" y="386" fill="#5B6B7A" font-size="11" text-anchor="middle">'+tk[i]+'</text>';
+  }
+  el('fgrid').innerHTML=h;
+  var mxT=0,i2;
+  for(i2=0;i2<NL;i2++)mxT=Math.max(mxT,Math.abs(HT[i2]));
+  var d='';
+  for(i2=0;i2<NL;i2++)d+=(i2===0?'M':'L')+xb(i2).toFixed(1)+' '+(120-65*SIGN*HT[i2]/mxT).toFixed(1)+' ';
+  pth(el('tgt'),d);
+})();
+function draw0(){
+  el('nsp').textContent=NSP;
+  var i,k,h='',mx=1e-9;
+  for(i=0;i<RECENT.length;i++){
+    var d='';
+    for(k=0;k<NL;k++)d+=(k===0?'M':'L')+xa(k).toFixed(1)+' '+(120-22*RECENT[i][k]).toFixed(1)+' ';
+    h+='<path d="'+d+'" fill="none" stroke="#8899A6" stroke-width="0.75" opacity="'+(0.13+0.02*i).toFixed(2)+'"/>';
+  }
+  el('snips').innerHTML=h;
+  if(RECENT.length){
+    var dl='', r=RECENT[RECENT.length-1];
+    for(k=0;k<NL;k++)dl+=(k===0?'M':'L')+xa(k).toFixed(1)+' '+(120-22*r[k]).toFixed(1)+' ';
+    pth(el('snlast'),dl);
+  } else pth(el('snlast'),'');
+  if(NSP===0){
+    pth(el('avg'),''); pth(el('fmag'),'');
+    el('pkf').textContent='\u2013';
+    el('r0').innerHTML='Nothing averaged yet. One spike gives you one snippet of noise, which tells you almost nothing.';
+    return;
+  }
+  var av=[], mu=0;
+  for(k=0;k<NL;k++){av.push(SUM[k]/NSP); mu+=av[k]/NL;}
+  for(k=0;k<NL;k++){av[k]-=mu; mx=Math.max(mx,Math.abs(av[k]));}
+  var d2='';
+  for(k=0;k<NL;k++)d2+=(k===0?'M':'L')+xb(k).toFixed(1)+' '+(120-65*av[k]/mx).toFixed(1)+' ';
+  pth(el('avg'),d2);
+  var fmx=1e-9, pk=0, f, mg, d3='', first=true;
+  for(f=40;f<=2000.001;f+=20){mg=dft(av,f); if(mg>fmx){fmx=mg;pk=f;}}
+  for(f=0;f<=2000.001;f+=20){
+    mg=dft(av,f)/fmx;
+    d3+=(first?'M':'L')+(60+0.39*f).toFixed(1)+' '+(366-86*mg).toFixed(1)+' ';
+    first=false;
+  }
+  pth(el('fmag'),d3);
+  el('pkf').textContent=Math.round(pk)+' Hz';
+  var msg;
+  if(NSP<5)msg='Still mostly noise. Individual snippets look nothing like the filter.';
+  else if(NSP<60)msg='A ringing shape is starting to show through, and the frequency peak is settling near 250 Hz.';
+  else msg='The estimate has locked on. Extra spikes now only polish it.';
+  el('r0').innerHTML='<b>'+NSP+'</b> of '+SPK.length+' available spikes averaged. '+msg+' The dashed line is the filter the simulated cell really has — you never see it in an experiment, only the estimate.';
+}
+makeSpikes(); resetSp(); addSp(1);
+
+var SU1=2.4, T1=7, T2=7;
+function s1env(t){return 0.3+0.7*(0.5-0.5*Math.cos(2*Math.PI*0.04*t));}
+function s1(t){return t<0?0:s1env(t)*Math.sin(2*Math.PI*FC*t);}
+function x1k(t){return 60+13*t;}
+function y1k(t){return 300-13*t;}
+function x1s(t){return 840-17.6*t;}
+raster(el('k1'),60,40,13,20,SU1);
+(function(){
+  var a='',b='',c='',t;
+  for(t=0;t<=25.001;t+=0.1){
+    a+=(t===0?'M':'L')+x1s(t).toFixed(1)+' '+(120-55*s1env(t)).toFixed(1)+' ';
+    b+=(t===0?'M':'L')+x1s(t).toFixed(1)+' '+(120+55*s1env(t)).toFixed(1)+' ';
+    c+=(t===0?'M':'L')+x1s(t).toFixed(1)+' '+(120-55*s1(t)).toFixed(1)+' ';
+  }
+  pth(el('e1a'),a); pth(el('e1b'),b); pth(el('t1'),c);
+})();
+function draw1(){
+  var u=(T1+T2)/2, v=T1-T2, k=ker(u,v,SU1);
+  el('d1').setAttribute('cx',x1k(T1).toFixed(1));
+  el('d1').setAttribute('cy',y1k(T2).toFixed(1));
+  el('c1x').setAttribute('y1',y1k(T2).toFixed(1)); el('c1x').setAttribute('y2',y1k(T2).toFixed(1));
+  el('c1y').setAttribute('x1',x1k(T1).toFixed(1)); el('c1y').setAttribute('x2',x1k(T1).toFixed(1));
+  var a=s1(T1), b=s1(T2), pr=a*b;
+  el('p1l').setAttribute('x1',x1s(T1).toFixed(1)); el('p1l').setAttribute('x2',x1s(T1).toFixed(1));
+  el('p2l').setAttribute('x1',x1s(T2).toFixed(1)); el('p2l').setAttribute('x2',x1s(T2).toFixed(1));
+  el('q1').setAttribute('cx',x1s(T1).toFixed(1)); el('q1').setAttribute('cy',(120-55*a).toFixed(1));
+  el('q2').setAttribute('cx',x1s(T2).toFixed(1)); el('q2').setAttribute('cy',(120-55*b).toFixed(1));
+  var col=pr>0.02?'#C7502A':(pr<-0.02?'#2C6FAF':'#7A8A97');
+  el('q1').setAttribute('fill',col); el('q2').setAttribute('fill',col);
+  var w=el('v1');
+  w.textContent=pr>0.02?'these two moments agree':(pr<-0.02?'these two moments disagree':'one of them is near zero');
+  w.setAttribute('fill',col);
+  var p=el('v2');
+  p.textContent=Math.abs(k)<0.04?'the cell barely cares about this pairing':(k>0?'the cell rewards agreement here':'the cell rewards disagreement here');
+  p.setAttribute('fill',Math.abs(k)<0.04?'#7A8A97':(k>0?'#C7502A':'#2C6FAF'));
+  var gap=Math.abs(v);
+  var fr=gap<0.3?'no gap at all, so no frequency is being asked about — this is raw power'
+    :('a gap of <b>'+gap.toFixed(1)+' ms</b>, which is '+(gap*FC).toFixed(2)+' cycles of a 250 Hz carrier');
+  el('r1').innerHTML='Across the diagonal: '+fr+'.<br>Along the diagonal: <b>'+u.toFixed(1)+' ms ago</b>. This is the <i>when</i>, and the kernel fades out past about 14 ms.';
+}
+function jump(a,b){T1=a;T2=b;draw1();}
+(function(){
+  var sv=el('s1'), dg=false;
+  function set(e){
+    var r=sv.getBoundingClientRect(), sc=r.width/860;
+    T1=Math.max(0.4,Math.min(19.6,((e.clientX-r.left)/sc-60)/13));
+    T2=Math.max(0.4,Math.min(19.6,(300-(e.clientY-r.top)/sc)/13));
+    draw1();
+  }
+  sv.addEventListener('pointerdown',function(e){dg=true;sv.setPointerCapture(e.pointerId);set(e);e.preventDefault();});
+  sv.addEventListener('pointermove',function(e){if(dg)set(e);});
+  sv.addEventListener('pointerup',function(){dg=false;});
+  sv.addEventListener('pointercancel',function(){dg=false;});
+})();
+draw1();
+
+var OFF=0, kv=[], la=[], lb=[];
+(function(){
+  for(var i=0;i<20;i++)for(var j=0;j<20;j++){
+    var a=i+0.5, b=j+0.5;
+    kv.push(ker((a+b)/2,a-b,SU1)); la.push(a); lb.push(b);
+  }
+})();
+raster(el('k2'),40,46,8.5,20,SU1);
+(function(){
+  var h='';
+  for(var i=0;i<20;i++)for(var j=0;j<20;j++){
+    h+='<rect x="'+(250+8.5*i).toFixed(2)+'" y="'+(46+8.5*(19-j)).toFixed(2)+'" width="8.9" height="8.9" fill="#C7502A" opacity="0"/>';
+  }
+  el('pd2').innerHTML=h;
+})();
+var prct=el('pd2').children;
+function e2(t){var a=t-OFF;return 0.1+0.92*Math.exp(-(a-30)*(a-30)/25)+0.46*Math.exp(-(a-50)*(a-50)/25);}
+function s2(t){return t<0?0:e2(t)*Math.sin(2*Math.PI*FC*t);}
+function x2(t){return 40+13.3333*t;}
+var MAXP=1, MAXO=1;
+function out2(n){var s=0;for(var q=0;q<kv.length;q++){s+=kv[q]*s2(n-la[q])*s2(n-lb[q]);}return s;}
+function calib(){
+  MAXP=1e-6; MAXO=1e-6;
+  for(var n=20;n<=60.001;n+=0.5){
+    var o=Math.abs(out2(n)); if(o>MAXO)MAXO=o;
+    for(var q=0;q<kv.length;q++){
+      var p=Math.abs(kv[q]*s2(n-la[q])*s2(n-lb[q])); if(p>MAXP)MAXP=p;
+    }
+  }
+}
+function stim2(){
+  var a='',b='',c='',t;
+  for(t=0;t<=60.001;t+=0.1){
+    a+=(t===0?'M':'L')+x2(t).toFixed(1)+' '+(294-34*e2(t)).toFixed(1)+' ';
+    b+=(t===0?'M':'L')+x2(t).toFixed(1)+' '+(294+34*e2(t)).toFixed(1)+' ';
+    c+=(t===0?'M':'L')+x2(t).toFixed(1)+' '+(294-34*s2(t)).toFixed(1)+' ';
+  }
+  pth(el('e2a'),a); pth(el('e2b'),b); pth(el('t2'),c);
+}
+function draw2(){
+  var n=+el('nw').value;
+  el('nwo').textContent=n.toFixed(1)+' ms';
+  for(var q=0;q<kv.length;q++){
+    var p=kv[q]*s2(n-la[q])*s2(n-lb[q]);
+    prct[q].setAttribute('fill',p>0?'#C7502A':'#2C6FAF');
+    prct[q].setAttribute('opacity',Math.min(0.72,Math.abs(p)/MAXP*0.72).toFixed(3));
+  }
+  var rel=out2(n)/MAXO;
+  el('onum').textContent=rel.toFixed(2);
+  el('ohint').textContent=rel>0.55?'firing hard':(rel>0.15?'responding':'quiet');
+  var w0=x2(Math.max(0,n-20)), w1=x2(n);
+  el('win').setAttribute('x',w0.toFixed(1));
+  el('win').setAttribute('width',(w1-w0).toFixed(1));
+  el('nowl').setAttribute('x1',w1.toFixed(1)); el('nowl').setAttribute('x2',w1.toFixed(1));
+  var d='';
+  for(var t=20;t<=n+0.001;t+=0.5){d+=(t===20?'M':'L')+x2(t).toFixed(1)+' '+(430-62*out2(t)/MAXO).toFixed(1)+' ';}
+  pth(el('o2'),d);
+  el('od').setAttribute('cx',w1.toFixed(1));
+  el('od').setAttribute('cy',(430-62*rel).toFixed(1));
+  el('r2').innerHTML='The loud patch of stimulus is centred at 30 ms, but the response peaks nearer <b>37 ms</b>, because the kernel weights moments about 7 ms into the past. The second patch is roughly half the amplitude and drives about a quarter of the response — envelope power goes as amplitude squared.';
+}
+function shiftStim(){OFF=OFF?0:9;stim2();calib();draw2();}
+el('nw').addEventListener('input',draw2);
+el('swb').addEventListener('click',function(){
+  var inp=el('nw'), v=20;
+  inp.value=20; draw2();
+  var id=setInterval(function(){
+    v+=0.5; inp.value=v; draw2();
+    if(v>=60)clearInterval(id);
+  },35);
+});
+stim2(); calib(); draw2();
+
+var SUF=0.9, SUS=4.5, M=0.9, TAP=[], GF=[], GS=[], SGF=0, SGS=0;
+(function(){
+  for(var u=0;u<=24.001;u+=0.5){
+    TAP.push(u);
+    var f=Math.exp(-(u-U0)*(u-U0)/(2*SUF*SUF)), s=Math.exp(-(u-U0)*(u-U0)/(2*SUS*SUS));
+    GF.push(f); GS.push(s); SGF+=f; SGS+=s;
+  }
+})();
+raster(el('kf'),30,38,7,24,SUF);
+raster(el('ks'),200,38,7,24,SUS);
+function gain(g,sg,feHz){
+  var re=0,im=0,w=2*Math.PI*feHz/1000;
+  for(var i=0;i<TAP.length;i++){re+=g[i]*Math.cos(w*TAP[i]); im+=g[i]*Math.sin(w*TAP[i]);}
+  return Math.sqrt(re*re+im*im)/sg;
+}
+function xm(f){return 430+400*(Math.log(f)-Math.log(2))/(Math.log(500)-Math.log(2));}
+function ym(db){return 38+(-Math.max(-30,db))*(150/30);}
+function cutoff(g,sg){
+  var lo=1, hi=1200;
+  for(var i=0;i<60;i++){var mid=Math.sqrt(lo*hi); if(gain(g,sg,mid)>0.7079)lo=mid; else hi=mid;}
+  return Math.sqrt(lo*hi);
+}
+(function(){
+  var h='', tk=[2,5,10,20,50,100,200,500], i, x;
+  for(i=0;i<tk.length;i++){
+    x=xm(tk[i]);
+    h+='<line x1="'+x.toFixed(1)+'" y1="38" x2="'+x.toFixed(1)+'" y2="188" stroke="#C6D0D9" stroke-width="0.5"/>';
+    h+='<text x="'+x.toFixed(1)+'" y="204" fill="#5B6B7A" font-size="11" text-anchor="middle">'+tk[i]+'</text>';
+  }
+  for(i=10;i<=20;i+=10){
+    h+='<line x1="430" y1="'+ym(-i).toFixed(1)+'" x2="830" y2="'+ym(-i).toFixed(1)+'" stroke="#C6D0D9" stroke-width="0.5"/>';
+  }
+  el('gr3').innerHTML=h;
+  var df='', ds='', f, first=true;
+  for(f=2;f<=500.001;f*=1.06){
+    var a=20*Math.log(gain(GF,SGF,f))/Math.LN10, b=20*Math.log(gain(GS,SGS,f))/Math.LN10;
+    df+=(first?'M':'L')+xm(f).toFixed(1)+' '+ym(a).toFixed(1)+' ';
+    ds+=(first?'M':'L')+xm(f).toFixed(1)+' '+ym(b).toFixed(1)+' ';
+    first=false;
+  }
+  pth(el('mf'),df); pth(el('ms'),ds);
+  el('cf').textContent=Math.round(cutoff(GF,SGF))+' Hz';
+  el('cs').textContent=Math.round(cutoff(GS,SGS))+' Hz';
+})();
+function x3(t){return 60+9.75*t;}
+function draw3(){
+  var fe=+el('fe').value;
+  el('feo').textContent=fe+' Hz';
+  var w=2*Math.PI*fe/1000, mx=(1+M)*(1+M);
+  function A2(t){var a=1+M*Math.cos(w*t);return a*a;}
+  function o(g,sg,t){var s=0;for(var i=0;i<TAP.length;i++){s+=g[i]*A2(t-TAP[i]);}return s/sg;}
+  var din='', dof='', dos='', t, first=true;
+  for(t=0;t<=80.001;t+=0.4){
+    din+=(first?'M':'L')+x3(t).toFixed(1)+' '+(208-165*A2(t)/mx).toFixed(1)+' ';
+    dof+=(first?'M':'L')+x3(t).toFixed(1)+' '+(208-165*o(GF,SGF,t)/mx).toFixed(1)+' ';
+    dos+=(first?'M':'L')+x3(t).toFixed(1)+' '+(208-165*o(GS,SGS,t)/mx).toFixed(1)+' ';
+    first=false;
+  }
+  pth(el('ain'),din); pth(el('of'),dof); pth(el('os'),dos);
+  var fmn=1e9,fmx=-1e9,smn=1e9,smx=-1e9, per=1000/fe;
+  for(t=40;t<=40+per;t+=per/120){
+    var vf=o(GF,SGF,t), vs=o(GS,SGS,t);
+    if(vf<fmn)fmn=vf; if(vf>fmx)fmx=vf;
+    if(vs<smn)smn=vs; if(vs>smx)smx=vs;
+  }
+  var d0=(mx-(1-M)*(1-M))/(mx+(1-M)*(1-M));
+  el('df').textContent=Math.round(100*((fmx-fmn)/(fmx+fmn))/d0)+'%';
+  el('ds').textContent=Math.round(100*((smx-smn)/(smx+smn))/d0)+'%';
+  var xf=xm(Math.max(2,Math.min(500,fe)));
+  el('fel').setAttribute('x1',xf.toFixed(1)); el('fel').setAttribute('x2',xf.toFixed(1));
+  el('mfd').setAttribute('cx',xf.toFixed(1));
+  el('mfd').setAttribute('cy',ym(20*Math.log(gain(GF,SGF,fe))/Math.LN10).toFixed(1));
+  el('msd').setAttribute('cx',xf.toFixed(1));
+  el('msd').setAttribute('cy',ym(20*Math.log(gain(GS,SGS,fe))/Math.LN10).toFixed(1));
+}
+el('fe').addEventListener('input',draw3);
+draw3();
+</script>
+</body>
+</html>
