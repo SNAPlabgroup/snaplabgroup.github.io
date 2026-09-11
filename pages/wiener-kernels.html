@@ -135,12 +135,12 @@ footer{border-top:1px solid var(--rule);padding-top:20px;font-size:14px;color:va
 <div id="r0" class="readout"></div>
 </div>
 <p class="note">Two things worth drawing out. The first is how fast it converges: one snippet is pure noise, ten is a hint, a few hundred is a recognisable filter. Nothing about the cell changed while you clicked — you were only collecting evidence. Real experiments accumulate 5000–10,000 driven spikes per fibre for exactly this reason (Henry et al., 2019). The second is what happens when you invert the noise. The estimate flips upside down, because this kernel tracks the shape of the waveform, sign and all. Hold on to that, because it is precisely the property the second-order kernel does not have.</p>
-<p class="note">The limitation of <i>h</i><sub>1</sub> is that it captures only what is linear in the response. A fibre that phase-locks poorly, as high-CF fibres do, yields a small or non-significant <i>h</i><sub>1</sub> even while it responds vigorously to the noise (Johnson, 1980; Heinz et al., 2001; Recio-Spinoso et al., 2005). Something is plainly driving those spikes, and reverse correlation on single moments cannot see it.</p>
+<p class="note">The limitation of <i>h</i><sub>1</sub> is that it captures only what is linear in the response. A fibre that phase-locks poorly, as high-CF fibres do, yields a small or non-significant <i>h</i><sub>1</sub> even while it responds vigorously to the noise (Johnson, 1980; Heinz et al., 2001; Recio-Spinoso et al., 2005). Something is plainly driving those spikes, and reverse correlation on single time bins cannot see it.</p>
 </section>
 
 <section>
 <h2>2. The second-order kernel</h2>
-<p class="note">The revcor asks about single moments. The second-order kernel asks about pairs of them, and that one change is what lets a cell report the envelope of a sound rather than its waveform. The reason is worth stating plainly: a purely linear filter cannot represent the envelope of a zero-mean carrier at all, because the modulation averages out. Recovering an envelope requires an even nonlinearity — squaring or rectification — and a second-order term is exactly that.</p>
+<p class="note">The revcor asks about single time bins. The second-order kernel asks about pairs of them, and that one change is what lets a cell report the envelope of a sound rather than its waveform. The reason is worth stating plainly: a purely linear filter cannot represent the envelope of a zero-mean carrier at all, because the modulation averages out. Recovering an envelope requires an even nonlinearity — squaring or rectification — and a second-order term is exactly that.</p>
 <div class="eq">
 <math display="block"><mrow>
 <msub><mi>R</mi><mn>2</mn></msub><mo stretchy="false">(</mo><msub><mi>&#x3C4;</mi><mn>1</mn></msub><mo>,</mo><msub><mi>&#x3C4;</mi><mn>2</mn></msub><mo stretchy="false">)</mo>
@@ -167,10 +167,10 @@ footer{border-top:1px solid var(--rule);padding-top:20px;font-size:14px;color:va
 <p class="note"><i>R</i><sub>2</sub> is the average product of the stimulus at two lags before a spike. Subtracting the stimulus autocorrelation <i>φ</i><sub>xx</sub> removes the structure the noise has anyway, leaving what is attributable to the cell. Because Wiener kernels are orthogonalised against a Gaussian input, <i>h</i><sub>1</sub> and <i>h</i><sub>2</sub> can be estimated independently by cross-correlation, and truncating the series after the second term leaves the first unchanged — which is not true of the corresponding Volterra kernels (van Drongelen, 2010). A one-dimensional Fourier transform of <i>h</i><sub>2</sub> yields a spectro-temporal receptive field, readable as the mean stimulus spectrogram preceding a spike (Lewis and van Dijk, 2004).</p>
 
 <div class="sub">
-<h3>2.1 Every square is a question about two moments</h3>
-<p class="note">The first-order kernel is a list of weights over time. The second-order kernel is a grid, and each square in it asks about a <em>pair</em> of moments in the recent past: how much does this cell like it when those two moments agreed, both up or both down, versus disagreed? Drag the dot to pick a pair, or use the buttons to jump to the four cases worth talking through.</p>
+<h3>2.1 Every square is a question about two time bins</h3>
+<p class="note">The first-order kernel is a list of weights over time. The second-order kernel is a grid, and each square in it asks about a <em>pair</em> of time bins in the recent past: how much does this cell like it when those two bins agreed, both up or both down, versus disagreed? Drag the dot to pick a pair, or use the buttons to jump to the four cases worth talking through.</p>
 <div class="fig">
-<p class="sr">Drag a point on the kernel to see which pair of past moments it asks about.</p>
+<p class="sr">Drag a point on the kernel to see which pair of past time bins it asks about.</p>
 <svg id="s1" viewBox="0 0 860 360" style="touch-action:none;cursor:crosshair">
   <text x="60" y="26" fill="var(--muted)" font-size="13">the cell</text>
   <text x="400" y="26" fill="var(--muted)" font-size="13">the stimulus it is asking about</text>
@@ -181,14 +181,14 @@ footer{border-top:1px solid var(--rule);padding-top:20px;font-size:14px;color:va
   <line id="c1y" x1="151" y1="40" x2="151" y2="300" stroke="var(--act)" stroke-width="0.75"/>
   <circle id="d1" cx="151" cy="209" r="7" fill="var(--act)" stroke="#fff" stroke-width="2"/>
   <rect x="60" y="40" width="260" height="260" fill="none" stroke="#B9C4CE"/>
-  <text x="190" y="336" fill="var(--muted)" font-size="13" text-anchor="middle">how long ago, moment 1 (ms)</text>
+  <text x="190" y="336" fill="var(--muted)" font-size="13" text-anchor="middle">how long ago, time bin 1 (ms)</text>
   <text x="60" y="316" fill="var(--muted)" font-size="12" text-anchor="middle">0</text>
   <text x="190" y="316" fill="var(--muted)" font-size="12" text-anchor="middle">10</text>
   <text x="320" y="316" fill="var(--muted)" font-size="12" text-anchor="middle">20</text>
   <text x="52" y="304" fill="var(--muted)" font-size="12" text-anchor="end">0</text>
   <text x="52" y="174" fill="var(--muted)" font-size="12" text-anchor="end">10</text>
   <text x="52" y="44" fill="var(--muted)" font-size="12" text-anchor="end">20</text>
-  <text x="30" y="174" fill="var(--muted)" font-size="13" text-anchor="middle">moment 2</text>
+  <text x="30" y="240" fill="var(--muted)" font-size="13" text-anchor="middle">time bin 2</text>
   <path id="e1a" fill="none" stroke="#8899A6" stroke-width="0.75" stroke-dasharray="3 3"/>
   <path id="e1b" fill="none" stroke="#8899A6" stroke-width="0.75" stroke-dasharray="3 3"/>
   <path id="t1" fill="none" stroke="var(--muted)" stroke-width="1.25"/>
@@ -213,7 +213,7 @@ footer{border-top:1px solid var(--rule);padding-top:20px;font-size:14px;color:va
 </div>
 <div id="r1" class="readout"></div>
 </div>
-<p class="note">Two directions, two different questions. Across the diagonal is the gap between the moments, and a gap is what frequency means, so that direction carries the carrier the cell is tuned to. Along the diagonal is how long ago both moments were, so that direction carries <em>when</em>. The stripes say 250 Hz; the fade past about 14 ms says the cell has no memory beyond that.</p>
+<p class="note">Two directions, two different questions. Across the diagonal is the gap between the two bins, and a gap is what frequency means, so that direction carries the carrier the cell is tuned to. Along the diagonal is how long ago both bins were, so that direction carries <em>when</em>. The stripes say 250 Hz; the fade past about 14 ms says the cell has no memory beyond that.</p>
 <p class="note">Real kernels contain two kinds of banding, and they mean different things. Bands running parallel to the diagonal, like the ones above, reflect phase locking to the envelope, and their spacing identifies the carrier band whose envelope the fibre follows. Bands running perpendicular to the diagonal instead reflect nonlinearity in the phase-locked response to the fine structure. A fibre showing both gives the kernel a checkerboard appearance (Recio-Spinoso et al., 2005; Henry et al., 2016). The two components separate cleanly in the two-dimensional Fourier transform of <i>h</i><sub>2</sub>: envelope energy falls in the second and fourth quadrants and fine-structure energy in the first and third, so zeroing the first and third quadrants leaves a kernel driven primarily by envelope coding (Recio-Spinoso et al., 2005; Henry et al., 2016).</p>
 <p class="note">From there the usual step is eigenvector decomposition, which typically returns one or sometimes two pairs of significant eigenvectors in quadrature phase — the signature of a phase-insensitive energy detector. The Fourier transform of the first eigenvector gives the BF of envelope coding, the counterpart to what <i>h</i><sub>1</sub> gives for fine structure (Lewis et al., 2002; Recio-Spinoso et al., 2005). One caution when reading a published kernel: if the decomposition returns a single eigenvector that simply matches <i>h</i><sub>1</sub>, the kernel is reporting curvature of the cell's output nonlinearity rather than a new feature, and there is no envelope claim to make.</p>
 </div>
@@ -552,7 +552,7 @@ function draw1(){
   var col=pr>0.02?'#C7502A':(pr<-0.02?'#2C6FAF':'#7A8A97');
   el('q1').setAttribute('fill',col); el('q2').setAttribute('fill',col);
   var w=el('v1');
-  w.textContent=pr>0.02?'these two moments agree':(pr<-0.02?'these two moments disagree':'one of them is near zero');
+  w.textContent=pr>0.02?'these two bins agree':(pr<-0.02?'these two bins disagree':'one of them is near zero');
   w.setAttribute('fill',col);
   var p=el('v2');
   p.textContent=Math.abs(k)<0.04?'the cell barely cares about this pairing':(k>0?'the cell rewards agreement here':'the cell rewards disagreement here');
@@ -637,7 +637,7 @@ function draw2(){
   pth(el('o2'),d);
   el('od').setAttribute('cx',w1.toFixed(1));
   el('od').setAttribute('cy',(430-62*rel).toFixed(1));
-  el('r2').innerHTML='The loud patch of stimulus is centred at 30 ms, but the response peaks nearer <b>37 ms</b>, because the kernel weights moments about 7 ms into the past. The second patch is roughly half the amplitude and drives about a quarter of the response — envelope power goes as amplitude squared.';
+  el('r2').innerHTML='The loud patch of stimulus is centred at 30 ms, but the response peaks nearer <b>37 ms</b>, because the kernel weights bins about 7 ms into the past. The second patch is roughly half the amplitude and drives about a quarter of the response — envelope power goes as amplitude squared.';
 }
 function shiftStim(){OFF=OFF?0:9;stim2();calib();draw2();}
 el('nw').addEventListener('input',draw2);
