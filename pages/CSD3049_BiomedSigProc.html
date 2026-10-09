@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CSD 3049: PhD Seminar – Biomedical Signal Processing (Spring 2027)</title>
+<meta name="description" content="Syllabus for CSD 3049, a biomedical data-science seminar on signal processing and stochastic methods, University of Pittsburgh, Department of Communication Science and Disorders.">
+<style>
+:root {
+  --blue: #003594;
+  --navy: #14224a;
+  --gold: #ffb81c;
+  --ink: #1d2230;
+  --muted: #5a6275;
+  --rule: #d7ddec;
+  --tint: #f3f5fb;
+  --paper: #ffffff;
+  --serif: "Palatino Linotype", Palatino, "Book Antiqua", "Iowan Old Style", Georgia, serif;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 1.5rem; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.62;
+  -webkit-text-size-adjust: 100%;
+}
+.wrap { max-width: 1140px; margin: 0 auto; padding: 0 1.5rem; }
+.skip { position: absolute; left: -999px; top: 0; background: var(--navy); color: #fff; padding: .6rem 1rem; z-index: 10; }
+.skip:focus { left: 0; }
+
+/* masthead */
+.masthead { border-top: 6px solid var(--gold); border-bottom: 1px solid var(--rule); background: var(--paper); padding: 2rem 0 2.25rem; }
+.logo { display: block; width: min(560px, 100%); height: auto; margin-bottom: 2.25rem; }
+.masthead h1 { margin: 0; font-family: var(--serif); font-weight: 400; color: var(--navy); line-height: 1.08; }
+.masthead .course { display: block; font-size: 1.35rem; color: var(--muted); margin-bottom: .35rem; }
+.masthead .title { display: block; font-size: clamp(2.4rem, 6vw, 4rem); font-weight: 700; color: var(--blue); letter-spacing: -0.01em; }
+.masthead .term { display: block; font-size: 1.35rem; margin-top: .6rem; color: var(--navy); }
+
+/* layout */
+.layout { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 4rem; padding-top: 2.5rem; padding-bottom: 5rem; align-items: start; }
+.toc { position: sticky; top: 1.5rem; max-height: calc(100vh - 3rem); overflow-y: auto; font-size: .92rem; }
+.toc summary { font-family: var(--serif); font-size: 1.1rem; font-weight: 700; color: var(--navy); cursor: pointer; margin-bottom: .6rem; }
+.toc ol { list-style: none; margin: 0; padding: 0; border-left: 1px solid var(--rule); }
+.toc li a { display: block; padding: .28rem 0 .28rem .9rem; margin-left: -1px; border-left: 3px solid transparent; color: var(--ink); text-decoration: none; line-height: 1.35; }
+.toc li a:hover { color: var(--blue); }
+.toc li a[aria-current="true"] { border-left-color: var(--gold); color: var(--blue); font-weight: 600; }
+
+/* content */
+main { min-width: 0; max-width: 46rem; }
+main > section { padding-bottom: 1.25rem; margin-bottom: 2.5rem; }
+main > section > h2 { position: relative; margin: 0 0 1rem; padding-top: 1rem; font-family: var(--serif); font-size: 1.75rem; line-height: 1.2; color: var(--blue); border-top: 1px solid var(--rule); }
+main > section > h2::before { content: ""; position: absolute; top: -2px; left: 0; width: 3rem; height: 3px; background: var(--gold); }
+main h3 { font-family: var(--serif); font-size: 1.3rem; color: var(--navy); margin: 2rem 0 .5rem; line-height: 1.25; }
+main h4 { font-size: 1rem; color: var(--navy); margin: 1.5rem 0 .4rem; }
+main p { margin: 0 0 1rem; }
+main ul, main ol { padding-left: 1.4rem; margin: 0 0 1rem; }
+main li { margin-bottom: .55rem; }
+main li::marker { color: var(--blue); }
+main a { color: var(--blue); text-decoration-thickness: 1px; text-underline-offset: 2px; overflow-wrap: anywhere; }
+main a:hover { color: var(--navy); text-decoration-thickness: 2px; }
+a:focus-visible, summary:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; border-radius: 2px; }
+main code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .9em; background: var(--tint); padding: .1em .35em; border-radius: 3px; }
+main blockquote { margin: 1rem 0; padding: .1rem 1rem; border-left: 3px solid var(--gold); background: var(--tint); }
+main sup a { text-decoration: none; }
+
+/* placeholders */
+mark.tbd { background: #fff1c2; color: var(--ink); padding: 0 .25em; border-bottom: 2px dashed #c98a00; border-radius: 2px; }
+
+/* tables */
+.table-wrap { overflow-x: auto; margin: 1.25rem 0 1.5rem; }
+.table-wrap:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+table { border-collapse: collapse; width: 100%; font-size: .96rem; }
+th { text-align: left; font-weight: 700; color: var(--blue); border-bottom: 2px solid var(--blue); padding: .55rem .75rem .55rem 0; }
+td { padding: .8rem .75rem .8rem 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+
+/* schedule */
+.schedule th:nth-child(1), .schedule td:nth-child(1) { width: 4.2rem; white-space: nowrap; }
+.schedule td:nth-child(1) { font-family: var(--serif); font-weight: 700; font-size: 1.2rem; color: var(--blue); line-height: 1.35; }
+.schedule th:nth-child(3), .schedule td:nth-child(3) { width: 11.5rem; padding-right: 0; }
+.schedule td.deadline { border-left: 3px solid var(--gold); padding-left: .75rem; font-weight: 600; color: var(--navy); }
+.schedule td:nth-child(3):not(.deadline) { color: var(--muted); }
+
+/* grades */
+.grades { max-width: 36rem; }
+.grades th:nth-child(2), .grades td:nth-child(2) { text-align: right; width: 5.5rem; padding-right: 0; font-variant-numeric: tabular-nums; }
+.grades td:nth-child(2) { font-weight: 700; color: var(--navy); }
+
+.grades td.sub { padding-left: 1.5rem; color: var(--muted); }
+
+/* footnotes */
+.footnotes { border-top: 1px solid var(--rule); padding-top: 1rem; font-size: .92rem; color: var(--muted); }
+.footnotes p { margin-bottom: .5rem; }
+
+@media (max-width: 900px) {
+  .layout { grid-template-columns: minmax(0, 1fr); gap: 1.25rem; padding-top: 1.5rem; }
+  .toc { position: static; max-height: none; border: 1px solid var(--rule); background: var(--tint); padding: .8rem 1rem; border-radius: 4px; }
+  .toc summary { margin-bottom: 0; }
+  .toc details[open] summary { margin-bottom: .6rem; }
+  .masthead { padding-top: 1.5rem; }
+}
+@media (max-width: 640px) {
+  body { font-size: 1rem; }
+  .wrap { padding: 0 1.1rem; }
+  .schedule thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .schedule tr { display: grid; grid-template-columns: 3rem minmax(0, 1fr); border-bottom: 1px solid var(--rule); padding: .7rem 0; }
+  .schedule td { border: 0; padding: 0; width: auto !important; }
+  .schedule td:nth-child(3) { grid-column: 2; margin-top: .35rem; }
+  .schedule td.deadline { padding-left: .6rem; }
+}
+
+@media print {
+  .toc, .skip { display: none; }
+  .layout { display: block; padding-top: 0; }
+  main { max-width: none; }
+  body { font-size: 10.5pt; }
+  mark.tbd { background: none; border-bottom: 1px dashed #000; }
+  main > section { break-inside: auto; }
+  h2, h3 { break-after: avoid; }
+  tr { break-inside: avoid; }
+  main a { color: inherit; }
+}
+
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="masthead">
+  <div class="wrap">
+    <img class="logo" src="figures/pittlogo.png" alt="University of Pittsburgh, Department of Communication Science and Disorders, School of Health and Rehabilitation Sciences">
+    <h1>
+      <span class="course">CSD 3049: PhD Seminar</span>
+      <span class="title">Biomedical Signal Processing</span>
+      <span class="term">Spring 2027</span>
+    </h1>
+  </div>
+</header>
+<div class="layout wrap">
+  <nav class="toc" aria-label="Syllabus sections">
+    <details open>
+      <summary>Contents</summary>
+      <ol>
+<li><a href="#registration">Registration</a></li>
+<li><a href="#instructor">Instructor</a></li>
+<li><a href="#description">Description</a></li>
+<li><a href="#course-outcomes">Course Outcomes</a></li>
+<li><a href="#learning-strategies">Learning Strategies</a></li>
+<li><a href="#prerequisites">Prerequisites</a></li>
+<li><a href="#midterm-project">Midterm Project</a></li>
+<li><a href="#final-project">Final Project</a></li>
+<li><a href="#tentative-schedule">Tentative Schedule</a></li>
+<li><a href="#final-grade-composition">Final Grade Composition</a></li>
+<li><a href="#learning-resources-technology-texts">Learning Resources, Technology, &amp; Texts</a></li>
+<li><a href="#problem-sets-project-submissions">Problem Sets &amp; Project Submissions</a></li>
+<li><a href="#university-policies-and-student-support">University Policies and Student Support</a></li>
+      </ol>
+    </details>
+  </nav>
+  <main id="main">
+<section id="registration"><h2>Registration</h2>
+<p>CSD 3049 — PhD Seminar: Biomedical Signal Processing <br/>
+Time: Wednesdays, <mark class="tbd">[time TBD]</mark> <br/>
+Location: <mark class="tbd">[TBD]</mark> <br/>
+Credits: 3 <br/>
+Open to students outside CSD. <br/></p>
+</section><section id="instructor"><h2>Instructor</h2>
+<p>Hari M. Bharadwaj, Ph.D. <br/>
+Associate Professor and Vice Chair for Research, Department of Communication Science and Disorders <br/>
+Office: 5HLKT 6141 <br/>
+e-Mail: <a href="mailto:hari.bharadwaj@pitt.edu">hari.bharadwaj@pitt.edu</a> <br/>
+Office Hours: Please see the “Discussion Forum” section below about using Slack<br/></p>
+</section><section id="description"><h2>Description</h2>
+<p>This is a biomedical “data-science” course covering the application of
+signal processing and stochastic methods to biomedical signals and
+systems. While orientation to biomedical data is key to this course, the
+tools and concepts covered provide foundational skills that are useful in
+many domains. Examples will be drawn from acoustics/speech,
+electrophysiology, and neuroimaging.</p>
+<p>This course is distinct from other classic offerings in ECE/MA/STAT in
+at least three ways:</p>
+<ol>
+<li>
+<p>Relevant theory in signal processing and statistical methods is
+    covered as needed, but a major focus is on implementation/application
+    of the fundamental techniques to real-world biomedical signals.</p>
+</li>
+<li>
+<p>Statistical methods that are typically taught with a “univariate”
+    perspective are expanded to topologically organized high-dimensional
+    data such as time-series and images, and done so motivated by the
+    needs in biomedical applications (e.g., electrophysiology,
+    neuroimaging).</p>
+</li>
+<li>
+<p>This course uses practical applications to integrate probabilistic
+    methods (e.g., estimation, detection, filtering) with classic
+    linear-algebraic tools (e.g., Fourier/wavelet transforms, PCA, noise
+    cancellation/regression). These foundational areas are often
+    introduced in separate courses, but are powerful when brought
+    together.</p>
+</li>
+</ol>
+<p>A “hands-on” approach is taken throughout the course via
+application-oriented problem sets. The course also includes a pre-defined
+midterm project (brain-computer interface),
+and a self-selected final project (last 5 weeks). An important goal of
+the final project is that each student should gain independent
+experience applying the tools/concepts to a real-world application of
+their interest.</p>
+</section><section id="course-outcomes"><h2>Course Outcomes</h2>
+<ol>
+<li>
+<p>Understand practical problems in objective analyses of biomedical
+    signals.</p>
+</li>
+<li>
+<p>Understand the theoretical background underlying the use of digital
+    signal processing and statistical techniques for biomedical
+    applications.</p>
+</li>
+<li>
+<p>Identify the best solution for specific problems by considering the
+    benefits and limitations of various digital signal processing
+    approaches.</p>
+</li>
+<li>
+<p>Implement appropriate signal processing algorithms for practical
+    problems involving biomedical signals and systems.</p>
+</li>
+<li>
+<p>Propose, carry out, and orally present a biomedical-research mini
+    project using signal-processing.</p>
+</li>
+</ol>
+</section><section id="learning-strategies"><h2>Learning Strategies</h2>
+<p>Pre-reading and in-class discussion; Computer-programmed (and some
+hand-solved) problem sets; Research-oriented predefined midterm project;
+Self-designed final research project</p>
+</section><section id="prerequisites"><h2>Prerequisites</h2>
+<p>Current engagement in research that involves signal processing (e.g.,
+speech/acoustics, electrophysiology, neuroimaging). If this does not
+describe you, please talk to the instructor before enrolling. Comfort
+with high-school mathematics (algebra, functions and graphs,
+trigonometry, exponentials and logarithms) and an introductory
+statistics course is also expected, along with a willingness to engage
+with programming. Prior exposure to calculus or linear algebra is
+helpful but not required; the necessary concepts will be introduced as
+needed.</p>
+<p>Python will be the default language used in class (MATLAB is an option if
+you strongly prefer it). No prior Python experience is assumed beyond a
+willingness to learn, and a self-paced orientation problem set (PS0) is
+provided for getting started. Questions about background are welcome any
+time before the term starts.</p>
+</section><section id="midterm-project"><h2>Midterm Project (about 2–3 weeks)</h2>
+<p>A pre-defined midterm project will apply signal processing to a
+brain-computer interface (BCI) dataset that is based on the so-called
+“P300” response measured using electroencephalography (EEG). Detailed
+instructions will be provided to walk through the problem at hand and
+specify the deliverables. The dataset comes from Hoffmann et al. (2008)
+and includes measurements both from typical control individuals and
+individuals with limited muscle control.</p>
+<p>Reference: Hoffmann, U., Vesin, J. M., Ebrahimi, T., &amp; Diserens,
+K. (2008). An efficient P300-based brain–computer interface for
+disabled subjects. Journal of Neuroscience methods, 167(1), 115-125.</p>
+</section><section id="final-project"><h2>Final Project (final 5 weeks)</h2>
+<p>An independent project will apply signal processing to a research
+question of interest to each student. This project can either be related
+to ongoing research in a lab or can replicate a published study. The
+final projects are intended to be extensive as they will hopefully be in
+an area of direct interest and familiarity to each student. Projects will
+be presented to the class during the final two weeks of the semester
+(modeled after a ~10-min conference talk). Grading of the presentation
+is based on both the content of the work and the quality of the oral
+presentation.</p>
+</section><section id="tentative-schedule"><h2>Tentative Schedule</h2>
+<p><em><mark class="tbd">Dates TBD</mark>.</em> Note that class will not meet during the week that
+overlaps with the Association for Research in Otolaryngology (ARO)
+Midwinter Meeting (February 5–10, 2027). Although listed below in abstract terms, all topics
+will be motivated and discussed through representative biomedical
+examples drawn from acoustics/speech, electrophysiology, and
+neuroimaging.</p>
+<div aria-label="Course schedule by week" class="table-wrap" role="region" tabindex="0"><table class="schedule" role="table">
+<thead role="rowgroup">
+<tr role="row">
+<th role="columnheader" scope="col">Week</th>
+<th role="columnheader" scope="col">Topic</th>
+<th role="columnheader" scope="col">Notes</th>
+</tr>
+</thead>
+<tbody role="rowgroup">
+<tr role="row">
+<td role="cell">1</td>
+<td role="cell">Introduction; Orientation to Python; Fourier transform and general intuitions about different signal representations (linear-space view of transforms and systems)</td>
+<td role="cell">PS0</td>
+</tr>
+<tr role="row">
+<td role="cell">2</td>
+<td role="cell">Noise reduction (I) – Triggered averaging; Filter design &amp; trade-offs</td>
+<td role="cell"></td>
+</tr>
+<tr role="row">
+<td role="cell">3</td>
+<td role="cell">Noise reduction (II) – Filtering beyond just frequencies using linear-space thinking, noise “cancellation” and regression</td>
+<td class="deadline" role="cell">PS1 due</td>
+</tr>
+<tr role="row">
+<td role="cell">4</td>
+<td role="cell">Noise reduction (III) – Multichannel filtering, PCA and applications</td>
+<td role="cell"></td>
+</tr>
+<tr role="row">
+<td role="cell">5</td>
+<td role="cell">Statistical inference (I) – Basics, ROC curves, multiple comparisons; Inference on 1D signals</td>
+<td class="deadline" role="cell">PS2 due</td>
+</tr>
+<tr role="row">
+<td role="cell">6</td>
+<td role="cell">Statistical inference (II) – Midterm project overview – P300 brain-computer interface; Review, extension of methods from 1D to images</td>
+<td role="cell"></td>
+</tr>
+<tr role="row">
+<td role="cell">7</td>
+<td role="cell">Spectral and time-frequency analysis (I) – Auto/cross-correlation review; Spectrum estimation with preview of bias/variance tradeoff</td>
+<td class="deadline" role="cell">PS3 due</td>
+</tr>
+<tr role="row">
+<td role="cell">8</td>
+<td role="cell">Spectral and time-frequency analysis (II) – Tapering and multitaper methods</td>
+<td role="cell"></td>
+</tr>
+<tr role="row">
+<td role="cell">9</td>
+<td role="cell">Spectral and time-frequency analysis (III) – Non-stationary signals and wavelets</td>
+<td class="deadline" role="cell">Midterm project due; start thinking about final project topics</td>
+</tr>
+<tr role="row">
+<td role="cell">10</td>
+<td role="cell">Modeling of biomedical signals and systems (I, II) – Introduction to statistical estimation (ML), bias, and variance; Regularization (i.e., priors, MAP) and model selection</td>
+<td role="cell"></td>
+</tr>
+<tr role="row">
+<td role="cell">11</td>
+<td role="cell">Modeling of biomedical signals and systems (III) – Minimum norm estimation and deconvolution example, Lasso regression</td>
+<td class="deadline" role="cell">PS4 due; Final proposal due</td>
+</tr>
+<tr role="row">
+<td role="cell">12</td>
+<td role="cell">Machine learning approaches (I) – Classification and clustering from a statistical modeling perspective; ROC curve review; Linear classifiers; The “training → validation → testing” workflow</td>
+<td role="cell"></td>
+</tr>
+<tr role="row">
+<td role="cell">13</td>
+<td role="cell">Machine learning approaches (II) – From linear classifiers to neural networks; Trainable filters; Review and consolidation</td>
+<td class="deadline" role="cell">Multiple choice due</td>
+</tr>
+<tr role="row">
+<td role="cell">Finals</td>
+<td role="cell">Final project presentations</td>
+<td role="cell"></td>
+</tr>
+</tbody>
+</table></div>
+</section><section id="final-grade-composition"><h2>Final Grade Composition</h2>
+<div aria-label="Grade composition" class="table-wrap" role="region" tabindex="0"><table class="grades">
+<thead>
+<tr>
+<th scope="col">Assessment Item</th>
+<th scope="col">Weight</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Problem Sets (“PS” 1 – 4)</td>
+<td>35%</td>
+</tr>
+<tr>
+<td>Consolidated Multiple Choice Problem Set</td>
+<td>15%</td>
+</tr>
+<tr>
+<td>Midterm brain-computer interface project</td>
+<td>20%</td>
+</tr>
+<tr>
+<td>Final (individual) research project</td>
+<td></td>
+</tr>
+<tr>
+<td class="sub">Proposal</td>
+<td>10%</td>
+</tr>
+<tr>
+<td class="sub">Presentation (including content)</td>
+<td>20%</td>
+</tr>
+</tbody>
+</table></div>
+<p>Additional bonus points may be assigned for contributions to peer
+success through the discussion forum.</p>
+</section><section id="learning-resources-technology-texts"><h2>Learning Resources, Technology, &amp; Texts</h2>
+<h3 id="supplemental-references">Supplemental References</h3>
+<p>There are no required textbooks. Class notes and code examples will
+be provided for all topics in some combination of PDFs, web pages,
+and Jupyter Notebooks.</p>
+<p>The following optional additional resources are suggested for students
+interested in exploring from the ground up on their own.</p>
+<ol>
+<li>
+<p>Moon, T. K., &amp; Stirling, W. C. (2005). Mathematical methods and
+    algorithms for signal processing. Prentice hall.
+    ISBN: 9788129709769.</p>
+</li>
+<li>
+<p>Hastie, T., Tibshirani, R., &amp; Friedman, J. (2009). The Elements of
+    Statistical Learning Data Mining, Inference, and Prediction (2nd
+    Illustrated Edition). ISBN: 9780387848587. [Reprint PDF may be
+    available for download from <a href="https://web.stanford.edu/~hastie/ElemStatLearn/" rel="noopener" target="_blank">Trevor Hastie’s web
+    page</a>].</p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab" rel="noopener" target="_blank">Grant Sanderson’s (3blue1brown) YouTube videos on
+    Linear Algebra</a>
+    provide excellent background on the geometrical thinking
+    that we will exploit in this course.</p>
+</li>
+<li>
+<p>Lyon, R. F. (2017). Human and Machine Hearing: Extracting Meaning
+    from Sound. Cambridge University Press.</p>
+</li>
+</ol>
+<h3 id="required-software">Required Software</h3>
+<ol>
+<li>
+<p>Python &gt;= 3.11 (or MATLAB if you strongly prefer)</p>
+</li>
+<li>
+<p>Any software to typeset PDF documents (e.g., Jupyter notebooks
+    converted to PDF, or Microsoft (TM) Word
+    → convert/print to PDF, or LaTeX)</p>
+</li>
+<li>
+<p>Software for final project presentations (e.g., Powerpoint,
+    LaTeXBeamer, etc. converted to PDFs)</p>
+</li>
+</ol>
+<h3 id="access-to-python">Access to Python</h3>
+<p>As of this writing, Python is one of the most widely
+used and fastest growing languages for data-science work. It is also
+free for individual researchers and students. We will use Python &gt;=
+3.11 and associated scientific packages, namely NumPy, SciPy,
+matplotlib, pandas, scikit-learn, and JAX in this course. It is the
+responsibility of each student working with Python to find a reliable
+computing environment in which to do the work for this course. This
+should be worked out within the first week of class. There are two
+excellent options that are recommended:</p>
+<ol>
+<li>
+<p><a href="https://www.anaconda.com/products/individual" rel="noopener" target="_blank">Anaconda
+    distribution</a>: The
+    Anaconda individual edition is free and can be easily installed on
+    Mac, Linux, or Windows. This will run locally on the computer on
+    which you install (e.g., personal computer, or lab computer). Being
+    able to install and use these data-science tools is a minor but very
+    useful skill in itself. Contained in the Anaconda distribution is
+    Jupyter Notebook, which is an interactive coding environment that
+    makes it easy to intersperse blocks of formatted text, code, and
+    code outputs/figures. Note that JAX is not part of the default
+    Anaconda installation and needs to be installed separately (e.g.,
+    via <code>pip install jax</code>; installation details vary by operating
+    system, so see the <a href="https://docs.jax.dev/en/latest/installation.html" rel="noopener" target="_blank">JAX installation
+    guide</a>).</p>
+</li>
+<li>
+<p><a href="https://colab.research.google.com/" rel="noopener" target="_blank">Google Colaboratory</a>:
+    Google Colaboratory is a cloud computing platform that comes
+    pre-installed with the scientific libraries we will need in
+    this course (including JAX). A Google account is needed to access Colaboratory. Once
+    logged in, users are presented with a Jupyter Notebook environment
+    where you can start writing and running code right away. The code
+    will run on virtual machines spawned from Google’s servers. Data and
+    notebooks can be saved on Google Drive (up to 5 GB is free as of
+    this writing). If using this option, you could use your existing
+    google account if you have enough space, or create a new one (for
+    free) for this course.</p>
+</li>
+</ol>
+<p>The scientific libraries across MATLAB and Python have many
+similarities. Thus, if you are primarily a MATLAB user, it is quite
+feasible to use this course as an opportunity to try or switch to
+Python. Excellent <a href="http://www.scipy-lectures.org" rel="noopener" target="_blank">online tutorials</a> are
+available for scientific Python. Office hours and the forum discussions
+are available to supplement your existing familiarity with Python.</p>
+<p>If you are a MATLAB user looking to start using the Python data science
+ecosystem, one useful resource is
+<a href="https://numpy.org/doc/stable/user/numpy-for-matlab-users.html" rel="noopener" target="_blank">NumPy for MATLAB users</a>.</p>
+<h3 id="access-to-matlab">Access to MATLAB</h3>
+<p>Although we will use Python by default for discussion in class, the
+scientific libraries are very similar across MATLAB and Python. Code
+illustrated with one language is replicable in the other. Thus, if you
+strongly prefer using MATLAB, that is an option accommodated in this
+course. You are welcome to solve assignments and projects using MATLAB
+code; the problems/projects themselves are language-agnostic. It is the
+responsibility of each student choosing to work with MATLAB to find a
+reliable computing environment in which to do the work for this course.
+MATLAB is available free to University of Pittsburgh students: look
+under the software for students section of
+<a href="https://services.pitt.edu/" rel="noopener" target="_blank">services.pitt.edu</a>, or see the <a href="https://www.mathworks.com/academia/tah-portal/university-of-pittsburgh-30296636.html" rel="noopener" target="_blank">MathWorks
+University of Pittsburgh
+portal</a>.</p>
+<h3 id="course-website">Course Website</h3>
+<p>Materials, assignments, and grades for the course will be posted on
+Canvas. Although the course site
+will serve as the starting point for all course material, some material
+will be hosted elsewhere and links will be provided on the course site.
+These include code blocks and Jupyter/IPython Notebooks on
+<a href="https://github.com" rel="noopener" target="_blank">GitHub</a> and <a href="https://colab.research.google.com/" rel="noopener" target="_blank">Google
+Colaboratory</a>.</p>
+<p>AI tools can also be useful for quick explanations, debugging help,
+and pointers to further reading. However, they can be confidently wrong,
+and learning to evaluate their output critically is an important skill
+in the modern-day data scientist’s repertoire. Please see the <a href="#use-of-generative-ai-tools-in-academic-work">policy on
+generative AI tools</a> under
+Academic Integrity for what is and is not permitted.</p>
+<h3 id="discussion-forum-and-live-qa-slack">Discussion Forum and Live Q&amp;A – Slack</h3>
+<p>We will use a group discussion forum for Q&amp;A and discussion.
+Specifically, we will use Slack. Details to join the Slack workspace for
+this course will be provided on the course site. Rather than emails,
+Slack is the preferred method for asking questions outside class.</p>
+<p>Using Slack allows for getting help quickly and efficiently from
+classmates, and instructors. You are encouraged to ask <em>and answer</em>
+questions about logistics, content, assignments, and projects. In
+particular, requesting and sharing general and specific Python/MATLAB
+“how to” knowledge is encouraged. However, please do <em>not</em> share
+explicit code blocks or solutions to homework sets, projects etc. You
+are also encouraged to share any ideas, articles, or videos that you
+think would benefit others.</p>
+</section><section id="problem-sets-project-submissions"><h2>Problem Sets &amp; Project Submissions</h2>
+<p>For PS1 – 4 and the multiple choice problem set, submitted work will
+consist of electronic files. All assignments are due by the specified due
+date (and time). Electronic material will consist of your *.PDF file
+containing your solutions and figures. In some cases, submission of code
+itself and/or data files (e.g., *.mat or *.npz data files)
+<sup><a href="#fn1">1</a></sup> may be requested. If multiple files are requested,
+all electronic files should be bundled together as one ZIP archive before
+submitting. Note that there is a problem set #0 (PS0), which is designed
+for reviewing/learning Python (or MATLAB) use and is intended for self
+appraisal and need not be submitted.</p>
+</section><section id="university-policies-and-student-support"><h2>University Policies and Student Support</h2>
+<h3 id="academic-integrity">Academic Integrity</h3>
+<p>Students in this course will be expected to comply with the <a href="https://www.provost.pitt.edu/info/ai1.html" rel="noopener" target="_blank">University of
+Pittsburgh’s Policy on Academic
+Integrity</a>. Any student
+suspected of violating this obligation for any reason during the semester
+will be required to participate in the procedural process, initiated at
+the instructor level, as outlined in the University Guidelines on
+Academic Integrity. This may include, but is not limited to, the
+confiscation of the examination of any individual suspected of violating
+University Policy. Furthermore, no student may bring any unauthorized
+materials to an exam, including dictionaries and programmable
+calculators.</p>
+<p>To learn more about Academic Integrity, visit the <a href="http://pitt.libguides.com/academicintegrity/" rel="noopener" target="_blank">Academic Integrity
+Guide</a> for an overview of
+the topic. For hands-on practice, complete the <a href="http://pitt.libguides.com/academicintegrity/plagiarism" rel="noopener" target="_blank">Understanding and
+Avoiding Plagiarism
+tutorial</a>.</p>
+<h4 id="use-of-generative-ai-tools-in-academic-work">Use of Generative AI Tools in Academic Work</h4>
+<p>Students may use generative AI tools, such as large language models, as
+supplementary resources in this course, within the following guidelines:</p>
+<ol>
+<li>
+<p>Original thought <br/>
+    AI tools should support your thinking, not replace it. Help with
+    programming (e.g., syntax, debugging, boilerplate), brainstorming, and
+    proofreading is fine. The choice of methods, the analysis, and the
+    interpretation of results should be your own. As a rule of thumb, you
+    should be able to explain and defend anything you submit without the
+    tool.</p>
+</li>
+<li>
+<p>Critical evaluation <br/>
+    AI output can be wrong in ways that are easy to miss, including code
+    that runs without errors and references that look real. You are
+    responsible for checking it, and for the accuracy of everything you
+    submit.</p>
+</li>
+<li>
+<p>Disclosure <br/>
+    End each submission with a brief note on which AI tools you used, if
+    any, and for what. Any AI-generated text included in your work should
+    be clearly cited.</p>
+</li>
+<li>
+<p>Data privacy <br/>
+    For any work involving private, restricted, or human-subjects data,
+    use only University-approved AI tools accessed through Pitt Passport.
+    Public AI services are not approved for sensitive data. Follow the
+    University’s <a href="https://www.digital.pitt.edu/acceptable-use-generative-artificial-intelligence-tools" rel="noopener" target="_blank">Acceptable Use of Generative AI Tools Operating
+    Standard</a>,
+    and see <a href="https://www.digital.pitt.edu/ai" rel="noopener" target="_blank">Generative AI @ Pitt</a> for the
+    list of approved tools. For research data, your IRB approval or
+    data-use agreement still applies.</p>
+</li>
+<li>
+<p>Multiple-choice problem set <br/>
+    AI tools may not be used.</p>
+</li>
+</ol>
+<p>If you are unsure whether a particular use is appropriate, ask.</p>
+<h3 id="disability-services">Disability Services</h3>
+<p>The University of Pittsburgh is committed to inclusive and accessible
+education experiences for all students. If you have a disability for
+which you are, or may be, requesting an accommodation, you are encouraged
+to contact both your instructor and <a href="https://www.studentaffairs.pitt.edu/drs/" rel="noopener" target="_blank">Disability Resources and Services
+(DRS)</a>, 140 William Pitt Union,
+(412) 648-7890, <a href="mailto:drsrecep@pitt.edu">drsrecep@pitt.edu</a>, (412) 228-5347 for P3 ASL users, as
+early as possible in the term. DRS will engage in a review process with
+you to determine eligibility and reasonable accommodations. If you are
+already registered with DRS, please complete the necessary steps on the
+<a href="https://sierra.accessiblelearning.com/pitt" rel="noopener" target="_blank">DRS Student Portal</a> to
+utilize your accommodations this term.</p>
+<h4 id="accessibility">Accessibility</h4>
+<p>The University of Pittsburgh is committed to <a href="https://www.wellbeing.pitt.edu/disability-access-accommodations/digital-accessibility/policy" rel="noopener" target="_blank">providing equal
+access</a>
+by making all electronic and information technology accessible to all
+users, including instructional materials and the <a href="https://community.instructure.com/en/kb/articles/662723-what-are-the-canvas-accessibility-standards" rel="noopener" target="_blank">Canvas LMS
+platform</a>.</p>
+<ul>
+<li>If you experience accessibility issues regarding course-specific
+  material, please reach out to the instructor.</li>
+<li>If you experience a University-wide or other large-scale accessibility
+  issue, please <a href="https://www.wellbeing.pitt.edu/disability-access-accommodations/digital-accessibility/report-a-barrier" rel="noopener" target="_blank">report the digital accessibility
+  barrier</a>
+  to the Digital Accessibility Coordinator.</li>
+<li>If you are registered with <a href="https://www.wellbeing.pitt.edu/disability-access/disability-resources-services" rel="noopener" target="_blank">Disability Resources and
+  Services</a>
+  (DRS) and experience issues with approved accommodations, you may
+  contact DRS, 140 William Pitt Union, 412-648-7890, <a href="mailto:drsrecep@pitt.edu">drsrecep@pitt.edu</a>.</li>
+</ul>
+<h3 id="copyright-notice">Copyright Notice</h3>
+<p>These materials may be protected by copyright. United States copyright
+law, 17 USC section 101, et seq., in addition to University policy and
+procedures, prohibit unauthorized duplication or retransmission of course
+materials.</p>
+<p>See the <a href="https://www.copyright.gov/" rel="noopener" target="_blank">Library of Congress Copyright Office</a>
+and the <a href="https://www.policy.pitt.edu/sites/default/files/Policies/Community-Standards/Policy_CS_03.pdf" rel="noopener" target="_blank">University Copyright
+Policy</a>.</p>
+<h3 id="religious-observances">Religious Observances</h3>
+<p>The University of Pittsburgh strives to foster a supportive environment
+and to respect the beliefs and values of all community members.
+Accordingly, recognizing that certain students may observe religious
+holidays (activities observed by a religious group of which a student is
+a member) and cultural practices that conflict with scheduled class
+activities, instructors will work with students to try to make reasonable
+accommodations in the event of such a conflict.</p>
+<p>At the beginning of the semester, you should review the course
+requirements to identify foreseeable conflicts with assignments, exams,
+or other required attendance. If you identify a conflict, please contact
+your instructor (or your course coordinator/s), ideally within the first
+two weeks of the first class meeting, to allow time to discuss and
+attempt to make fair and reasonable adjustments to the schedule and/or
+tasks.</p>
+<h3 id="statement-on-classroom-recording">Statement on Classroom Recording</h3>
+<p>To ensure the free and open discussion of ideas, students may not record
+classroom lectures, discussion and/or activities without the advance
+written permission of the instructor, and any such recording properly
+approved in advance can be used solely for the student’s own private use.</p>
+<h3 id="your-well-being-matters">Your Well-Being Matters</h3>
+<p>For general information about mental health, see the <a href="https://www.nimh.nih.gov/health/" rel="noopener" target="_blank">National Institute
+of Mental Health (NIMH) website</a>.</p>
+<p>Graduate school can be an exciting and challenging time. It can be
+helpful to remember that we all benefit from assistance and guidance at
+times, and there are many resources available to support your well-being
+while you are at Pitt. You are encouraged to visit
+<a href="https://www.thrive.pitt.edu/" rel="noopener" target="_blank">Thrive@Pitt</a> to learn more about
+well-being and the many campus resources available to help you thrive.</p>
+<p>If you or anyone you know experiences academic stress, persistent
+difficult feelings and/or challenging life events, you are strongly
+encouraged to seek support.
+<a href="https://www.studentaffairs.pitt.edu/cc/services/" rel="noopener" target="_blank">Services</a> are
+available through the <a href="https://www.studentaffairs.pitt.edu/cc/" rel="noopener" target="_blank">University Counseling Center
+(UCC)</a>. The UCC is located on
+the 2nd Floor of Nordenberg Hall - Wellness Center at 119 University
+Place, Pittsburgh, PA 15260. The UCC website also provides links to a
+<a href="http://www.studentaffairs.pitt.edu/cc/resources/" rel="noopener" target="_blank">range of
+resources</a> and
+information about programs that may be beneficial. You can call
+412-648-7930 at any time to connect with a clinician. If you or someone
+you know is feeling suicidal, please call the University Counseling
+Center at any time at 412-648-7930. You can also contact Resolve Crisis
+Network at 888-796-8226. If the situation is life threatening, call Pitt
+Police at 412-624-2121 or dial 911.</p>
+<h4 id="additional-resources">Additional Resources</h4>
+<ul>
+<li><a href="http://www.studentaffairs.pitt.edu/cc/therapy-assistance-online/" rel="noopener" target="_blank">Therapy Assistance Online
+  (TAO)</a>:
+  A private online library of behavioral health resources from the
+  University Counseling Center (available with your Pitt login).</li>
+<li><a href="https://www.studentaffairs.pitt.edu/care-and-resources" rel="noopener" target="_blank">Care &amp; Resource
+  Support</a>:
+  Connect with resources like the on-campus food pantry and thrift store,
+  as well as Care Advocates.</li>
+<li><a href="https://financialaid.pitt.edu/" rel="noopener" target="_blank">Financial Aid Office</a>: Learn more about
+  financial aid (including FAFSA) and connect with staff who can answer
+  questions.</li>
+<li><a href="https://financialwellness.pitt.edu/" rel="noopener" target="_blank">Financial Wellness Center</a>:
+  Offers programs and guidance to help students build personal finance
+  skills and take control of their financial future.</li>
+<li><a href="https://www.ois.pitt.edu/" rel="noopener" target="_blank">Office of International Services (OIS)</a>:
+  Provides immigration-related services for international visitors,
+  students, faculty, researchers, and staff.</li>
+<li><a href="https://www.writingcenter.pitt.edu/" rel="noopener" target="_blank">Writing Center</a>: A space for all
+  Pitt students to work with trained consultants on writing projects at
+  any stage.</li>
+</ul>
+</section><footer class="footnotes"><p><a id="fn1" name="fn1">[1]</a>: The .mat format is MATLAB’s native format (readable in Python via <code>scipy.io</code>).
+    The .npz format is the NumPy analogue (created with <code>numpy.savez</code>) and is
+    not natively readable in MATLAB, so please use whichever is native to your
+    language.</p></footer>
+  </main>
+</div>
+<script>
+(function () {
+  var links = Array.prototype.slice.call(document.querySelectorAll('.toc a'));
+  var map = {};
+  links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+  var sections = Array.prototype.slice.call(document.querySelectorAll('main > section'));
+  if (!('IntersectionObserver' in window)) return;
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        links.forEach(function (a) { a.removeAttribute('aria-current'); });
+        var a = map[e.target.id];
+        if (a) a.setAttribute('aria-current', 'true');
+      }
+    });
+  }, { rootMargin: '-10% 0px -80% 0px' });
+  sections.forEach(function (s) { io.observe(s); });
+  // collapse contents on small screens
+  var d = document.querySelector('.toc details');
+  if (d && window.matchMedia('(max-width: 900px)').matches) d.removeAttribute('open');
+})();
+
+</script>
+</body>
+</html>
